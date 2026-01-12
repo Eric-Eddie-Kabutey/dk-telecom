@@ -1,0 +1,82 @@
+{
+    "nav": {
+        "explore": "Explore",
+        "about": "About Us",
+        "services": "Our Services",
+        "blog": "Blog",
+        "contact": "Contact",
+        "support": "Support"
+    },
+    "aboveNavBar": {
+        "toggleLabel": "Switch to Business",
+        "message": "Welcome to DK Telecom Residential"
+    },
+    "hero": {
+        "title": "High-Speed Internet for Your Home",
+        "subtitle": "Reliable connectivity for all your family's needs, from streaming to working from home.",
+        "ctaPrimary": "Explore Plans",
+        "ctaSecondary": "Check Coverage"
+    },
+    "getStarted": {
+        "title": "Get Started in 3 Easy Steps",
+        "step1": {
+            "title": "Choose Plan",
+            "desc": "Pick the best plan for you."
+        },
+        "step2": {
+            "title": "Register",
+            "desc": "Fill in your details."
+        },
+        "step3": {
+            "title": "Connect",
+            "desc": "Get connected instantly."
+        }
+    },
+    "fastInternet": {
+        "family": {
+            "title": "Fast Internet for the Whole Family",
+            "desc": "No more buffering. Everyone can stream, game, and work at the same time."
+        },
+        "streaming": {
+            "title": "Built for Everyday Smooth Streaming",
+            "desc": "Enjoy your favorite shows and movies in 4K without interruptions."
+        }
+    },
+    "paymentHub": {
+        "title": "Your All-in-One Wallet & Payment Hub",
+        "desc": "Manage your bills and payments seamlessly in one place."
+    },
+    "howWeStandOut": {
+        "title": "How We Stand Out",
+        "features": [
+            {
+                "title": "Exceptional Service",
+                "desc": "24/7 support for you."
+            },
+            {
+                "title": "Flexible Plans",
+                "desc": "Plans that fit your budget."
+            },
+            {
+                "title": "Reliable Network",
+                "desc": "99.9% uptime guaranteed."
+            }
+        ]
+    },
+    "footer": {
+        "copy": "© 2026 DK Telecom. All rights reserved.",
+        "links": [
+            "Privacy Policy",
+            "Terms of Service",
+            "Help Center"
+        ]
+    },
+    "placeholders": {
+        "explore": "Residential - Explore",
+        "about": "Residential - About",
+        "services": "Residential - Our Services",
+        "blog": "Residential - Blog",
+        "contact": "Residential - Contact",
+        "support": "Residential - Support"
+    }
+}

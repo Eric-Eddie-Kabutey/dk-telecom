@@ -1,0 +1,82 @@
+{
+    "nav": {
+        "explore": "Explore Business",
+        "about": "About Business",
+        "services": "Business Services",
+        "blog": "Business Blog",
+        "contact": "Business Contact",
+        "support": "Business Support"
+    },
+    "aboveNavBar": {
+        "toggleLabel": "Switch to Residential",
+        "message": "Enterprise Solutions by DK Telecom"
+    },
+    "hero": {
+        "title": "Powerful Connectivity for Your Business",
+        "subtitle": "Scaling your business with dedicated high-speed internet and reliable uptime.",
+        "ctaPrimary": "View Business Plans",
+        "ctaSecondary": "Contact Sales"
+    },
+    "getStarted": {
+        "title": "Seamless Business Integration",
+        "step1": {
+            "title": "Consultation",
+            "desc": "Talk to our experts."
+        },
+        "step2": {
+            "title": "Setup",
+            "desc": "Professional installation."
+        },
+        "step3": {
+            "title": "Scale",
+            "desc": "Grow your business faster."
+        }
+    },
+    "fastInternet": {
+        "family": {
+            "title": "Dedicated Bandwidth for Teams",
+            "desc": "High-performance connectivity for offices and remote teams."
+        },
+        "streaming": {
+            "title": "Uninterrupted Business Operations",
+            "desc": "Guaranteed low latency for video conferencing and cloud services."
+        }
+    },
+    "paymentHub": {
+        "title": "Enterprise Payment & Billing Hub",
+        "desc": "Customized billing solutions and multi-user access for your finance team."
+    },
+    "howWeStandOut": {
+        "title": "Why Businesses Choose Us",
+        "features": [
+            {
+                "title": "SLA Guaranteed",
+                "desc": "Priority support and uptime."
+            },
+            {
+                "title": "Custom Solutions",
+                "desc": "Sized perfectly for your needs."
+            },
+            {
+                "title": "Next-Gen Infrastructure",
+                "desc": "Future-proof connectivity."
+            }
+        ]
+    },
+    "footer": {
+        "copy": "© 2026 DK Telecom Business. All rights reserved.",
+        "links": [
+            "Enterprise Terms",
+            "Service Level Agreement",
+            "Contact Sales"
+        ]
+    },
+    "placeholders": {
+        "explore": "Business - Explore",
+        "about": "Business - About",
+        "services": "Business - Our Services",
+        "blog": "Business - Blog",
+        "contact": "Business - Contact",
+        "support": "Business - Support"
+    }
+}
