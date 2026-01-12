@@ -1,9 +1,8 @@
 {
     "nav": {
-        "explore": "Explore",
-        "about": "About Us",
-        "services": "Our Services",
-        "blog": "Blog",
+        "about": "About",
+        "services": "Customer Services",
+        "blog": "Insights",
         "contact": "Contact",
         "support": "Support"
     },
@@ -12,7 +11,7 @@
         "message": "Welcome to DK Telecom Residential"
     },
     "hero": {
-        "title": "High-Speed Internet for Your Home",
+        "title": "Personal",
         "subtitle": "Reliable connectivity for all your family's needs, from streaming to working from home.",
         "ctaPrimary": "Explore Plans",
         "ctaSecondary": "Check Coverage"

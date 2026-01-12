@@ -8,7 +8,7 @@ export const Hero = () => {
     const { text } = useSiteMode();
 
     return (
-        <section className="relative min-h-[85vh] flex items-center bg-hero overflow-hidden">
+        <section className="relative min-h-[100vh] flex items-center bg-hero overflow-hidden">
             <div className="absolute inset-0 bg-black/10 z-0"></div>
             <div className="container relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                 <div className="text-white space-y-8 animate-in fade-in slide-in-from-left duration-1000">
@@ -30,11 +30,6 @@ export const Hero = () => {
                 <div className="hidden lg:block relative h-[600px] animate-in fade-in zoom-in duration-1000 delay-200">
                     {/* Optionally add a decorative element here */}
                 </div>
-            </div>
-
-            {/* Visual Reference Note */}
-            <div className="absolute bottom-4 left-4 text-xs text-white/30 pointer-events-none">
-                Visual Reference: hero.png
             </div>
         </section>
     );

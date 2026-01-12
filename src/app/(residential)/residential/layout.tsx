@@ -9,7 +9,6 @@ export default function ResidentialLayout({
 }) {
     return (
         <div className="flex flex-col min-h-screen">
-            <AboveNavBar />
             <NavBar />
             <main className="flex-grow">
                 {children}
