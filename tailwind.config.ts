@@ -16,6 +16,12 @@ const config: Config = {
         secondary: {
           DEFAULT: "hsl(215, 25%, 27%)",
         },
+        dark: {
+          DEFAULT: "#101828",
+        },
+        darkPrimary: {
+          DEFAULT: "#1D1962",
+        },
       },
       backgroundImage: {
         "hero-pattern": "url('/assets/resources/hero-bg.png')",

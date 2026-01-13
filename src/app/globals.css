@@ -6,8 +6,10 @@
 :root {
     --background: #ffffff;
     --foreground: #111827;
-    --primary: #4A3ff7;
-    --primary-dark: #1506e7;
+    --primary: #4A3FF7;
+    --primary-dark: #1D1962;
+
+    --dark: #101828;
 }
 
 body {
@@ -17,6 +19,7 @@ body {
 }
 
 .container {
+    width: 80%;
     max-width: 1280px;
     margin: 0 auto;
     padding: 0 1rem;

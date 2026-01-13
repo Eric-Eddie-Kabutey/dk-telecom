@@ -9,7 +9,7 @@ export const Footer = () => {
     const { text } = useSiteMode();
 
     return (
-        <footer className="bg-gray-100 py-12 px-4 border-t border-gray-200">
+        <footer className="bg-dark py-12 px-4 border-t border-gray-200">
             <div className="container grid grid-cols-1 md:grid-cols-4 gap-8">
                 <div className="col-span-1 md:col-span-2">
                     <Image src="/assets/resources/logo.svg" alt="DK Telecom" width={140} height={45} className="mb-4" />

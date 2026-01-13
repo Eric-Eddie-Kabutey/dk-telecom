@@ -12,38 +12,62 @@
     },
     "hero": {
         "title": "Personal",
-        "subtitle": "Reliable connectivity for all your family's needs, from streaming to working from home.",
-        "ctaPrimary": "Explore Plans",
-        "ctaSecondary": "Check Coverage"
+        "subtitle": "Your Complete Internet Service Partner",
+        "ctaPrimary": "Explore Now"
     },
     "getStarted": {
-        "title": "Get Started in 3 Easy Steps",
-        "step1": {
-            "title": "Choose Plan",
-            "desc": "Pick the best plan for you."
-        },
-        "step2": {
-            "title": "Register",
-            "desc": "Fill in your details."
-        },
-        "step3": {
-            "title": "Connect",
-            "desc": "Get connected instantly."
-        }
+        "title": "Get Started with DK",
+        "steps": [
+            {
+                "title": "Reliable High-Speed Connectivity",
+                "desc": "STay  connected with fast, dependable fibre and broadband plans designed for sreaming, gaming, and everyday online life",
+                "icon": "/assets/resources/reliable-high-speed-connectivity-icon.svg"
+            },
+            {
+                "title": "Flexible Plans for every need",
+                "desc": "Choose a perfect plan for your home or business - from basic starter packages to premium high-speed fibre options",
+                "icon": "/assets/resources/flexible-plans-for-ever-need-icon.svg"
+            },
+            {
+                "title": "Exceptional Customer Care",
+                "desc": "Experience worry-free service with free installation, dedicated support, and a commitment to keeping you connected whenever you need it.",
+                "icon": "/assets/resources/exceptional-customer-service-icon.svg"
+            }
+        ]
     },
     "fastInternet": {
         "family": {
             "title": "Fast Internet for the Whole Family",
-            "desc": "No more buffering. Everyone can stream, game, and work at the same time."
+            "desc": "Stream, studt, game, and browse all th the same time with stable, high speed internet that keeps every family member connected without interruptions."
         },
         "streaming": {
-            "title": "Built for Everyday Smooth Streaming",
-            "desc": "Enjoy your favorite shows and movies in 4K without interruptions."
+            "title": "Fast Internet Built for Everyday Smooth Streaming",
+            "desc": "Enjoy consistent speeds that handle video streaming and social media across multiple devices, so everyone stays connected without interruptions."
         }
     },
     "paymentHub": {
-        "title": "Your All-in-One Wallet & Payment Hub",
-        "desc": "Manage your bills and payments seamlessly in one place."
+        "tagline": "business solutions",
+        "title": "Get your All-in-One Wallet & Payment Hub",
+        "desc": "Pay bills, top uo airtime, link bank accounts, create virtual cards, and manage payments - all from one secure app"
+    },
+    "familyPlus": {
+        "tagline": "Family Plus",
+        "title": "Build for Familt Life, Streaming, Learning, and Fun",
+        "img": "/assets/resources/fast-internet-for-the-whole-family-img.png",
+        "features": [
+            {
+                "title": "ideal for multiple devices"
+            },
+            {
+                "title": "HD streaming & gamind"
+            },
+            {
+                "title": "30 days unlimited browsing"
+            },
+            {
+                "title": "free support & installation"
+            }
+        ]
     },
     "howWeStandOut": {
         "title": "How We Stand Out",

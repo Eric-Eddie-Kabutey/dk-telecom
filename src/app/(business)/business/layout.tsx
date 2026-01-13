@@ -11,7 +11,7 @@ export default function BusinessLayout({
         <div className="flex flex-col min-h-screen">
             <AboveNavBar />
             <NavBar />
-            <main className="flex-grow">
+            <main className="flex-grow relative">
                 {children}
             </main>
             <Footer />
