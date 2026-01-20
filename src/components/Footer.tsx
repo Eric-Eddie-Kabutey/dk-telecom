@@ -4,39 +4,106 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { useSiteMode } from "@/context/SiteModeProvider";
+import { MessageSquare, AppWindow, type LucideIcon } from "lucide-react";
+
+type FooterLink1 = {
+    label: string;
+    icon: keyof typeof ICONS;
+    href?: string;
+};
+
+type FooterLink2 = {
+    label: string;
+    href?: string;
+};
+
+const ICONS = {
+    MessageSquare,
+    AppWindow,
+} satisfies Record<string, LucideIcon>;
 
 export const Footer = () => {
     const { text } = useSiteMode();
 
+    const links1 = (text.footer.links1 ?? []) as FooterLink1[];
+    const links2Raw = text.footer.links2 ?? [];
+
+    // Support BOTH formats for links2: strings OR {label, href}
+    const links2: FooterLink2[] = links2Raw.map((x: any) =>
+        typeof x === "string" ? { label: x, href: "#" } : x
+    );
+
     return (
-        <footer className="bg-dark py-12 px-4 border-t border-gray-200">
-            <div className="container grid grid-cols-1 md:grid-cols-4 gap-8">
-                <div className="col-span-1 md:col-span-2">
-                    <Image src="/assets/resources/logo.svg" alt="DK Telecom" width={140} height={45} className="mb-4" />
-                    <p className="text-gray-600 max-w-sm mb-4">
-                        Connect to the fastest network in the nation. Providing reliable connectivity for homes and businesses.
-                    </p>
-                    <p className="text-gray-800 font-medium">{text.footer.copy}</p>
+        <footer className="bg-dark border-t border-white/10">
+            <div className="container px-4 py-12">
+                {/* Logo */}
+                <div className="shrink-0 my-10">
+                    <Image
+                        src="/assets/resources/logo.svg"
+                        alt="DK Telecom"
+                        width={140}
+                        height={45}
+                        className="h-auto w-[120px] sm:w-[140px]"
+                    />
                 </div>
-                <div>
-                    <h4 className="font-bold text-gray-900 mb-4">Quick Links</h4>
-                    <ul className="space-y-2 text-gray-600">
-                        {text.footer.links.map(link => (
-                            <li key={link}><Link href="#" className="hover:text-blue-600 transition-colors">{link}</Link></li>
-                        ))}
-                    </ul>
+                {/* links1 */}
+                <div className="mb-10 grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-6 md:flex md:gap-10">
+                    {links1.map((item) => {
+                        const Icon = ICONS[item.icon] ?? MessageSquare;
+                        const content = (
+                            <div className="flex items-center gap-3">
+                                <Icon className="text-primary-dark" size={22} />
+                                <span className="text-base font-normal capitalize text-white sm:text-lg">
+                                    {item.label}
+                                </span>
+                            </div>
+                        );
+
+                        return item.href ? (
+                            <Link
+                                key={item.label}
+                                href={item.href}
+                                className="rounded-xl"
+                            >
+                                {content}
+                            </Link>
+                        ) : (
+                            <div
+                                key={item.label}
+                                className="rounded-xl"
+                            >
+                                {content}
+                            </div>
+                        );
+                    })}
                 </div>
-                <div>
-                    <h4 className="font-bold text-gray-900 mb-4">Contact Info</h4>
-                    <ul className="space-y-2 text-gray-600 text-sm">
-                        <li>123 Telecom Plaza, City</li>
-                        <li>info@dktelecom.com</li>
-                        <li>+1 (234) 567-890</li>
-                    </ul>
+
+                {/* links2 */}
+                <div className="mb-10 flex flex-col gap-4 sm:flex-row sm:flex-wrap sm:items-center sm:gap-x-8 sm:gap-y-3">
+                    {links2.map((link) =>
+                        link.href ? (
+                            <Link
+                                key={link.label}
+                                href={link.href}
+                                className="text-sm font-light text-white/80 transition hover:text-white"
+                            >
+                                {link.label}
+                            </Link>
+                        ) : (
+                            <span
+                                key={link.label}
+                                className="text-sm font-light text-white/80"
+                            >
+                                {link.label}
+                            </span>
+                        )
+                    )}
                 </div>
-            </div>
-            <div className="container mt-12 pt-8 border-t border-gray-200 text-center text-gray-500 text-sm">
-                Visual Reference: footer.png
+
+                {/* copy */}
+                <p className="mb-6 text-sm font-light text-white/70">
+                    {text.footer.copy}
+                </p>
             </div>
         </footer>
     );

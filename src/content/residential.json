@@ -71,27 +71,134 @@
     },
     "howWeStandOut": {
         "title": "How We Stand Out",
+        "subtitle": "Because you need more than just internet speedyou need reliability, coverage, and a provider that shows up when it matters.",
         "features": [
             {
-                "title": "Exceptional Service",
-                "desc": "24/7 support for you."
+                "id": "1",
+                "titleSection1": "17x",
+                "titleSection2": "faster",
+                "titleSection3": "than the national average",
+                "img": "/assets/resources/17x-faster-than-the-national-average.png"
             },
             {
-                "title": "Flexible Plans",
-                "desc": "Plans that fit your budget."
+                "id": "2",
+                "titleSection1": "guaranteed",
+                "titleSection2": "high",
+                "titleSection3": "speeds,day & night",
+                "img": "/assets/resources/guaranteed-high-speeds-day-&-night.png"
             },
             {
-                "title": "Reliable Network",
-                "desc": "99.9% uptime guaranteed."
+                "id": "3",
+                "titleSection1": "Service with network",
+                "titleSection2": "uptime",
+                "titleSection3": "",
+                "img": "/assets/resources/service-wth-network-uptime.png"
             }
         ]
     },
     "footer": {
-        "copy": "© 2026 DK Telecom. All rights reserved.",
-        "links": [
-            "Privacy Policy",
-            "Terms of Service",
-            "Help Center"
+        "copy": "© Copyright 2026 DK Telecom. All rights reserved.",
+        "links1": [
+            {
+                "label": "contact us",
+                "icon": "MessageSquare",
+                "href": "/"
+            },
+            {
+                "label": "more sites",
+                "icon": "AppWindow",
+                "href": "/"
+            }
+        ],
+        "links2": [
+            {
+                "label": "Terms of Service",
+                "href": "/"
+            },
+            {
+                "label": "Privacy Policy",
+                "href": "/"
+            },
+            {
+                "label": "Cookie Policy",
+                "href": "/"
+            }
+        ]
+    },
+    "help": {
+        "hero": {
+            "kicker": "HELP",
+            "title": "Welcome To Our Help Center",
+            "searchPlaceholder": "Search through our help center"
+        },
+        "section": {
+            "title": "Help & Support",
+            "subtitle": "Welcome to dk telecom Media's help and support page. Pick a category to get started."
+        },
+        "categories": [
+            {
+                "id": "broadband",
+                "title": "BroadBand",
+                "icon": "Wifi",
+                "href": "/help/broadband",
+                "keywords": [
+                    "internet",
+                    "wifi",
+                    "router",
+                    "speed"
+                ],
+                "articles": [
+                    {
+                        "title": "Slow internet troubleshooting",
+                        "href": "/help/broadband/slow",
+                        "keywords": [
+                            "slow",
+                            "speed"
+                        ]
+                    },
+                    {
+                        "title": "How to reset your router",
+                        "href": "/help/broadband/reset-router",
+                        "keywords": [
+                            "reset",
+                            "router"
+                        ]
+                    }
+                ]
+            },
+            {
+                "id": "billing",
+                "title": "Billing",
+                "icon": "CreditCard",
+                "href": "/help/billing",
+                "keywords": [
+                    "payment",
+                    "invoice",
+                    "charges"
+                ]
+            },
+            {
+                "id": "account",
+                "title": "My Account",
+                "icon": "User",
+                "href": "/help/account",
+                "keywords": [
+                    "profile",
+                    "login",
+                    "password"
+                ]
+            },
+            {
+                "id": "support",
+                "title": "Support",
+                "icon": "Headset",
+                "href": "/help/support",
+                "keywords": [
+                    "help",
+                    "ticket",
+                    "contact"
+                ]
+            }
         ]
     },
     "placeholders": {

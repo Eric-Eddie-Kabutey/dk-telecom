@@ -5,59 +5,69 @@ import Image from "next/image";
 import { useSiteMode } from "@/context/SiteModeProvider";
 
 export const HowWeStandOut = () => {
-    const { text } = useSiteMode();
+  const { text } = useSiteMode();
 
-    const icons = [
-        "/assets/resources/exceptional-customer-service-icon.svg",
-        "/assets/resources/flexible-plans-for-ever-need-icon.svg",
-        "/assets/resources/reliable-high-speed-connectivity-icon.svg"
-    ];
+  // Optional: use these if you want a small “tag” row like the screenshot
+  const icons = [
+    "/assets/resources/exceptional-customer-service-icon.svg",
+    "/assets/resources/flexible-plans-for-ever-need-icon.svg",
+    "/assets/resources/reliable-high-speed-connectivity-icon.svg",
+  ];
 
-    const stats = [
-        "/assets/resources/17x-faster-than-the-national-average.png",
-        "/assets/resources/guaranteed-high-speeds-day-&-night.png",
-        "/assets/resources/service-wth-network-uptime.png"
-    ];
+  return (
+    <section className="bg-white py-16 sm:py-20 lg:py-24">
+      <div className="container">
+        {/* Header */}
+        <div className="mx-auto mb-12 max-w-3xl text-center sm:mb-16 lg:mb-20">
+          <h2 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
+            {text.howWeStandOut.title}
+          </h2>
+          <p className="mt-4 text-base text-gray-600 sm:mt-5 sm:text-lg md:text-xl">
+            {text.howWeStandOut.subtitle}
+          </p>
+        </div>
 
-    return (
-        <section className="py-24 bg-white">
-            <div className="container">
-                <div className="text-center mb-20">
-                    <h2 className="text-4xl md:text-5xl font-bold mb-6">{text.howWeStandOut.title}</h2>
-                    <div className="w-24 h-1.5 bg-blue-600 mx-auto rounded-full"></div>
+        {/* Cards */}
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-3 md:gap-8">
+          {text.howWeStandOut.features.map((feature: any, idx: number) => {
+            const title =
+              `${feature.titleSection1 ?? ""} ${feature.titleSection2 ?? ""} ${feature.titleSection3 ?? ""}`.trim();
+
+            return (
+              <div
+                key={idx}
+                className="group relative overflow-hidden rounded-3xl border border-gray-100 bg-white shadow-[0_10px_30px_rgba(0,0,0,0.06)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_18px_45px_rgba(0,0,0,0.10)]"
+              >
+                {/* Subtle background wash behind image (like the screenshot) */}
+                <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-white via-white to-gray-50/70" />
+
+                <div className="relative flex h-full flex-col">
+                  {/* Title */}
+                  <p className="pt-6 sm:pt-8 text-md text-center font-normal leading-snug text-gray-900 sm:text-lg capitalize">
+                    {feature.titleSection1}{" "}
+                    <span className="text-primary">{feature.titleSection2}</span>{" "}
+                    {feature.titleSection3}
+                  </p>
+
+                  {/* Image area */}
+                  <div className="relative mt-6 flex-1">
+                    <div className="relative h-56 w-full sm:h-64 lg:h-72">
+                      <Image
+                        src={feature.img}
+                        alt={title}
+                        fill
+                        sizes="(max-width: 768px) 100vw, 33vw"
+                        className="object-contain"
+                        priority={idx === 0}
+                      />
+                    </div>
+                  </div>
                 </div>
-
-                {/* Feature Grid */}
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-24">
-                    {text.howWeStandOut.features.map((feature, idx) => (
-                        <div key={idx} className="text-center group">
-                            <div className="bg-blue-50 w-24 h-24 rounded-3xl flex items-center justify-center mx-auto mb-8 transition-all duration-500 group-hover:bg-blue-600 group-hover:rotate-12">
-                                <Image
-                                    src={icons[idx]}
-                                    alt={feature.title}
-                                    width={48}
-                                    height={48}
-                                    className="group-hover:invert transition-all"
-                                />
-                            </div>
-                            <h3 className="text-2xl font-bold mb-4">{feature.title}</h3>
-                            <p className="text-gray-600 leading-relaxed">{feature.desc}</p>
-                        </div>
-                    ))}
-                </div>
-
-                {/* Stats Grid */}
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    {stats.map((stat, idx) => (
-                        <div key={idx} className="relative h-48 rounded-2xl overflow-hidden shadow-lg border border-gray-100 hover:shadow-xl transition-shadow">
-                            <Image src={stat} alt="Stat" fill className="object-cover" />
-                        </div>
-                    ))}
-                </div>
-            </div>
-            <div className="text-center mt-12 text-xs text-gray-300">
-                Visual Reference: how-we-stand-out.png
-            </div>
-        </section>
-    );
+              </div>
+            );
+          })}
+        </div>
+      </div>
+    </section>
+  );
 };

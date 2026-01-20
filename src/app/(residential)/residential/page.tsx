@@ -8,6 +8,8 @@ import { HowWeStandOut } from "@/components/HowWeStandOut";
 import { FamilyPlus } from "@/components/FamilyPlus";
 import ComponentCarousel from "@/components/ComponentCarousel";
 import { FlashCard } from "@/components/FlashCard";
+import { ContactUsForm } from "@/components/ContactUsForm";
+import { HelpCenter } from "@/components/HelpCenter";
 
 export default function ResidentialHome() {
     return (
@@ -25,6 +27,8 @@ export default function ResidentialHome() {
                 <FamilyPlus />
                 <FastInternet variant="streaming" />
             </ComponentCarousel>
+            <ContactUsForm />
+            <HelpCenter />
             <FlashCard
                 title={"Experience Reliable\nInternet With DK"}
                 subtitle={"Haven't found what you're looking for? Save time experts for\nexclusive deals - we answer calls"}
