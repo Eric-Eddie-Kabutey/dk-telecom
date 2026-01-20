@@ -198,6 +198,496 @@
                     "ticket",
                     "contact"
                 ]
+            },
+            {
+                "id": "billing2",
+                "title": "Billing",
+                "icon": "CreditCard",
+                "href": "/help/billing",
+                "keywords": [
+                    "payment",
+                    "invoice",
+                    "charges"
+                ]
+            },
+            {
+                "id": "broadband2",
+                "title": "BroadBand",
+                "icon": "Wifi",
+                "href": "/help/broadband",
+                "keywords": [
+                    "internet",
+                    "wifi",
+                    "router",
+                    "speed"
+                ],
+                "articles": [
+                    {
+                        "title": "Slow internet troubleshooting 2",
+                        "href": "/help/broadband/slow",
+                        "keywords": [
+                            "slow",
+                            "speed"
+                        ]
+                    },
+                    {
+                        "title": "How to reset your router 2",
+                        "href": "/help/broadband/reset-router",
+                        "keywords": [
+                            "reset",
+                            "router"
+                        ]
+                    }
+                ]
+            },
+            {
+                "id": "support2",
+                "title": "Support",
+                "icon": "Headset",
+                "href": "/help/support",
+                "keywords": [
+                    "help",
+                    "ticket",
+                    "contact"
+                ]
+            },
+            {
+                "id": "account2",
+                "title": "My Account",
+                "icon": "User",
+                "href": "/help/account",
+                "keywords": [
+                    "profile",
+                    "login",
+                    "password"
+                ]
+            }
+        ]
+    },
+    "AboutUs": {
+        "hero": {
+            "img": "/assets/resources/aboutUs/hero.png",
+            "tag": "About US",
+            "title": "accelerating growth through tech",
+            "subtitle": "Experience the future of connectivity with our ultra-fast broadband solutions designed for modern living."
+        },
+        "whatWeDo": {
+            "title": "What We Do",
+            "subtitle": "We create connections that matter to people. From seamless, reliable network solutions to personalized customer care, everything we do is built around how you live, work, and stay connected every day.",
+            "body": "Whether it’s streaming, learning, running a business, or staying in touch with loved ones, we’re here to support your digital journey with consistency you can trust. As technology evolves, we continue to invest in better infrastructure, better service, and better experiences—paving the way for a more connected, reliable, and inclusive digital future for everyone."
+        },
+        "ourMission": [
+            {
+                "id": 1,
+                "title": "Our Mission",
+                "icon": "Eye",
+                "body": "At DK Telecom, we’re more than just a company – we’re a family. Each member of our team brings their unique strengths and perspectives, coming together to create something truly special"
+            },
+            {
+                "id": 2,
+                "title": "Our Goal",
+                "icon": "Target",
+                "body": "At DK Telecom, our goal is to provide reliable, high-speed internet services to homes and businesses across Ghana. We are committed to delivering exceptional customer service and innovative solutions that meet the evolving needs of our customers."
+            },
+            {
+                "id": 3,
+                "title": "Our Goal",
+                "icon": "Target",
+                "body": "At DK Telecom, our goal is to provide reliable, high-speed internet services to homes and businesses across Ghana. We are committed to delivering exceptional customer service and innovative solutions that meet the evolving needs of our customers."
+            },
+            {
+                "id": 4,
+                "title": "Our Goal",
+                "icon": "Target",
+                "body": "At DK Telecom, our goal is to provide reliable, high-speed internet services to homes and businesses across Ghana. We are committed to delivering exceptional customer service and innovative solutions that meet the evolving needs of our customers."
+            }
+        ],
+        "latestNews": {
+            "title": "Latest News",
+            "filters": [
+                {
+                    "id": "all",
+                    "title": "All"
+                },
+                {
+                    "id": "news",
+                    "title": "News"
+                },
+                {
+                    "id": "events",
+                    "title": "Events"
+                },
+                {
+                    "id": "case studies",
+                    "title": "Case Studies"
+                }
+            ],
+            "articles": [
+                {
+                    "id": 1,
+                    "title": "How to Choose the Right Internet Plan for Your Home",
+                    "img": "/assets/resources/aboutUs/articles/article-default.png",
+                    "body": "A simple guide to help you understand speeds, usage, and what really matters when picking an internet plan for your household.",
+                    "href": "/",
+                    "button": "Read more",
+                    "categoryId": "case studies"
+                },
+                {
+                    "id": 2,
+                    "title": "Why Reliable Internet Matters More Than Just Speed",
+                    "img": "/assets/resources/aboutUs/articles/article-default.png",
+                    "body": "Learn why stability, uptime, and support are just as important as fast speeds for work, streaming, and everyday browsing.",
+                    "href": "/",
+                    "button": "Read more",
+                    "categoryId": "news"
+                },
+                {
+                    "id": 3,
+                    "title": "Understanding Unlimited Internet: What It Really Means",
+                    "img": "/assets/resources/aboutUs/articles/article-default.png",
+                    "body": "We break down what unlimited browsing is, how it works, and what to look out for when choosing an internet provider.",
+                    "href": "/",
+                    "button": "Read more",
+                    "categoryId": "case studies"
+                },
+                {
+                    "id": 4,
+                    "title": "5 Signs You Need a Faster Internet Connection",
+                    "img": "/assets/resources/aboutUs/articles/article-default.png",
+                    "body": "We break down what unlimited browsing is, how it works, and what to look out for when choosing an internet provider.",
+                    "href": "/",
+                    "button": "Read more",
+                    "categoryId": "events"
+                }
+            ]
+        },
+        "team": {
+            "title": "A Team that understands your everyday internet needs",
+            "subtitle": "meet our team focuses on practical solutions that actually help.",
+            "members": [
+                {
+                    "id": 1,
+                    "img": "/assets/resources/aboutUs/team/member-default.png",
+                    "name": "Zayn Malik",
+                    "position": "ceo"
+                },
+                {
+                    "id": 2,
+                    "img": "/assets/resources/aboutUs/team/member-default.png",
+                    "name": "Zayn Malik",
+                    "position": "ceo"
+                },
+                {
+                    "id": 3,
+                    "img": "/assets/resources/aboutUs/team/member-default.png",
+                    "name": "Zayn Malik",
+                    "position": "ceo"
+                },
+                {
+                    "id": 4,
+                    "img": "/assets/resources/aboutUs/team/member-default.png",
+                    "name": "Zayn Malik",
+                    "position": "ceo"
+                },
+                {
+                    "id": 5,
+                    "img": "/assets/resources/aboutUs/team/member-default.png",
+                    "name": "Zayn Malik",
+                    "position": "ceo"
+                }
+            ]
+        }
+    },
+    "services": {
+        "hero": {
+            "img": "/assets/resources/aboutUs/hero.png",
+            "tag": "services",
+            "title": "explore our digital solutions",
+            "subtitle": "find the right solution, tailored for your every needs"
+        },
+        "serviceList": {
+            "title": "At DK Telecom, we deliver practical and reliable digital solutions that help you work smarter, stay secure, and grow with confidence.",
+            "list": [
+                {
+                    "id": 1,
+                    "title": "Electric Power Back-up System",
+                    "img": "/assets/resources/services/serviceList/electric-power.png"
+                },
+                {
+                    "id": 2,
+                    "title": "Email Hosting",
+                    "img": "/assets/resources/services/serviceList/email-hosting.png"
+                },
+                {
+                    "id": 3,
+                    "title": "CCTV and Intruder Alarm",
+                    "img": "/assets/resources/services/serviceList/cctv.png"
+                },
+                {
+                    "id": 4,
+                    "title": "DK Cloud Services",
+                    "img": "/assets/resources/services/serviceList/cloud-service.png"
+                },
+                {
+                    "id": 5,
+                    "title": "Web Hosting",
+                    "img": "/assets/resources/services/serviceList/web-hosting.png"
+                },
+                {
+                    "id": 6,
+                    "title": "Network Security",
+                    "img": "/assets/resources/services/serviceList/network-security.png"
+                }
+            ]
+        }
+    },
+    "career": {
+        "hero": {
+            "img": "/assets/resources/career/hero.png",
+            "tag": "career",
+            "title": "build the future of connectivity with us",
+            "subtitle": "vJoin a team that’s passionate about connecting people and communities. At DK, you’ll work on meaningful projects, grow your skills, and help shape reliable internet experiences for homes and businesses.",
+            "button": {
+                "text": "view open roles",
+                "href": "/"
+            }
+        },
+        "buildingSomethingMeaningful": {
+            "title": "biuld something meaningful with a driven team",
+            "subtitle": "We’re bringing together committed young professionals who want to learn, grow, and contribute to projects that go beyond today and leave a lasting mark.",
+            "things": [
+                {
+                    "id": 1,
+                    "title": "meaningful work with real impact",
+                    "body": "Your work helps people stay connected every day, powering homes, businesses, and communities through reliable internet.",
+                    "img": "/assets/resources/career/buildingSomethingMeaningful/1.png",
+                    "type": "simple"
+                },
+                {
+                    "id": 2,
+                    "title": "Grow Your Skills on Real Projects",
+                    "body": "Learn by doing. Gain hands-on experience, sharpen your technical and professional skills, and grow alongside a driven team.",
+                    "type": "simple",
+                    "img": "/assets/resources/career/buildingSomethingMeaningful/2.png"
+                },
+                {
+                    "id": 3,
+                    "title": "Supportive Team Culture",
+                    "body": "Work with people who respect your ideas, value collaboration, and support each other’s growth and success.",
+                    "type": "simple",
+                    "img": "/assets/resources/career/buildingSomethingMeaningful/3.png"
+                },
+                {
+                    "id": 4,
+                    "title": "room to take ownership",
+                    "body": "Take responsibility, make decisions, and play an active role in shaping how we build and grow as a company.",
+                    "type": "detailed",
+                    "img": "/assets/resources/career/buildingSomethingMeaningful/1000006332.svg",
+                    "img2": "/assets/resources/career/buildingSomethingMeaningful/1707480138.svg"
+                },
+                {
+                    "id": 5,
+                    "title": "Build a Career, Not Just a Job",
+                    "body": "Join a growing company where long-term growth, learning, and leadership opportunities are part of the journey.",
+                    "type": "simple",
+                    "img": "/assets/resources/career/buildingSomethingMeaningful/5.png"
+                }
+            ]
+        },
+        "openRoles": {
+            "title": "join our team",
+            "subtitle": "Work alongside passionate, forward-thinking people who care deeply about making a difference through technology.",
+            "roles": [
+                {
+                    "id": 1,
+                    "unit": "finance",
+                    "type": "Fulltime",
+                    "title": "finance & Accounting officer",
+                    "description": "Manage day-to-day financial operations, including bookkeeping, reconciliations, and financial reporting to support healthy business growth.",
+                    "date": "feb 13, 2026"
+                },
+                {
+                    "id": 2,
+                    "unit": "customer service",
+                    "type": "Fulltime",
+                    "title": "Customer Support Specialist",
+                    "description": "Provide technical support and assistance to customers. Gain hands-on experience, sharpen your technical and professional skills, and grow alongside a driven team.",
+                    "date": "feb 13, 2026"
+                },
+                {
+                    "id": 3,
+                    "unit": "sales",
+                    "type": "Fulltime",
+                    "title": "Sales Representative",
+                    "description": "Promote and sell our products and services. Gain hands-on experience, sharpen your technical and professional skills, and grow alongside a driven team.",
+                    "date": "feb 13, 2026"
+                },
+                {
+                    "id": 4,
+                    "unit": "software engineering",
+                    "type": "Fulltime",
+                    "title": "Software Engineer",
+                    "description": "Design, develop, and maintain software applications and systems. Gain hands-on experience, sharpen your technical and professional skills, and grow alongside a driven team.",
+                    "date": "feb 13, 2026"
+                },
+                {
+                    "id": 5,
+                    "unit": "technical support",
+                    "type": "internship",
+                    "title": "Technical Support Specialist",
+                    "description": "Provide technical support and assistance to customers. Gain hands-on experience, sharpen your technical and professional skills, and grow alongside a driven team.",
+                    "date": "feb 13, 2026"
+                },
+                {
+                    "id": 6,
+                    "unit": "network engineering",
+                    "type": "Fulltime",
+                    "title": "Network Engineer",
+                    "description": "Design, develop, and maintain network infrastructure and systems. Gain hands-on experience, sharpen your technical and professional skills, and grow alongside a driven team.",
+                    "date": "feb 13, 2026"
+                },
+                {
+                    "id": 7,
+                    "unit": "network engineering",
+                    "type": "Fulltime",
+                    "title": "Network Engineer",
+                    "description": "Design, develop, and maintain network infrastructure and systems. Gain hands-on experience, sharpen your technical and professional skills, and grow alongside a driven team.",
+                    "date": "feb 13, 2026"
+                }
+            ]
+        },
+        "callToAction": {
+            "title": "work with people who respect your ideas, and value collaboravtion",
+            "subtitle": "Haven't found what you're looking for? Save time experts for exclusive deals - we answer calls",
+            "button": {
+                "text": "view open roles",
+                "href": "/"
+            },
+            "img": "/assets/resources/career/callToAction/1.png"
+        }
+    },
+    "packages": {
+        "hero": {
+            "tag": "residental packages",
+            "title": "the perfect package for every need",
+            "subtitle": "Choose a plan that fits your needs and budget",
+            "img": "/assets/resources/packages/hero/1.png"
+        },
+        "packageSection": {
+            "title": "choose your broadband plan",
+            "packageList": [
+                {
+                    "id": 1,
+                    "type": "starter",
+                    "bandwidth": "5",
+                    "for": "for home use",
+                    "tags": [
+                        "perfect for families",
+                        "stable for school and streaming",
+                        "30 days unlimited browsing",
+                        "excellect 24/7 customer care",
+                        "free support and installation"
+                    ],
+                    "prices": [
+                        {
+                            "id": 1,
+                            "title": "router (one time)",
+                            "price": "D 5,000"
+                        },
+                        {
+                            "id": 2,
+                            "title": "monthly subscription",
+                            "price": "D 2,500"
+                        }
+                    ],
+                    "colors": [
+                        "#fff",
+                        "#fff"
+                    ],
+                    "popular": false
+                },
+                {
+                    "id": 2,
+                    "type": "family plus",
+                    "bandwidth": "10",
+                    "for": "for power users",
+                    "tags": [
+                        "perfect for power users",
+                        "stable for school and streaming",
+                        "30 days unlimited browsing",
+                        "excellect 24/7 customer care",
+                        "free support and installation"
+                    ],
+                    "prices": [
+                        {
+                            "id": 1,
+                            "title": "router (one time)",
+                            "price": "D 5,000"
+                        },
+                        {
+                            "id": 2,
+                            "title": "monthly subscription",
+                            "price": "D 3,500"
+                        }
+                    ],
+                    "colors": [
+                        "#fff",
+                        "#fff"
+                    ],
+                    "popular": true
+                },
+                {
+                    "id": 3,
+                    "type": "pro",
+                    "bandwidth": "20",
+                    "for": "for heavy use",
+                    "tags": [
+                        "perfect for power users",
+                        "stable for school and streaming",
+                        "30 days unlimited browsing",
+                        "excellect 24/7 customer care",
+                        "free support and installation"
+                    ],
+                    "prices": [
+                        {
+                            "id": 1,
+                            "title": "router (one time)",
+                            "price": "D 5,000"
+                        },
+                        {
+                            "id": 2,
+                            "title": "monthly subscription",
+                            "price": "D 3,500"
+                        }
+                    ],
+                    "colors": [
+                        "#fff",
+                        "#fff"
+                    ],
+                    "popular": false
+                }
+            ]
+        },
+        "benefits": [
+            {
+                "id": 1,
+                "title": "fast file transfer",
+                "icon": "File"
+            },
+            {
+                "id": 2,
+                "title": "unlimited data",
+                "icon": "Cloud"
+            },
+            {
+                "id": 3,
+                "title": "reliable network",
+                "icon": "Globe"
+            },
+            {
+                "id": 5,
+                "title": "garaunteed speeds",
+                "icon": "Meter"
             }
         ]
     },

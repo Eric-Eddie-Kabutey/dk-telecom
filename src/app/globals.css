@@ -25,6 +25,20 @@ body {
     padding: 0 1rem;
 }
 
+.container-inner {
+    width: 85%;
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.container-compact {
+    width: 85%;
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
 .glass {
     background: rgba(255, 255, 255, 0.7);
     backdrop-filter: blur(10px);
@@ -40,3 +54,8 @@ body {
     background-size: cover;
     background-position: center;
 }
+
+.bg-hero {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url('/assets/resources/hero-bg.png');
+}
+

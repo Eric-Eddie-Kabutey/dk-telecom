@@ -95,23 +95,25 @@ export const HelpCenter = () => {
     return (
         <div className="bg-white">
             {/* HERO */}
-            <section className="bg-primary text-white">
+            <section className="bg-primary text-white pt-40">
                 <div className="container px-4 py-12 sm:py-16 lg:py-20">
-                    <p className="text-xs font-semibold tracking-widest text-white/80">
-                        {help?.hero?.kicker ?? "HELP"}
-                    </p>
+                    <div className="justify-start w-full mb-10 sm:mb-20">
+                        <p className="text-sm font-semibold tracking-widest text-white mb-6">
+                            {help?.hero?.kicker ?? "HELP"}
+                        </p>
 
-                    <h1 className="mt-3 max-w-3xl text-3xl font-bold leading-tight sm:text-4xl md:text-5xl">
-                        {help?.hero?.title ?? "Welcome To Our Help Center"}
-                    </h1>
+                        <h1 className="mt-3 max-w-sm sm:max-w-md md:max-w-lg text-3xl font-bold leading-tight sm:text-4xl md:text-5xl">
+                            {help?.hero?.title ?? "Welcome To Our Help Center"}
+                        </h1>
+                    </div>
 
                     {/* Search */}
                     <form
                         onSubmit={onSearchSubmit}
-                        className="mt-8 w-full max-w-5xl"
+                        className="w-full pb-20 sm:pb-0"
                     >
-                        <div className="flex items-center gap-3 rounded-full bg-white px-4 py-3 shadow-sm">
-                            <Search className="text-gray-500" size={18} />
+                        <div className="flex items-center gap-3 rounded-full bg-white p-4 shadow-sm">
+                            <Search className="text-dark" size={20} strokeWidth={2.5} />
                             <input
                                 value={query}
                                 onChange={(e) => setQuery(e.target.value)}
@@ -126,12 +128,12 @@ export const HelpCenter = () => {
 
             {/* CONTENT */}
             <section className="py-12 sm:py-16">
-                <div className="container px-4">
-                    <div className="mx-auto max-w-2xl text-center">
+                <div className="container-inner">
+                    <div className="mx-auto max-w-md text-center">
                         <h2 className="text-2xl font-bold text-gray-900 sm:text-3xl">
                             {help?.section?.title ?? "Help & Support"}
                         </h2>
-                        <p className="mt-3 text-sm text-gray-600 sm:text-base">
+                        <p className="mt-3 text-sm text-gray-600 text-center leading-relaxed line-clamp-2 min-h-[3rem]">
                             {help?.section?.subtitle ??
                                 "Welcome to dk telecom Media's help and support page. Pick a category to get started."}
                         </p>
@@ -140,7 +142,7 @@ export const HelpCenter = () => {
                     {/* Results anchor */}
                     <div ref={resultsRef} className="mt-10" />
 
-                    {/* If searching: show results count */}
+                    {/* If searching : show results count + breadcrumbs & clear search button */}
                     {q && (
                         <div className="mb-6 flex flex-col items-center gap-2 text-center sm:flex-row sm:justify-between sm:text-left">
                             <p className="text-sm text-gray-600">
@@ -165,7 +167,7 @@ export const HelpCenter = () => {
                     )}
 
                     {/* Categories grid */}
-                    <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
+                    <div className="grid gap-5 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
                         {filteredCategories.map((cat) => {
                             const Icon = ICONS[cat.icon] ?? Wifi;
 
@@ -173,11 +175,11 @@ export const HelpCenter = () => {
                                 <Link
                                     key={cat.id}
                                     href={cat.href}
-                                    className="group rounded-3xl border border-gray-100 bg-white p-6 shadow-[0_10px_30px_rgba(0,0,0,0.05)] transition hover:-translate-y-1 hover:shadow-[0_18px_45px_rgba(0,0,0,0.08)]"
+                                    className="group aspect-square rounded-3xl border border-gray-100 bg-white p-6 shadow-[0_10px_30px_rgba(0,0,0,0.05)] transition hover:-translate-y-1 hover:shadow-[0_18px_45px_rgba(0,0,0,0.08)]"
                                 >
-                                    <div className="flex flex-col items-center text-center">
-                                        <div className="flex h-14 w-14 items-center justify-center rounded-full bg-gray-50 ring-1 ring-gray-100">
-                                            <Icon className="text-primary" size={22} />
+                                    <div className="h-full flex flex-col justify-center items-center text-center gap-4">
+                                        <div className="flex  items-center justify-center rounded-full bg-primary/5 ring-1 ring-gray-100">
+                                            <Icon className="text-primary text-bold m-6" size={28} strokeWidth={2.3} />
                                         </div>
 
                                         <p className="mt-4 text-sm font-medium text-gray-800">
@@ -193,21 +195,21 @@ export const HelpCenter = () => {
                     {q && filteredCategories.length === 0 && matchedArticles.length === 0 && (
                         <div className="mt-10 rounded-2xl border border-gray-200 bg-gray-50 p-6 text-center">
                             <p className="text-sm text-gray-700">
-                                No results found for “<span className="font-semibold">{query}</span>”. Try a different keyword 👀
+                                No results found for “<span className="font-semibold">{query}</span>”. Try a different keyword
                             </p>
                         </div>
                     )}
 
-                    {/* Articles results (optional but fire) */}
+                    {/* Articles results*/}
                     {q && matchedArticles.length > 0 && (
                         <div className="mt-10">
                             <h3 className="text-lg font-semibold text-gray-900">Top articles</h3>
                             <div className="mt-4 grid grid-cols-1 gap-3 sm:grid-cols-2">
                                 {matchedArticles.map(({ categoryTitle, article }) => (
                                     <Link
-                                        key={article.href}
+                                        key={article.title}
                                         href={article.href}
-                                        className="rounded-2xl border border-gray-100 bg-white p-4 shadow-sm transition hover:shadow-md"
+                                        className="rounded-md border border-gray-100 bg-white p-4 shadow-sm transition hover:shadow-md"
                                     >
                                         <p className="text-sm font-semibold text-gray-900">{article.title}</p>
                                         <p className="mt-1 text-xs text-gray-500">{categoryTitle}</p>
