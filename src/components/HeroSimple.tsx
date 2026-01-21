@@ -43,7 +43,7 @@ export const HeroSimple = ({
                         {title}
                     </h2>
 
-                    <p className="font-extralight text-xl text-white drop-shadow-sm">
+                    <p className="font-extralight text-xl capitalize text-white drop-shadow-sm">
                         {subtitle}
                     </p>
                 </div>

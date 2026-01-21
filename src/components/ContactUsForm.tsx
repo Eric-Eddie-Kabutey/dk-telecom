@@ -63,7 +63,7 @@ export const ContactUsForm = ({
     };
 
     return (
-        <section className="bg-gray-50 py-12 sm:py-16">
+        <section className="bg-gray-50 py-60">
             <div className="container px-4">
                 {/* Header */}
                 <div className="max-w-2xl">

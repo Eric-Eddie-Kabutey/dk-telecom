@@ -116,7 +116,7 @@ export default function ComponentCarousel({
                 {/* Track */}
                 <div
                     className={clsx(
-                        "flex w-full will-change-transform",
+                        "flex w-full will-change-transform py-20",
                         "transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)]"
                     )}
                     style={{ transform: `translateX(-${index * 100}%)` }}

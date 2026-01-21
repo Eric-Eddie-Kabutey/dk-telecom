@@ -21,7 +21,7 @@ export const FastInternet = ({ variant = "family" }: FastInternetProps) => {
             : "/assets/resources/fast-internet-built-for-everyday-smooth-streaming-img.png";
 
     return (
-        <section className="py-16 md:py-24 bg-white">
+        <section className=" bg-white">
             {variant === "family" ? (
                 <FastInternetFamily content={content} imagePath={imagePath} />
             ) : (

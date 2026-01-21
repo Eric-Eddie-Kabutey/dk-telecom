@@ -13,7 +13,7 @@ export const OurMission = () => {
     const { text } = useSiteMode();
 
     return (
-        <section className="bg-white py-20 sm:py-24 lg:py-32">
+        <section className="bg-white">
             <div className="container mx-auto max-w-7xl px-6">
 
                 {/* Grid */}

@@ -15,7 +15,7 @@ export const HowWeStandOut = () => {
   ];
 
   return (
-    <section className="bg-white py-16 sm:py-20 lg:py-24">
+    <section className="bg-gray-900/5 py-16 sm:py-20 lg:py-24">
       <div className="container">
         {/* Header */}
         <div className="mx-auto mb-12 max-w-3xl text-center sm:mb-16 lg:mb-20">

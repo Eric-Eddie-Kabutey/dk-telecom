@@ -37,7 +37,7 @@ export const Footer = () => {
         <footer className="bg-dark border-t border-white/10">
             <div className="container px-4 py-12">
                 {/* Logo */}
-                <div className="shrink-0 my-10">
+                {/* <div className="shrink-0 my-10">
                     <Image
                         src="/assets/resources/logo.svg"
                         alt="DK Telecom"
@@ -45,9 +45,9 @@ export const Footer = () => {
                         height={45}
                         className="h-auto w-[120px] sm:w-[140px]"
                     />
-                </div>
+                </div> */}
                 {/* links1 */}
-                <div className="mb-10 grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-6 md:flex md:gap-10">
+                <div className="my-10 grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-6 md:flex md:gap-10">
                     {links1.map((item) => {
                         const Icon = ICONS[item.icon] ?? MessageSquare;
                         const content = (

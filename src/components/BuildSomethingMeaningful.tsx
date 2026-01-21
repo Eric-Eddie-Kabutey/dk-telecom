@@ -56,10 +56,10 @@ export const BuildSomethingMeaningful: React.FC<Props> = ({
   return (
     <section id={id} className={clsx("w-full bg-gray-50 py-20", className)}>
       <div className="container ">
-        <h2 className="text-center text-2xl sm:text-4xl font-bold text-gray-900 leading-tight">
+        <h2 className="pt-20 text-center text-2xl sm:text-4xl font-bold text-gray-900 leading-tight capitalize">
           {data.title}
         </h2>
-        <p className="mx-auto mt-3 max-w-3xl text-center text-sm sm:text-base text-gray-600">
+        <p className="mx-auto mt-3 max-w-3xl text-center text-sm sm:text-base text-gray-600 capitalize">
           {data.subtitle}
         </p>
 

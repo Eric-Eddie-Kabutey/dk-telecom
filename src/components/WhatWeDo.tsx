@@ -3,7 +3,7 @@
 import React from "react";
 import { useSiteMode } from "@/context/SiteModeProvider";
 
-export const WhatWedo = () => {
+export const WhatWeDo = () => {
     const { text } = useSiteMode();
 
     return (

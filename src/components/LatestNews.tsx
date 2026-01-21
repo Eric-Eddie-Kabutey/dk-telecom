@@ -31,6 +31,8 @@ type LatestNewsSectionProps = {
   // how many cards to show (screenshot shows 3)
   initialCount?: number;
 
+  viewAll?: boolean;
+
   // if provided, "View All" becomes a link
   viewAllHref?: string;
 
@@ -41,8 +43,9 @@ type LatestNewsSectionProps = {
 export const LatestNews: React.FC<LatestNewsSectionProps> = ({
   className,
   initialCount = 3,
+  viewAll = true,
   viewAllHref,
-  id = "latest-news",
+  id = "/blog",
 }) => {
   const { text } = useSiteMode();
 
@@ -72,7 +75,7 @@ export const LatestNews: React.FC<LatestNewsSectionProps> = ({
   if (!latestNews) return null;
 
   return (
-    <section id={id} className={clsx("w-full ", className)}>
+    <section id={id} className={clsx("w-full py-20", className)}>
       <div className="container">
         {/* Title */}
         <h2 className="text-center text-2xl sm:text-3xl font-bold text-gray-900">
@@ -92,7 +95,7 @@ export const LatestNews: React.FC<LatestNewsSectionProps> = ({
                   setExpanded(false);
                 }}
                 className={clsx(
-                  "rounded-lg px-4 py-2 text-sm font-medium transition",
+                  "rounded-full px-4 py-2 text-sm font-medium transition",
                   "border",
                   isActive
                     ? "bg-primary text-white border-primary shadow-sm"
@@ -121,23 +124,25 @@ export const LatestNews: React.FC<LatestNewsSectionProps> = ({
         </div>
 
         {/* View All */}
-        <div className="mt-10 flex justify-center">
-          {viewAllHref ? (
-            <Link
-              href={viewAllHref}
-              className="inline-flex items-center gap-2 rounded-xl border border-gray-300 bg-white px-5 py-3 text-sm font-medium text-gray-900 hover:bg-gray-50 transition"
-            >
-              View All <ArrowRight size={18} />
-            </Link>
-          ) : (
-            <button
-              onClick={() => setExpanded((v) => !v)}
-              className="inline-flex items-center gap-2 rounded-xl border border-gray-300 bg-white px-5 py-3 text-sm font-medium text-gray-900 hover:bg-gray-50 transition"
-            >
-              {expanded ? "Show Less" : "View All"} <ArrowRight size={18} />
-            </button>
-          )}
-        </div>
+        {viewAll && (
+          <div className="mt-10 flex justify-center">
+            {viewAllHref ? (
+              <Link
+                href={viewAllHref}
+                className="inline-flex items-center gap-2 rounded-xl border border-gray-300 bg-white px-5 py-3 text-sm font-medium text-gray-900 hover:bg-gray-50 transition"
+              >
+                View All <ArrowRight size={18} />
+              </Link>
+            ) : (
+              <button
+                onClick={() => setExpanded((v) => !v)}
+                className="inline-flex items-center gap-2 rounded-xl border border-gray-300 bg-white px-5 py-3 text-sm font-medium text-gray-900 hover:bg-gray-50 transition"
+              >
+                {expanded ? "Show Less" : "View All"} <ArrowRight size={18} />
+              </button>
+            )}
+          </div>
+        )}
       </div>
     </section>
   );

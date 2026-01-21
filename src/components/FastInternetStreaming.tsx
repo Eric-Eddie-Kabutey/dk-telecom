@@ -21,6 +21,7 @@ export const FastInternetStreaming = ({ content, imagePath }: Props) => {
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center">
                 {/* Text */}
                 <div className="lg:col-span-6 xl:col-span-5 space-y-6 sm:space-y-8">
+                    <p className="text-[10px] text-primary font-bold leading-relaxed max-w-prose">MOVIE AND SOCIAL MEDIA STREAMING</p>
                     <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight">
                         {content.title}
                     </h2>

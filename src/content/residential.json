@@ -1,10 +1,12 @@
 {
     "nav": {
         "about": "About",
-        "services": "Customer Services",
-        "blog": "Insights",
+        "services": "Custom Services",
+        "blog": "Insight",
         "contact": "Contact",
-        "support": "Support"
+        "support": "Support",
+        "career": "Career",
+        "packages": "Packages"
     },
     "aboveNavBar": {
         "toggleLabel": "Switch to Business",
@@ -13,7 +15,26 @@
     "hero": {
         "title": "Personal",
         "subtitle": "Your Complete Internet Service Partner",
-        "ctaPrimary": "Explore Now"
+        "heroImg": "/assets/resources/hero/residential.png",
+        "ctaPrimary": "Explore Now",
+        "features": [
+            {
+                "title": "20 mbps download apeed"
+            },
+            {
+                "title": "20 mbps upload speed"
+            },
+            {
+                "title": "30 days unlimited browsing"
+            },
+            {
+                "title": "free support & installation"
+            }
+        ],
+        "price": {
+            "amount": "5,000",
+            "duration": "month"
+        }
     },
     "getStarted": {
         "title": "Get Started with DK",
@@ -66,6 +87,77 @@
             },
             {
                 "title": "free support & installation"
+            }
+        ]
+    },
+    "offers": {
+        "title": "top offers",
+        "offerslist": [
+            {
+                "id": 1,
+                "tagline": "boost unlimited",
+                "title": "high performance internet for busy teams",
+                "img": "/assets/resources/offers/1.png",
+                "color": "#292293",
+                "bandwidth": "10",
+                "features": [
+                    {
+                        "title": "ideal for multiple devices"
+                    },
+                    {
+                        "title": "HD streaming & gaming"
+                    },
+                    {
+                        "title": "30 days unlimited browsing"
+                    },
+                    {
+                        "title": "free support & installation"
+                    }
+                ]
+            },
+            {
+                "id": 2,
+                "tagline": "boost unlimited",
+                "title": "high performance internet for busy teams",
+                "img": "/assets/resources/offers/2.png",
+                "color": "#020201",
+                "bandwidth": "20",
+                "features": [
+                    {
+                        "title": "ideal for multiple devices"
+                    },
+                    {
+                        "title": "HD streaming & gaming"
+                    },
+                    {
+                        "title": "30 days unlimited browsing"
+                    },
+                    {
+                        "title": "free support & installation"
+                    }
+                ]
+            },
+            {
+                "id": 3,
+                "tagline": "boost unlimited",
+                "title": "high performance internet for busy teams",
+                "img": "/assets/resources/offers/3.png",
+                "color": "#0CAF11",
+                "bandwidth": "5",
+                "features": [
+                    {
+                        "title": "ideal for multiple devices"
+                    },
+                    {
+                        "title": "HD streaming & gaming"
+                    },
+                    {
+                        "title": "30 days unlimited browsing"
+                    },
+                    {
+                        "title": "free support & installation"
+                    }
+                ]
             }
         ]
     },
@@ -398,9 +490,17 @@
             ]
         }
     },
+    "insights": {
+        "hero": {
+            "img": "/assets/resources/insights/1.png",
+            "tag": "insights",
+            "title": "explore our insights and updates",
+            "subtitle": "find the right solution, tailored for your every needs"
+        }
+    },
     "services": {
         "hero": {
-            "img": "/assets/resources/aboutUs/hero.png",
+            "img": "/assets/resources/services/hero.png",
             "tag": "services",
             "title": "explore our digital solutions",
             "subtitle": "find the right solution, tailored for your every needs"
@@ -453,7 +553,7 @@
             }
         },
         "buildingSomethingMeaningful": {
-            "title": "biuld something meaningful with a driven team",
+            "title": "build something meaningful with a driven team",
             "subtitle": "We’re bringing together committed young professionals who want to learn, grow, and contribute to projects that go beyond today and leave a lasting mark.",
             "things": [
                 {
@@ -563,7 +663,7 @@
                 "text": "view open roles",
                 "href": "/"
             },
-            "img": "/assets/resources/career/callToAction/1.png"
+            "img": "/assets/resources/flashCard/openRoles.png"
         }
     },
     "packages": {
@@ -571,7 +671,7 @@
             "tag": "residental packages",
             "title": "the perfect package for every need",
             "subtitle": "Choose a plan that fits your needs and budget",
-            "img": "/assets/resources/packages/hero/1.png"
+            "img": "/assets/resources/packages/1.png"
         },
         "packageSection": {
             "title": "choose your broadband plan",
@@ -688,6 +788,27 @@
                 "id": 5,
                 "title": "garaunteed speeds",
                 "icon": "Meter"
+            }
+        ]
+    },
+    "transform": {
+        "title": "transform your business",
+        "img": "/assets/resources/tranform/hero.png",
+        "ideas": [
+            {
+                "id": 1,
+                "title": "Reliable High-Speed Connectivity",
+                "subtitle": "Stay connected with fast, dependable fibre and broadband plans designed for streaming, gaming, and everyday online life"
+            },
+            {
+                "id": 2,
+                "title": "Unlimited Data",
+                "subtitle": "Enjoy unlimited data on our fibre and broadband plans, giving you the freedom to stream, game, and browse without worrying about data limits"
+            },
+            {
+                "id": 3,
+                "title": "24/7 Customer Support",
+                "subtitle": "Get 24/7 customer support to help you with any questions or issues you may have"
             }
         ]
     },
