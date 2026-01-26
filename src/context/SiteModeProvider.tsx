@@ -15,28 +15,38 @@ interface SiteModeContextType {
 
 const SiteModeContext = createContext<SiteModeContextType | undefined>(undefined);
 
-export const SiteModeProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-    const [mode, setMode] = useState<Mode>("residential");
+export const SiteModeProvider: React.FC<{ children: React.ReactNode; initialMode: Mode }> = ({
+    children,
+    initialMode
+}) => {
+    const [mode, setMode] = useState<Mode>(initialMode);
     const router = useRouter();
     const pathname = usePathname();
 
-    // Rehydrate from localStorage
+    // Sync mode with URL and localStorage
     useEffect(() => {
-        const savedMode = localStorage.getItem("dk-telecom-mode") as Mode;
-        if (savedMode && (savedMode === "residential" || savedMode === "business")) {
-            setMode(savedMode);
-
-            // Ensure the URL matches the saved mode if we are at root
-            if (pathname === "/") {
-                router.push(`/${savedMode}`);
+        // Redirection for root path based on saved preference
+        if (pathname === "/" || pathname === "") {
+            const savedMode = localStorage.getItem("dk-telecom-mode") as Mode;
+            const targetMode = (savedMode === "residential" || savedMode === "business") ? savedMode : "residential";
+            if (targetMode !== mode) {
+                setMode(targetMode);
             }
-        } else {
-            // Default redirect
-            if (pathname === "/") {
-                router.push("/residential");
-            }
+            router.push(`/${targetMode}`);
+            return;
         }
-    }, [pathname, router]);
+
+        // Detect mode from current URL segments
+        const pathSegments = pathname.split("/").filter(Boolean);
+        const modeSegment = pathSegments[0] as Mode;
+
+        if (modeSegment === "residential" || modeSegment === "business") {
+            if (mode !== modeSegment) {
+                setMode(modeSegment);
+            }
+            localStorage.setItem("dk-telecom-mode", modeSegment);
+        }
+    }, [pathname, router, mode]);
 
     const toggleMode = () => {
         const newMode = mode === "residential" ? "business" : "residential";

@@ -1,11 +1,12 @@
 "use client";
 
+import { motion, Variants } from "framer-motion";
 import React from "react";
 import Link from "next/link";
 import clsx from "clsx";
 import { ArrowRight } from "lucide-react";
 import { useSiteMode } from "@/context/SiteModeProvider";
-import { Offer, OfferItem } from "@/components/Offer";
+import { Offer, OfferItem } from "@/components/home/Offer";
 
 type OffersData = {
     title: string;
@@ -16,6 +17,28 @@ type OfferListProps = {
     className?: string;
     id?: string;
     requestHref?: string;
+};
+
+const containerVariants: Variants = {
+    hidden: { opacity: 0 },
+    visible: {
+        opacity: 1,
+        transition: {
+            staggerChildren: 0.15,
+        },
+    },
+};
+
+const itemVariants: Variants = {
+    hidden: { y: 20, opacity: 0 },
+    visible: {
+        y: 0,
+        opacity: 1,
+        transition: {
+            duration: 0.6,
+            ease: "easeOut",
+        },
+    },
 };
 
 export const OfferList: React.FC<OfferListProps> = ({
@@ -31,10 +54,16 @@ export const OfferList: React.FC<OfferListProps> = ({
     const [left, topRight, bottomRight] = offers.offerslist ?? [];
 
     return (
-        <section id={id} className={clsx("w-full", className)}>
+        <section id={id} className={clsx("w-full py-10", className)}>
             <div className="container mx-auto px-4 sm:px-6 lg:px-8">
                 {/* Header */}
-                <div className="flex items-center justify-between gap-4">
+                <motion.div
+                    initial={{ opacity: 0, y: -10 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5 }}
+                    className="flex items-center justify-between gap-4"
+                >
                     <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 capitalize">
                         {offers.title}
                     </h2>
@@ -51,13 +80,19 @@ export const OfferList: React.FC<OfferListProps> = ({
                     >
                         Request Installation <ArrowRight size={18} />
                     </Link>
-                </div>
+                </motion.div>
 
                 {/* ✅ Layout starts at md (tablet) */}
-                <div className="mt-10 grid grid-cols-1 gap-6 md:gap-4 md:grid-cols-12 md:grid-rows-2">
+                <motion.div
+                    variants={containerVariants}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true, margin: "-100px" }}
+                    className="mt-10 grid grid-cols-1 gap-6 md:gap-4 md:grid-cols-12 md:grid-rows-2"
+                >
                     {/* Left big card spans both rows */}
                     {left ? (
-                        <div className="md:col-span-5 md:row-span-2">
+                        <motion.div variants={itemVariants} className="md:col-span-5 md:row-span-2">
                             <Offer
                                 offer={left}
                                 size="lg"
@@ -66,13 +101,14 @@ export const OfferList: React.FC<OfferListProps> = ({
                                 badgePosition="bottom-right"
                                 badgeRotation="-8deg"
                                 className="h-full"
+                                page="business"
                             />
-                        </div>
+                        </motion.div>
                     ) : null}
 
                     {/* Top right */}
                     {topRight ? (
-                        <div className="md:col-span-7 md:row-span-1">
+                        <motion.div variants={itemVariants} className="md:col-span-7 md:row-span-1">
                             <Offer
                                 offer={topRight}
                                 size="sm"
@@ -82,12 +118,12 @@ export const OfferList: React.FC<OfferListProps> = ({
                                 badgeRotation="8deg"
                                 className="h-full"
                             />
-                        </div>
+                        </motion.div>
                     ) : null}
 
                     {/* Bottom right (green badge on left like screenshot) */}
                     {bottomRight ? (
-                        <div className="md:col-span-7 md:row-span-1">
+                        <motion.div variants={itemVariants} className="md:col-span-7 md:row-span-1">
                             <Offer
                                 offer={bottomRight}
                                 size="sm"
@@ -97,9 +133,9 @@ export const OfferList: React.FC<OfferListProps> = ({
                                 badgeRotation="-8deg"
                                 className="h-full"
                             />
-                        </div>
+                        </motion.div>
                     ) : null}
-                </div>
+                </motion.div>
             </div>
         </section>
     );

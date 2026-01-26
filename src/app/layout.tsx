@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { SiteModeProvider } from "@/context/SiteModeProvider";
+import WhatsAppButton from "@/components/WhatsAppButton";
+import { InitialLoader } from "@/components/InitialLoader";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -18,9 +20,10 @@ export default function RootLayout({
     return (
         <html lang="en">
             <body className={inter.className}>
-                <SiteModeProvider>
+                <InitialLoader>
                     {children}
-                </SiteModeProvider>
+                    <WhatsAppButton />
+                </InitialLoader>
             </body>
         </html>
     );

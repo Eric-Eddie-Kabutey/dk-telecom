@@ -1,8 +1,8 @@
 "use client";
 
 import { HeroSimple } from "@/components/HeroSimple";
-import { BuildSomethingMeaningful } from "@/components/BuildSomethingMeaningful";
-import { OpenRoles } from "@/components/OpenRoles";
+import { BuildSomethingMeaningful } from "@/components/career/BuildSomethingMeaningful";
+import { OpenRoles } from "@/components/career/OpenRoles";
 import { FlashCard } from "@/components/FlashCard";
 import { useSiteMode } from "@/context/SiteModeProvider";
 

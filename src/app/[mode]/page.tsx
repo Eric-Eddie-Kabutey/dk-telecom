@@ -1,30 +1,30 @@
 "use client";
 
-import { HeroMain } from "@/components/HeroMain";
+import { HeroMain } from "@/components/home/HeroMain";
 import { HeroSimple } from "@/components/HeroSimple";
-import { GetStarted } from "@/components/GetStarted";
-import { FastInternet } from "@/components/FastInternet";
-import { PaymentHub } from "@/components/PaymentHub";
-import { HowWeStandOut } from "@/components/HowWeStandOut";
-import { FamilyPlus } from "@/components/FamilyPlus";
-import ComponentCarousel from "@/components/ComponentCarousel";
+import { GetStarted } from "@/components/home/GetStarted";
+import { FastInternet } from "@/components/home/FastInternet";
+import { PaymentHub } from "@/components/home/PaymentHub";
+import { HowWeStandOut } from "@/components/about/HowWeStandOut";
+import { FamilyPlus } from "@/components/home/FamilyPlus";
+import ComponentCarousel from "@/components/home/ComponentCarousel";
 import { FlashCard } from "@/components/FlashCard";
-import { ContactUsForm } from "@/components/ContactUsForm";
-import { HelpCenter } from "@/components/HelpCenter";
+import { ContactUsForm } from "@/components/support/ContactUsForm";
+import { HelpCenter } from "@/components/support/HelpCenter";
 import { useSiteMode } from "@/context/SiteModeProvider";
-import { WhatWeDo } from "@/components/WhatWeDo";
-import { OurMission } from "@/components/OurMission";
-import { LatestNews } from "@/components/LatestNews";
-import { Team } from "@/components/Team";
-import { ServiceList } from "@/components/ServiceList";
-import { BuildSomethingMeaningful } from "@/components/BuildSomethingMeaningful";
-import { OpenRoles } from "@/components/OpenRoles";
-import { PackageList } from "@/components/PackageList";
-import { Benefits } from "@/components/Benefits";
-import { TransformSection } from "@/components/TransformSection";
-import { OfferList } from "@/components/OfferList";
+import { WhatWeDo } from "@/components/about/WhatWeDo";
+import { OurMission } from "@/components/about/OurMission";
+import { LatestNews } from "@/components/about/LatestNews";
+import { Team } from "@/components/about/Team";
+import { ServiceList } from "@/components/services/ServiceList";
+import { BuildSomethingMeaningful } from "@/components/career/BuildSomethingMeaningful";
+import { OpenRoles } from "@/components/career/OpenRoles";
+import { PackageList } from "@/components/packages/PackageList";
+import { Benefits } from "@/components/business/Benefits";
+import { TransformSection } from "@/components/business/TransformSection";
+import { OfferList } from "@/components/business/OfferList";
 import { useParams } from "next/navigation";
-import { Offer, OfferItem } from "@/components/Offer";
+import { Offer, OfferItem } from "@/components/home/Offer";
 
 export default function UnifiedHome() {
     const { mode: currentMode, text } = useSiteMode();
@@ -48,7 +48,7 @@ export default function UnifiedHome() {
                     <FastInternet variant="family" />
                     {/* <FamilyPlus /> */}
                     <ComponentCarousel autoPlay intervalMs={7000} pauseOnHover>
-                        <div className="container-compact my-20">
+                        <div className="container">
                             <Offer
                                 offer={offers?.offerslist[0]}
                                 size="sm"
@@ -57,9 +57,10 @@ export default function UnifiedHome() {
                                 badgePosition="top-right"
                                 badgeRotation="8deg"
                                 className="h-full"
+                                page="residential"
                             />
                         </div>
-                        <div className="container-compact">
+                        <div className="container">
                             <Offer
                                 offer={offers?.offerslist[1]}
                                 size="sm"
@@ -68,9 +69,10 @@ export default function UnifiedHome() {
                                 badgePosition="top-right"
                                 badgeRotation="8deg"
                                 className="h-full"
+                                page="residential"
                             />
                         </div>
-                        <div className="container-compact">
+                        <div className="container">
                             <Offer
                                 offer={offers?.offerslist[2]}
                                 size="sm"
@@ -79,14 +81,15 @@ export default function UnifiedHome() {
                                 badgePosition="top-right"
                                 badgeRotation="8deg"
                                 className="h-full"
+                                page="residential"
                             />
                         </div>
                     </ComponentCarousel>
                     <FastInternet variant="streaming" />
                     <HowWeStandOut />
                     <FlashCard
-                        title={"Experience Reliable\nInternet With DK"}
-                        subtitle={"Haven't found what you're looking for? Save time experts for\nexclusive deals - we answer calls"}
+                        title={"Get Connected Instantly"}
+                        subtitle={"Experience fiber-speed internet with zero lag, enterprise-grade reliability, and concierge onboarding for your entire household."}
                         buttonText="Request a Sales Call"
                         buttonRoute="/contact"
                         gradientColors={["#4B46E5", "#2E2A8F"]}
@@ -95,6 +98,7 @@ export default function UnifiedHome() {
             ) : (
                 <>
                     <OfferList requestHref="/contact" />
+                    <Benefits />
                     <TransformSection />
                 </>
             )}

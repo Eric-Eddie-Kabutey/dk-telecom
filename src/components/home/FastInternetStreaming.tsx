@@ -17,11 +17,11 @@ type Props = {
 
 export const FastInternetStreaming = ({ content, imagePath }: Props) => {
     return (
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="container">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center">
                 {/* Text */}
                 <div className="lg:col-span-6 xl:col-span-5 space-y-6 sm:space-y-8">
-                    <p className="text-[10px] text-primary font-bold leading-relaxed max-w-prose">MOVIE AND SOCIAL MEDIA STREAMING</p>
+                    <p className="text-[14px] text-primary font-bold leading-relaxed max-w-prose">MOVIE AND SOCIAL MEDIA STREAMING</p>
                     <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight">
                         {content.title}
                     </h2>
@@ -72,26 +72,27 @@ export const FastInternetStreaming = ({ content, imagePath }: Props) => {
                         <Image
                             src="/assets/resources/youtube-streaming.png"
                             alt="YouTube"
-                            width={240}
+                            width={400}
                             height={240}
                             className={clsx(
-                                "absolute z-20",
-                                "left-0 top-1/2 -translate-x-1/2 -translate-y-1/2",
-                                "w-24 sm:w-28 md:w-32 lg:w-36 xl:w-40 h-auto drop-shadow-2xl"
+                                "absolute z-20 h-auto drop-shadow-2xl",
+                                "top-0 right-6 lg:left-0 lg:top-1/2 -translate-x-0 lg:-translate-x-1/2 -translate-y-1/2",
+                                "w-40 sm:w-64 lg:w-72" // mobile / tablet / desktop
                             )}
                         />
 
                         <Image
                             src="/assets/resources/video-streaming.png"
                             alt="Video"
-                            width={240}
+                            width={400}
                             height={240}
                             className={clsx(
-                                "absolute z-20",
-                                "bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2",
-                                "w-24 sm:w-28 md:w-32 lg:w-36 xl:w-40 h-auto drop-shadow-2xl"
+                                "absolute z-20 drop-shadow-2xl h-auto",
+                                "bottom-0 left-6 lg:bottom-0 lg:left-1/2 -translate-x-0 lg:-translate-x-1/2 translate-y-1/2",
+                                "w-40 sm:w-64 lg:w-72" // mobile / tablet / desktop
                             )}
                         />
+
                     </div>
                 </div>
             </div>

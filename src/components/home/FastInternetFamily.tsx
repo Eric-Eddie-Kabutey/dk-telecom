@@ -16,33 +16,34 @@ type Props = {
 
 export const FastInternetFamily = ({ content, imagePath }: Props) => {
     return (
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="container">
             <div className="relative overflow-hidden rounded-[28px] md:rounded-[36px] shadow-2xl bg-black">
-                <div className="relative min-h-[320px] sm:min-h-[380px] lg:min-h-[460px]">
+                <div className="relative h-full min-h-[320px] sm:min-h-[380px] lg:min-h-[460px]">
                     {/* Image */}
                     <div className="absolute inset-y-0 right-0 w-full">
-                        <div className="relative h-full w-full">
+                        <div className="relative flex flex-col md:flex-row justify-end h-full w-full">
+                            <div className="w-0 md:w-[50%]"></div>
                             <Image
                                 src={imagePath}
                                 alt={content.title}
-                                fill
                                 priority
-                                className="object-cover object-right"
-                                sizes="100vw"
+                                className="object-cover object-right w-full md:w-[60%] h-[100%]"
+                                width={400}
+                                height={20}
                             />
 
                             {/* Image edge blend */}
-                            <div className="absolute inset-0 bg-gradient-to-l from-transparent via-black/20 to-black/80" />
+                            <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/60 to-black md:bg-gradient-to-l md:from-transparent md:via-black/90 md:to-black" />
                         </div>
                     </div>
 
                     {/* Overlay */}
-                    <div className="absolute inset-0 bg-gradient-to-r from-black/95 via-black/75 to-transparent" />
+                    <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/60 to-black md:bg-gradient-to-r md:from-black/95 md:via-black/75 md:to-transparent" />
                     <div className="absolute inset-0 bg-black/10" />
 
                     {/* Content */}
                     <div className="relative z-10 h-full flex items-center">
-                        <div className="w-full lg:w-[70%] px-6 sm:px-10 lg:px-14 py-10 sm:py-14 lg:py-20 space-y-5">
+                        <div className="w-full lg:w-[70%] px-6 sm:px-10 lg:px-14 pt-32 sm:pt-10 lg:pt-20 pb-10 sm:pb-14 lg:pb-20 space-y-5">    
                             <h2 className="text-white text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight max-w-xl">
                                 {content.title}
                             </h2>

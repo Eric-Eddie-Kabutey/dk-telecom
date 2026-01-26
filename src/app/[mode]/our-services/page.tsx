@@ -2,7 +2,7 @@
 
 import { FlashCard } from "@/components/FlashCard";
 import { HeroSimple } from "@/components/HeroSimple";
-import { ServiceList } from "@/components/ServiceList";
+import { ServiceList } from "@/components/services/ServiceList";
 import { useSiteMode } from "@/context/SiteModeProvider";
 
 export default function ServicesPage() {

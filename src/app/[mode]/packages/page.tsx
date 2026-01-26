@@ -1,8 +1,8 @@
 "use client";
 
 import { HeroSimple } from "@/components/HeroSimple";
-import { PackageList } from "@/components/PackageList";
-import { Benefits } from "@/components/Benefits";
+import { PackageList } from "@/components/packages/PackageList";
+import { Benefits } from "@/components/business/Benefits";
 import { FlashCard } from "@/components/FlashCard";
 import { useSiteMode } from "@/context/SiteModeProvider";
 

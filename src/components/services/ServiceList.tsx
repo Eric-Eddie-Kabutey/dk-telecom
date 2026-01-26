@@ -3,7 +3,7 @@
 import React, { useMemo, useState } from "react";
 import clsx from "clsx";
 import { useSiteMode } from "@/context/SiteModeProvider";
-import { ServiceCard } from "@/components/ServiceCard";
+import { ServiceCard } from "@/components/services/ServiceCard";
 
 type ServiceItem = {
     id: number;

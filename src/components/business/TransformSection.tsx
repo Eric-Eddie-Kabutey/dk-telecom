@@ -4,7 +4,9 @@ import React from "react";
 import Image from "next/image";
 import clsx from "clsx";
 import { useSiteMode } from "@/context/SiteModeProvider";
-import { TransformCard } from "@/components/TransformCard";
+import { TransformCard } from "@/components/business/TransformCard";
+
+import { motion, Variants } from "framer-motion";
 
 type TransformIdea = {
     id: number;
@@ -23,6 +25,28 @@ type TransformSectionProps = {
     id?: string;
 };
 
+const containerVariants: Variants = {
+    hidden: { opacity: 0 },
+    visible: {
+        opacity: 1,
+        transition: {
+            staggerChildren: 0.15,
+        },
+    },
+};
+
+const itemVariants: Variants = {
+    hidden: { y: 20, opacity: 0 },
+    visible: {
+        y: 0,
+        opacity: 1,
+        transition: {
+            duration: 0.7,
+            ease: "easeOut",
+        },
+    },
+};
+
 export const TransformSection: React.FC<TransformSectionProps> = ({
     className,
     id = "transform",
@@ -33,7 +57,7 @@ export const TransformSection: React.FC<TransformSectionProps> = ({
     if (!transform) return null;
 
     return (
-        <section id={id} className={clsx("w-full pt-40", className)}>
+        <section id={id} className={clsx("w-full pb-20", className)}>
             <div className="">
                 <div className="relative">
                     {/* background image */}
@@ -54,15 +78,29 @@ export const TransformSection: React.FC<TransformSectionProps> = ({
 
                     {/* content */}
                     <div className="container relative z-10 ">
-                        <h2 className="text-white text-3xl sm:text-4xl lg:text-5xl font-bold text-center capitalize pt-48">
+                        <motion.h2
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.8 }}
+                            className="text-white text-3xl sm:text-4xl lg:text-5xl font-bold text-center capitalize pt-48"
+                        >
                             {transform.title}
-                        </h2>
+                        </motion.h2>
 
-                        <div className="mt-7 sm:mt-9 pb-28 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+                        <motion.div
+                            variants={containerVariants}
+                            initial="hidden"
+                            whileInView="visible"
+                            viewport={{ once: true, margin: "-100px" }}
+                            className="mt-7 sm:mt-9 pb-28 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3"
+                        >
                             {(transform.ideas ?? []).map((idea) => (
-                                <TransformCard key={idea.id} idea={idea} />
+                                <motion.div key={idea.id} variants={itemVariants}>
+                                    <TransformCard idea={idea} />
+                                </motion.div>
                             ))}
-                        </div>
+                        </motion.div>
                     </div>
                 </div>
 

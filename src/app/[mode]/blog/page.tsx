@@ -1,7 +1,7 @@
 "use client";
 
 import { HeroSimple } from "@/components/HeroSimple";
-import { LatestNews } from "@/components/LatestNews";
+import { LatestNews } from "@/components/about/LatestNews";
 import { useSiteMode } from "@/context/SiteModeProvider";
 
 export default function BlogPage() {
@@ -15,7 +15,7 @@ export default function BlogPage() {
                 image={text.insights.hero.img}
             />
             <LatestNews />
-            
+
         </>
     );
 }

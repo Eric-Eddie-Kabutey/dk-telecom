@@ -3,7 +3,7 @@
 import React from "react";
 import clsx from "clsx";
 import { useSiteMode } from "@/context/SiteModeProvider";
-import { Member } from "@/components/Member";
+import { Member } from "@/components/about/Member";
 
 type TeamMember = {
     id: number;

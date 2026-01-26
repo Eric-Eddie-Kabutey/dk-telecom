@@ -40,18 +40,18 @@
         "title": "Get Started with DK",
         "steps": [
             {
-                "title": "Reliable High-Speed Connectivity",
-                "desc": "STay  connected with fast, dependable fibre and broadband plans designed for sreaming, gaming, and everyday online life",
+                "title": "High-Speed Connectivity",
+                "desc": "fast, reliable internet for homes and businesses",
                 "icon": "/assets/resources/reliable-high-speed-connectivity-icon.svg"
             },
             {
-                "title": "Flexible Plans for every need",
-                "desc": "Choose a perfect plan for your home or business - from basic starter packages to premium high-speed fibre options",
+                "title": "Flexible Plans",
+                "desc": "plans that scale with your needs",
                 "icon": "/assets/resources/flexible-plans-for-ever-need-icon.svg"
             },
             {
-                "title": "Exceptional Customer Care",
-                "desc": "Experience worry-free service with free installation, dedicated support, and a commitment to keeping you connected whenever you need it.",
+                "title": "Expert support",
+                "desc": "professional help when you need it",
                 "icon": "/assets/resources/exceptional-customer-service-icon.svg"
             }
         ]
@@ -59,11 +59,11 @@
     "fastInternet": {
         "family": {
             "title": "Fast Internet for the Whole Family",
-            "desc": "Stream, studt, game, and browse all th the same time with stable, high speed internet that keeps every family member connected without interruptions."
+            "desc": "Stream, study, game, and browse all at the same time with stable, high-speed internet that keeps every family member connected—no interruptions, no compromises."
         },
         "streaming": {
-            "title": "Fast Internet Built for Everyday Smooth Streaming",
-            "desc": "Enjoy consistent speeds that handle video streaming and social media across multiple devices, so everyone stays connected without interruptions."
+            "title": "Fast Internet Optimized for Daily Streaming",
+            "desc": "Stable, high-speed connections designed to support streaming and social media across multiple devices without disruption."
         }
     },
     "paymentHub": {
@@ -163,7 +163,7 @@
     },
     "howWeStandOut": {
         "title": "How We Stand Out",
-        "subtitle": "Because you need more than just internet speedyou need reliability, coverage, and a provider that shows up when it matters.",
+        "subtitle": "Because you need more than just internet speed—you need reliability, wide coverage, and a provider that shows up when it matters.",
         "features": [
             {
                 "id": "1",
@@ -379,19 +379,7 @@
                 "id": 2,
                 "title": "Our Goal",
                 "icon": "Target",
-                "body": "At DK Telecom, our goal is to provide reliable, high-speed internet services to homes and businesses across Ghana. We are committed to delivering exceptional customer service and innovative solutions that meet the evolving needs of our customers."
-            },
-            {
-                "id": 3,
-                "title": "Our Goal",
-                "icon": "Target",
-                "body": "At DK Telecom, our goal is to provide reliable, high-speed internet services to homes and businesses across Ghana. We are committed to delivering exceptional customer service and innovative solutions that meet the evolving needs of our customers."
-            },
-            {
-                "id": 4,
-                "title": "Our Goal",
-                "icon": "Target",
-                "body": "At DK Telecom, our goal is to provide reliable, high-speed internet services to homes and businesses across Ghana. We are committed to delivering exceptional customer service and innovative solutions that meet the evolving needs of our customers."
+                "body": "At DK Telecom, our goal is to provide reliable, high-speed internet services to homes and businesses across Gambia. We are committed to delivering exceptional customer service and innovative solutions that meet the evolving needs of our customers."
             }
         ],
         "latestNews": {
@@ -678,7 +666,7 @@
             "packageList": [
                 {
                     "id": 1,
-                    "type": "starter",
+                    "type": "shared-home",
                     "bandwidth": "5",
                     "for": "for home use",
                     "tags": [
@@ -691,13 +679,15 @@
                     "prices": [
                         {
                             "id": 1,
-                            "title": "router (one time)",
-                            "price": "D 5,000"
+                            "billing": "monthly",
+                            "title": "monthly subscription",
+                            "price": "D 2,500"
                         },
                         {
                             "id": 2,
-                            "title": "monthly subscription",
-                            "price": "D 2,500"
+                            "billing": "yearly",
+                            "title": "yearly subscription",
+                            "price": "D 30,000"
                         }
                     ],
                     "colors": [
@@ -708,8 +698,8 @@
                 },
                 {
                     "id": 2,
-                    "type": "family plus",
-                    "bandwidth": "10",
+                    "type": "sme",
+                    "bandwidth": "7",
                     "for": "for power users",
                     "tags": [
                         "perfect for power users",
@@ -721,13 +711,15 @@
                     "prices": [
                         {
                             "id": 1,
-                            "title": "router (one time)",
-                            "price": "D 5,000"
+                            "billing": "monthly",
+                            "title": "monthly subscription",
+                            "price": "D 3,500"
                         },
                         {
                             "id": 2,
-                            "title": "monthly subscription",
-                            "price": "D 3,500"
+                            "billing": "yearly",
+                            "title": "yearly subscription",
+                            "price": "D 42,000"
                         }
                     ],
                     "colors": [
@@ -738,8 +730,8 @@
                 },
                 {
                     "id": 3,
-                    "type": "pro",
-                    "bandwidth": "20",
+                    "type": "office",
+                    "bandwidth": "10",
                     "for": "for heavy use",
                     "tags": [
                         "perfect for power users",
@@ -751,13 +743,15 @@
                     "prices": [
                         {
                             "id": 1,
-                            "title": "router (one time)",
+                            "billing": "monthly",
+                            "title": "monthly subscription",
                             "price": "D 5,000"
                         },
                         {
                             "id": 2,
-                            "title": "monthly subscription",
-                            "price": "D 3,500"
+                            "billing": "yearly",
+                            "title": "yearly subscription",
+                            "price": "D 60,000"
                         }
                     ],
                     "colors": [
@@ -809,6 +803,208 @@
                 "id": 3,
                 "title": "24/7 Customer Support",
                 "subtitle": "Get 24/7 customer support to help you with any questions or issues you may have"
+            }
+        ]
+    },
+    "branchLocator": {
+        "title": "branch locator",
+        "img": "/assets/resources/branches/hero.png",
+        "branches": [
+            {
+                "id": 1,
+                "name": "Banjul Main Branch",
+                "description": "Full-service main branch for accounts, support, and payments.",
+                "address": "Independence Drive, Banjul, The Gambia",
+                "phone": "+220 300 1001",
+                "openingHours": "Mon–Fri 08:30–16:30, Sat 09:00–13:00",
+                "services": [
+                    "new installations",
+                    "bill payments",
+                    "customer support",
+                    "router sales"
+                ],
+                "region": "Banjul",
+                "town": "Banjul",
+                "location": {
+                    "lat": 13.4549,
+                    "lng": -16.5790
+                }
+            },
+            {
+                "id": 2,
+                "name": "Serekunda Branch",
+                "description": "Walk-in support center for upgrades, troubleshooting, and onboarding.",
+                "address": "Kairaba Avenue, Serekunda, The Gambia",
+                "phone": "+220 300 1002",
+                "openingHours": "Mon–Fri 08:30–17:00, Sat 09:00–13:00",
+                "services": [
+                    "plan upgrades",
+                    "technical support",
+                    "SIM/wireless setup",
+                    "payments"
+                ],
+                "region": "Kanifing",
+                "town": "Serekunda",
+                "location": {
+                    "lat": 13.4383,
+                    "lng": -16.6780
+                }
+            },
+            {
+                "id": 3,
+                "name": "Brikama Branch",
+                "description": "Regional branch serving West Coast communities and nearby settlements.",
+                "address": "Brikama Highway, Brikama, The Gambia",
+                "phone": "+220 300 1003",
+                "openingHours": "Mon–Fri 08:30–16:30, Sat 09:00–13:00",
+                "services": [
+                    "new installations",
+                    "router configuration",
+                    "support",
+                    "payments"
+                ],
+                "region": "West Coast Region",
+                "town": "Brikama",
+                "location": {
+                    "lat": 13.2719,
+                    "lng": -16.6496
+                }
+            },
+            {
+                "id": 4,
+                "name": "Bakau Branch",
+                "description": "Neighborhood branch for quick support and subscription assistance.",
+                "address": "Atlantic Road, Bakau, The Gambia",
+                "phone": "+220 300 1004",
+                "openingHours": "Mon–Fri 08:30–16:30",
+                "services": [
+                    "customer support",
+                    "bill payments",
+                    "equipment replacement"
+                ],
+                "region": "Kanifing",
+                "town": "Bakau",
+                "location": {
+                    "lat": 13.4786,
+                    "lng": -16.6810
+                }
+            },
+            {
+                "id": 5,
+                "name": "Bundung Branch",
+                "description": "Support and onboarding for homes, SMEs, and office packages.",
+                "address": "Kombo Sillah Drive, Bundung, The Gambia",
+                "phone": "+220 300 1005",
+                "openingHours": "Mon–Fri 08:30–16:30, Sat 09:00–13:00",
+                "services": [
+                    "plan consultation",
+                    "SME support",
+                    "payments",
+                    "router sales"
+                ],
+                "region": "Kanifing",
+                "town": "Bundung",
+                "location": {
+                    "lat": 13.4007,
+                    "lng": -16.7070
+                }
+            },
+            {
+                "id": 6,
+                "name": "Tallinding Branch",
+                "description": "Fast service point for quick fixes, renewals, and plan changes.",
+                "address": "Tallinding Kunjang Junction, Tallinding, The Gambia",
+                "phone": "+220 300 1006",
+                "openingHours": "Mon–Fri 08:30–16:30",
+                "services": [
+                    "renewals",
+                    "plan upgrades",
+                    "technical support"
+                ],
+                "region": "Kanifing",
+                "town": "Tallinding",
+                "location": {
+                    "lat": 13.4432,
+                    "lng": -16.7085
+                }
+            },
+            {
+                "id": 7,
+                "name": "Kololi Branch",
+                "description": "Tourist-area branch supporting apartments, hotels, and small businesses.",
+                "address": "Senegambia Strip, Kololi, The Gambia",
+                "phone": "+220 300 1007",
+                "openingHours": "Mon–Sat 09:00–17:00",
+                "services": [
+                    "business packages",
+                    "hotel connectivity",
+                    "priority support",
+                    "payments"
+                ],
+                "region": "West Coast Region",
+                "town": "Kololi",
+                "location": {
+                    "lat": 13.4436,
+                    "lng": -16.7310
+                }
+            },
+            {
+                "id": 8,
+                "name": "Farafenni Branch",
+                "description": "Upcountry branch for service requests, payments, and installations.",
+                "address": "Main Road, Farafenni, The Gambia",
+                "phone": "+220 300 1008",
+                "openingHours": "Mon–Fri 08:30–16:30",
+                "services": [
+                    "new installations",
+                    "customer support",
+                    "bill payments"
+                ],
+                "region": "North Bank Region",
+                "town": "Farafenni",
+                "location": {
+                    "lat": 13.5660,
+                    "lng": -15.6000
+                }
+            },
+            {
+                "id": 9,
+                "name": "Lamin Branch",
+                "description": "Community branch for nearby towns and residential support.",
+                "address": "Coastal Road, Lamin, The Gambia",
+                "phone": "+220 300 1009",
+                "openingHours": "Mon–Fri 08:30–16:30, Sat 09:00–13:00",
+                "services": [
+                    "customer support",
+                    "router setup",
+                    "payments"
+                ],
+                "region": "West Coast Region",
+                "town": "Lamin",
+                "location": {
+                    "lat": 13.3656,
+                    "lng": -16.6546
+                }
+            },
+            {
+                "id": 10,
+                "name": "Kotu Branch",
+                "description": "Convenient branch for quick support and subscription management.",
+                "address": "Kotu Beach Road, Kotu, The Gambia",
+                "phone": "+220 300 1010",
+                "openingHours": "Mon–Fri 08:30–16:30",
+                "services": [
+                    "renewals",
+                    "plan consultation",
+                    "technical support",
+                    "payments"
+                ],
+                "region": "Kanifing",
+                "town": "Kotu",
+                "location": {
+                    "lat": 13.4552,
+                    "lng": -16.7101
+                }
             }
         ]
     },

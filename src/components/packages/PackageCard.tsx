@@ -8,6 +8,7 @@ type PriceItem = {
     id: number;
     title: string;
     price: string;
+    billing: "monthly" | "yearly";
 };
 
 export type PackageItem = {
@@ -36,8 +37,8 @@ export const PackageCard: React.FC<PackageCardProps> = ({
 }) => {
     const isPopular = Boolean(pkg.popular);
 
-    // ✅ You can later switch price list based on billing if you add yearly prices to JSON
-    const priceItems = pkg.prices ?? [];
+    // Switch price list based on billing
+    const priceItems = (pkg.prices ?? []).filter((p) => p.billing === billing);
 
     return (
         <article
@@ -88,7 +89,7 @@ export const PackageCard: React.FC<PackageCardProps> = ({
                                 <Check size={14} className="text-white" />
                             </span>
 
-                            <span className={clsx("text-[10px] capitalize", isPopular ? "text-white/90" : "text-gray-700")}>
+                            <span className={clsx("text-[13px] capitalize", isPopular ? "text-white/90" : "text-gray-700")}>
                                 {t}
                             </span>
                         </li>
@@ -100,7 +101,7 @@ export const PackageCard: React.FC<PackageCardProps> = ({
             <div className={clsx("p-6 sm:p-7", isPopular ? "bg-[#1A2740]" : "bg-gray-50")}>
                 <div className={clsx("pt-5", isPopular ? "border-t border-white/10" : "border-t border-gray-200")}>
                     <div className="space-y-3">
-                        {priceItems.map((p) => (
+                        {priceItems.slice(0, 1).map((p) => (
                             <div key={p.id} className="flex items-end justify-between gap-4">
                                 <span className={clsx("text-xs capitalize tracking-wide", isPopular ? "text-white/70" : "text-gray-600")}>
                                     {p.title}
@@ -127,3 +128,10 @@ export const PackageCard: React.FC<PackageCardProps> = ({
         </article>
     );
 };
+
+
+// {
+//                             "id": 1,
+//                             "title": "router (one time)",
+//                             "price": "D 5,000"
+//                         },

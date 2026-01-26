@@ -3,11 +3,35 @@
 import React, { useMemo, useState } from "react";
 import clsx from "clsx";
 import { useSiteMode } from "@/context/SiteModeProvider";
-import { PackageCard, PackageItem } from "@/components/PackageCard";
+import { PackageCard, PackageItem } from "@/components/packages/PackageCard";
 
 type PackageListProps = {
     className?: string;
     id?: string;
+};
+
+import { motion, Variants } from "framer-motion";
+
+const containerVariants: Variants = {
+    hidden: { opacity: 0 },
+    visible: {
+        opacity: 1,
+        transition: {
+            staggerChildren: 0.1,
+        },
+    },
+};
+
+const itemVariants: Variants = {
+    hidden: { y: 20, opacity: 0 },
+    visible: {
+        y: 0,
+        opacity: 1,
+        transition: {
+            duration: 0.8,
+            ease: "easeOut",
+        },
+    },
 };
 
 export const PackageList: React.FC<PackageListProps> = ({
@@ -28,20 +52,31 @@ export const PackageList: React.FC<PackageListProps> = ({
     if (!packageSection) return null;
 
     const handleSelect = (pkg: PackageItem) => {
-        // put your routing / modal here later 😄
         console.log("Selected package:", pkg);
     };
 
     return (
         <section id={id} className={clsx("w-full py-20", className)}>
-            <div className="container">
+            <div className="container p-0">
                 {/* Title */}
-                <h2 className="text-center text-3xl sm:text-4xl font-bold text-gray-900 capitalize">
+                <motion.h2
+                    initial={{ opacity: 0, scale: 0.95 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.6 }}
+                    className="text-center text-3xl sm:text-4xl font-bold text-gray-900 capitalize"
+                >
                     {packageSection.title}
-                </h2>
+                </motion.h2>
 
                 {/* Toggle */}
-                <div className="mt-7 flex justify-center">
+                <motion.div
+                    initial={{ opacity: 0, y: 10 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.6, delay: 0.2 }}
+                    className="mt-7 flex justify-center"
+                >
                     <div className="inline-flex rounded-full bg-gray-100 p-1">
                         <button
                             onClick={() => setBilling("monthly")}
@@ -62,24 +97,34 @@ export const PackageList: React.FC<PackageListProps> = ({
                             Yearly
                         </button>
                     </div>
-                </div>
+                </motion.div>
 
                 {/* Cards */}
-                <div className="mt-12 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 lg:items-stretch">
+                <motion.div
+                    variants={containerVariants}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true, margin: "-100px" }}
+                    className="mt-12 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 lg:items-stretch"
+                >
                     {packages.map((pkg) => (
-                        <PackageCard
+                        <motion.div
                             key={pkg.id}
-                            pkg={pkg}
-                            billing={billing}
-                            onSelect={handleSelect}
+                            variants={itemVariants}
                             className={clsx(
-                                // 🔥 pop the popular card on desktop like the screenshot
                                 pkg.popular ? "lg:-mt-6 lg:scale-[1.03]" : "lg:mt-0",
                                 "transform"
                             )}
-                        />
+                        >
+                            <PackageCard
+                                pkg={pkg}
+                                billing={billing}
+                                onSelect={handleSelect}
+                                className="h-full"
+                            />
+                        </motion.div>
                     ))}
-                </div>
+                </motion.div>
             </div>
         </section>
     );

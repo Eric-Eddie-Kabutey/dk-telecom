@@ -17,11 +17,11 @@ export const FastInternet = ({ variant = "family" }: FastInternetProps) => {
 
     const imagePath =
         variant === "family"
-            ? "/assets/resources/fast-internet-for-the-whole-family-img.png"
+            ? "/assets/resources/image2.png"
             : "/assets/resources/fast-internet-built-for-everyday-smooth-streaming-img.png";
 
     return (
-        <section className=" bg-white">
+        <section className=" bg-white py-20">
             {variant === "family" ? (
                 <FastInternetFamily content={content} imagePath={imagePath} />
             ) : (

@@ -38,18 +38,14 @@ export const OurMission = () => {
                                 {/* Icon */}
                                 <div
                                     className="
-                                        mb-8 flex h-24 w-24 items-center justify-center
-                                        rounded-2xl bg-gray-50 border border-gray-200
-                                        transition-colors duration-300
-                                        group-hover:bg-gray-900 group-hover:border-gray-900
+                                        mb-8 flex h-40 w-40 rounded-3xl bg-gray-900/5 items-center justify-center
+                                        
                                     "
                                 >
                                     <Icon
-                                        size={34}
+                                        size={64}
                                         className="
                                             text-dark
-                                            transition-colors duration-300
-                                            group-hover:text-white
                                         "
                                     />
                                 </div>
@@ -67,9 +63,9 @@ export const OurMission = () => {
                                 {/* Body */}
                                 <p
                                     className="
-                                        mt-4 text-sm sm:text-base text-dark/70
+                                        mt-4 px-10 text-sm sm:text-base text-dark/70
                                         leading-relaxed
-                                        line-clamp54
+                                        line-clamp-4
                                     "
                                 >
                                     {mission.body}

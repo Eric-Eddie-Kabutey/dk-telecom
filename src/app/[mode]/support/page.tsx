@@ -1,6 +1,6 @@
 "use client";
 
-import { HelpCenter } from "@/components/HelpCenter";
+import { HelpCenter } from "@/components/support/HelpCenter";
 import { HeroSimple } from "@/components/HeroSimple";
 import { useSiteMode } from "@/context/SiteModeProvider";
 export default function SupportPage() {

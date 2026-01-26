@@ -4,7 +4,7 @@ import React, { useMemo, useState } from "react";
 import clsx from "clsx";
 import { Search } from "lucide-react";
 import { useSiteMode } from "@/context/SiteModeProvider";
-import { RoleCard } from "@/components/RoleCard";
+import { RoleCard } from "@/components/career/RoleCard";
 
 type Role = {
     id: number;

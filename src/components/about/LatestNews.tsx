@@ -5,7 +5,7 @@ import Link from "next/link";
 import clsx from "clsx";
 import { ArrowRight } from "lucide-react";
 import { useSiteMode } from "@/context/SiteModeProvider";
-import { ArticleCard } from "@/components/ArticleCard";
+import { ArticleCard } from "@/components/about/ArticleCard";
 
 type LatestNewsFilter = {
   id: string; // "all" | "news" | "events" | "case studies"

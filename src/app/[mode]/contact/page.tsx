@@ -1,6 +1,6 @@
 "use client";
 
-import { ContactUsForm } from "@/components/ContactUsForm";
+import { ContactUsForm } from "@/components/support/ContactUsForm";
 import { HeroSimple } from "@/components/HeroSimple";
 import { useSiteMode } from "@/context/SiteModeProvider";
 

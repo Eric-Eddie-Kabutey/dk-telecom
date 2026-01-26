@@ -27,6 +27,8 @@ type FlashCardProps = {
     buttonVariant?: "light" | "outline";
 };
 
+import { motion } from "framer-motion";
+
 export const FlashCard: React.FC<FlashCardProps> = ({
     title,
     subtitle,
@@ -41,6 +43,7 @@ export const FlashCard: React.FC<FlashCardProps> = ({
     buttonVariant = "light",
 }) => {
     const [from, to] = gradientColors;
+    const bg = `bg-gradient-to-r from-${from} to-${to}`;
 
     const Button = (
         <Link
@@ -61,13 +64,17 @@ export const FlashCard: React.FC<FlashCardProps> = ({
     );
 
     return (
-        <section className={clsx("py-8 sm:py-12 bg-whiteh", className)}>
-            <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-                <div
+        <section className={clsx("pb-20 bg-white", className)}>
+            <div className="container2">
+                <motion.div
+                    initial={{ opacity: 0, scale: 0.98 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    viewport={{ once: true, margin: "-50px" }}
+                    transition={{ duration: 0.8, ease: "easeOut" }}
                     className={clsx(
                         "relative overflow-hidden shadow-2xl",
                         roundedClassName,
-                        img ? "bg-black" : "",
+                        img ? "bg-primary" : "",
                         !img ? minHeightClassName : ""
                     )}
                     style={
@@ -83,24 +90,44 @@ export const FlashCard: React.FC<FlashCardProps> = ({
                             <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-white/10 via-transparent to-black/10" />
 
                             <div className="relative z-10 flex flex-col items-center justify-center text-center px-6 sm:px-10 lg:px-16 py-16 sm:py-20 capitalize">
-                                <h2 className="text-white font-bold leading-tight text-3xl sm:text-4xl lg:text-5xl max-w-3xl">
+                                <motion.h2
+                                    initial={{ opacity: 0, y: 15 }}
+                                    whileInView={{ opacity: 1, y: 0 }}
+                                    viewport={{ once: true }}
+                                    transition={{ duration: 0.6, delay: 0.2 }}
+                                    className="text-white font-bold leading-tight text-3xl sm:text-4xl lg:text-5xl max-w-3xl"
+                                >
                                     {title}
-                                </h2>
+                                </motion.h2>
 
                                 {subtitle ? (
-                                    <p className="mt-4 text-white/80 text-sm sm:text-base lg:text-lg max-w-xl leading-relaxed capitalize">
+                                    <motion.p
+                                        initial={{ opacity: 0, y: 15 }}
+                                        whileInView={{ opacity: 1, y: 0 }}
+                                        viewport={{ once: true }}
+                                        transition={{ duration: 0.6, delay: 0.3 }}
+                                        className="mt-4 text-white/80 text-sm sm:text-base lg:text-lg max-w-xl leading-relaxed capitalize"
+                                    >
                                         {subtitle}
-                                    </p>
+                                    </motion.p>
                                 ) : null}
 
-                                <div className="mt-8 sm:mt-10 capitalize">{Button}</div>
+                                <motion.div
+                                    initial={{ opacity: 0, y: 15 }}
+                                    whileInView={{ opacity: 1, y: 0 }}
+                                    viewport={{ once: true }}
+                                    transition={{ duration: 0.6, delay: 0.4 }}
+                                    className="mt-8 sm:mt-10 capitalize"
+                                >
+                                    {Button}
+                                </motion.div>
                             </div>
                         </div>
                     ) : (
                         /*  */
                         <div className="relative min-h-[280px] sm:min-h-[310px] lg:min-h-[360px]">
                             {/* Image */}
-                            <div className="absolute inset-y-0 right-0 w-[60%]">
+                            <div className="absolute inset-y-0 right-0 w-full md:w-[40%]">
                                 <div className="relative h-full w-full">
                                     <Image
                                         src={img}
@@ -112,36 +139,48 @@ export const FlashCard: React.FC<FlashCardProps> = ({
                                     />
 
                                     {/* Image edge blend */}
-                                    <div className="absolute inset-0 bg-gradient-to-l from-transparent via-black/20 to-black/80" />
+                                    <div className="absolute inset-0 bg-gradient-to-t from-primary to-transparent md:bg-gradient-to-r md:from-primary md:to-transparent" />
                                 </div>
                             </div>
-
-                            <div
-                                className="absolute inset-0"
-                                style={{
-                                    background: `linear-gradient(90deg, ${from}F2 40%, ${to}CC 70%, transparent 100%)`,
-                                }}
-                            />
-                            <div className="absolute inset-0 bg-black/10" />
                             {/* Content */}
-                            <div className="relative z-10 py-10 h-full flex items-center">
+                            <div className="relative z-10 pt-20 md:pt-10 pb-10 h-full flex items-center ">
                                 <div className="w-full lg:w-[70%] px-6 sm:px-10 lg:px-14 py-10 sm:py-14 lg:py-20 space-y-5">
-                                    <h2 className="text-white text-xl sm:text-2xl lg:text-3xl font-bold leading-tight max-w-xl capitalize">
+                                    <motion.h2
+                                        initial={{ opacity: 0, x: -20 }}
+                                        whileInView={{ opacity: 1, x: 0 }}
+                                        viewport={{ once: true }}
+                                        transition={{ duration: 0.6, delay: 0.2 }}
+                                        className="text-white text-xl sm:text-2xl lg:text-3xl font-bold leading-tight max-w-xl capitalize"
+                                    >
                                         {title}
-                                    </h2>
+                                    </motion.h2>
 
                                     {subtitle ? (
-                                        <p className="text-white/70 text-sm sm:text-base lg:text-lg leading-relaxed max-w-md capitalize">
+                                        <motion.p
+                                            initial={{ opacity: 0, x: -20 }}
+                                            whileInView={{ opacity: 1, x: 0 }}
+                                            viewport={{ once: true }}
+                                            transition={{ duration: 0.6, delay: 0.3 }}
+                                            className="text-white/70 text-sm sm:text-base lg:text-lg leading-relaxed max-w-md capitalize"
+                                        >
                                             {subtitle}
-                                        </p>
+                                        </motion.p>
                                     ) : null}
 
-                                    <div className="pt-2 capitalize">{Button}</div>
+                                    <motion.div
+                                        initial={{ opacity: 0, x: -20 }}
+                                        whileInView={{ opacity: 1, x: 0 }}
+                                        viewport={{ once: true }}
+                                        transition={{ duration: 0.6, delay: 0.4 }}
+                                        className="pt-2 capitalize"
+                                    >
+                                        {Button}
+                                    </motion.div>
                                 </div>
                             </div>
                         </div>
                     )}
-                </div>
+                </motion.div>
             </div>
         </section>
     );

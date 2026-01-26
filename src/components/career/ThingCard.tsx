@@ -47,7 +47,7 @@ export const ThingCard: React.FC<ThingCardProps> = ({ thing, className }) => {
     return (
         <article
             className={clsx(
-                "relative w-full overflow-hidden rounded-2xl bg-primary-dark text-white",
+                "relative w-full overflow-hidden rounded-2xl bg-primary text-white",
                 className
             )}
         >
@@ -59,7 +59,7 @@ export const ThingCard: React.FC<ThingCardProps> = ({ thing, className }) => {
             </div>
 
             {/* Visual area (bottom) */}
-            <div className="relative w-full h-[150px]">
+            <div className="relative w-full h-[150px] mb-10 lg:mb-0">
                 {/* img = illustration around (background-ish) */}
                 {thing.img ? (
                     <Image

@@ -56,10 +56,10 @@ export const NavBar = () => {
     };
 
     return (
-        <div className="fixed flex justify-center content-center align-center top-0 left-0 w-[100vw] z-50 bg-gradient-to-b from-black/90 to-transparent pb-8 pointer-events-none">
+        <div className="fixed flex justify-center content-center align-center top-0 left-0 w-[100vw] z-50 bg-gradient-to-b from-black/80 to-transparent pb-28 pointer-events-none">
             <div className="max-w-[1800px] w-full px-4 md:px-6 pointer-events-auto">
                 {/* Top Bar / Toggles */}
-                <div className="w-full text-white flex justify-between items-center text-sm py-4">
+                <div className="w-full text-white flex justify-between items-center text-sm py-2">
                     <div className="flex items-center space-x-3">
                         <div className="flex items-center gap-4">
                             {/* Residential */}
@@ -148,7 +148,7 @@ export const NavBar = () => {
 
                     <div className="flex items-center space-x-4">
                         <Link
-                            href="/"
+                            href={`/${mode}/branches`}
                             className="hidden md:flex items-center space-x-2 text-xs md:text-sm font-bold text-white transition-colors"
                         >
                             <span>Branch Locator</span>
@@ -237,7 +237,7 @@ export const NavBar = () => {
 
                                 <motion.div variants={itemVariants} className="w-full">
                                     <Link
-                                        href="/"
+                                        href={`/${mode}/branches`}
                                         onClick={closeMenu}
                                         className="block w-full text-center py-3 text-md font-bold rounded-md transition-all text-black hover:bg-black/5"
                                     >

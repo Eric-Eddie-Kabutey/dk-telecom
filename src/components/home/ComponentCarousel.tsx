@@ -28,7 +28,7 @@ export default function ComponentCarousel({
     showIndicators = true,
     indicatorsClassName = "",
 
-    showArrows = false,
+    showArrows = false, // (kept in props for later if you add arrows)
     className = "",
     slideClassName = "",
 }: CarouselProps) {
@@ -40,15 +40,11 @@ export default function ComponentCarousel({
     );
     const [isHovering, setIsHovering] = React.useState(false);
 
-    // swipe handling
-    const startXRef = React.useRef<number | null>(null);
-    const deltaXRef = React.useRef<number>(0);
-
     const goTo = React.useCallback(
         (i: number) => {
             if (count === 0) return;
-            const next = (i + count) % count;
-            setIndex(next);
+            const nextIdx = (i + count) % count;
+            setIndex(nextIdx);
         },
         [count]
     );
@@ -78,27 +74,67 @@ export default function ComponentCarousel({
         return () => window.removeEventListener("keydown", onKeyDown);
     }, [next, prev]);
 
-    const onPointerDown = (e: React.PointerEvent<HTMLDivElement>) => {
-        startXRef.current = e.clientX;
+    // swipe handling (pointer + touch)
+    const startXRef = React.useRef<number | null>(null);
+    const startYRef = React.useRef<number | null>(null);
+    const deltaXRef = React.useRef<number>(0);
+
+    const beginSwipe = (x: number, y: number) => {
+        startXRef.current = x;
+        startYRef.current = y;
         deltaXRef.current = 0;
-        (e.currentTarget as HTMLDivElement).setPointerCapture(e.pointerId);
     };
 
-    const onPointerMove = (e: React.PointerEvent<HTMLDivElement>) => {
-        if (startXRef.current == null) return;
-        deltaXRef.current = e.clientX - startXRef.current;
+    const moveSwipe = (x: number, y: number) => {
+        if (startXRef.current == null || startYRef.current == null) return;
+
+        const dx = x - startXRef.current;
+        const dy = y - startYRef.current;
+
+        // Only consider it a swipe if it's more horizontal than vertical
+        if (Math.abs(dx) > Math.abs(dy)) {
+            deltaXRef.current = dx;
+        }
     };
 
-    const onPointerUp = () => {
+    const endSwipe = (threshold = 60) => {
         const dx = deltaXRef.current;
+
         startXRef.current = null;
+        startYRef.current = null;
         deltaXRef.current = 0;
 
-        // swipe threshold
-        if (Math.abs(dx) < 60) return;
+        if (Math.abs(dx) < threshold) return;
+
+        // swipe left -> next, swipe right -> prev
         if (dx < 0) next();
         else prev();
     };
+
+    // Pointer events (covers mouse/pen/touch in most browsers)
+    const onPointerDown = (e: React.PointerEvent<HTMLDivElement>) => {
+        beginSwipe(e.clientX, e.clientY);
+        e.currentTarget.setPointerCapture(e.pointerId);
+    };
+
+    const onPointerMove = (e: React.PointerEvent<HTMLDivElement>) => {
+        moveSwipe(e.clientX, e.clientY);
+    };
+
+    const onPointerUp = () => endSwipe();
+
+    // Touch fallback (helps on some mobile Safari edge cases)
+    const onTouchStart = (e: React.TouchEvent<HTMLDivElement>) => {
+        const t = e.touches[0];
+        beginSwipe(t.clientX, t.clientY);
+    };
+
+    const onTouchMove = (e: React.TouchEvent<HTMLDivElement>) => {
+        const t = e.touches[0];
+        moveSwipe(t.clientX, t.clientY);
+    };
+
+    const onTouchEnd = () => endSwipe();
 
     return (
         <div
@@ -108,15 +144,19 @@ export default function ComponentCarousel({
         >
             <div
                 className="relative overflow-hidden w-full"
+                style={{ touchAction: "pan-y" }} // ✅ allow horizontal swipe; keep vertical scroll
                 onPointerDown={onPointerDown}
                 onPointerMove={onPointerMove}
                 onPointerUp={onPointerUp}
                 onPointerCancel={onPointerUp}
+                onTouchStart={onTouchStart}
+                onTouchMove={onTouchMove}
+                onTouchEnd={onTouchEnd}
             >
                 {/* Track */}
                 <div
                     className={clsx(
-                        "flex w-full will-change-transform py-20",
+                        "flex w-full will-change-transform pb-20",
                         "transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)]"
                     )}
                     style={{ transform: `translateX(-${index * 100}%)` }}
@@ -131,7 +171,6 @@ export default function ComponentCarousel({
                         </div>
                     ))}
                 </div>
-
             </div>
 
             {/* Indicators */}

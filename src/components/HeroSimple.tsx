@@ -19,22 +19,26 @@ export const HeroSimple = ({
     imageAlt = "Hero background",
 }: HeroSimpleProps) => {
     return (
-        <section className="relative min-h-screen w-full overflow-hidden flex items-center">
-            {/* Background Image */}
-            <Image
-                src={image}
-                alt={imageAlt}
-                fill
-                priority
-                className="object-cover"
-            />
+        <section className="relative h-full  w-full overflow-hidden flex ">
 
-            {/* Overlay */}
-            <div className="absolute inset-0 bg-black/40" />
+            <div className="absolute inset-0">
+                {/* Background Image */}
+                <Image
+                    src={image}
+                    alt={imageAlt}
+                    fill
+                    priority
+                    className="object-cover"
+                />
+
+                {/* Overlay */}
+                <div className="absolute inset-0 bg-black/60" />
+            </div>
+
 
             {/* Content */}
-            <div className="relative z-10 w-full max-w-[1800px] px-10">
-                <div className="max-w-2xl space-y-8 animate-in fade-in slide-in-from-left duration-1000">
+            <div className="container relative z-10">
+                <div className="my-[200px] max-w-2xl space-y-8 animate-in fade-in slide-in-from-left duration-1000">
                     <h1 className="text-xl uppercase text-white/90 font-medium leading-tight drop-shadow-md">
                         {tag}
                     </h1>

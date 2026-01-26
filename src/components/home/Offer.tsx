@@ -42,6 +42,7 @@ type OfferProps = {
     imageObjectPosition?: "left" | "right" | "center";
 
     badgeRotation?: string;
+    page?: "business" | "residential";
 };
 
 const hexToRgb = (hex: string) => {
@@ -63,19 +64,19 @@ const toMobileTB = (p: Placement): "top" | "bottom" =>
 const badgePosClass = (pos: BadgePosition) => {
     switch (pos) {
         case "top-left":
-            return "bottom-6 right-6 sm:top-7 sm:left-7";
+            return "bottom-6 right-6 md:top-7 md:left-7";
         case "top-right":
-            return "bottom-6 right-6 sm:top-7 sm:right-7";
+            return "bottom-6 right-6 md:top-7 md:right-7";
         case "bottom-left":
-            return "bottom-6 left-6 sm:bottom-7 sm:left-7";
+            return "bottom-6 left-6 md:bottom-7 md:left-7";
         case "bottom-right":
-            return "bottom-6 right-6 sm:bottom-7 sm:right-7";
+            return "bottom-6 right-6 md:bottom-7 md:right-7";
         case "center-left":
-            return "top-1/2 -translate-y-1/2 left-6 sm:left-7";
+            return "top-1/2 -translate-y-1/2 left-6 md:left-7";
         case "center-right":
-            return "top-1/2 -translate-y-1/2 right-6 sm:right-7";
+            return "top-1/2 -translate-y-1/2 right-6 md:right-7";
         default:
-            return "top-6 right-6 sm:top-7 sm:right-7";
+            return "top-6 right-6 md:top-7 md:right-7";
     }
 };
 
@@ -133,7 +134,9 @@ export const Offer: React.FC<OfferProps> = ({
     size = "sm",
     imageObjectPosition = "right",
     badgeRotation = "",
+    page = "business",
 }) => {
+    const componentHeight = page === "business" ? "h-full" : "min-h-[320px] sm:min-h-[380px] lg:min-h-[460px]";
     const base = offer.color || "#14146A";
     const rgb = hexToRgb(base);
 
@@ -143,7 +146,7 @@ export const Offer: React.FC<OfferProps> = ({
 
     const isLg = size === "lg";
 
-    // ✅ mobile rule applied
+    // mobile rule applied
     const mobileContentSide = toMobileTB(contentSide);
     const mobileImageSide = toMobileTB(imageSide);
 
@@ -173,7 +176,7 @@ export const Offer: React.FC<OfferProps> = ({
     const contentWidthClass =
         contentSide === "top" || contentSide === "bottom"
             ? "md:w-full md:max-w-4xl"
-            : "md:w-[70%]";
+            : "md:w-[90%] lg:w-[70%]";
 
     const badgeOverlapPadding = clsx(
         badgePosition.includes("left") ? "md:pl-24" : "",
@@ -196,7 +199,7 @@ export const Offer: React.FC<OfferProps> = ({
             )}
             style={{ backgroundColor: base }}
         >
-            <div className="relative h-full">
+            <div className={`relative ${componentHeight}`}>
                 {/* ✅ Image panel - mobile */}
                 <div className={clsx("absolute w-full md:hidden", imageSideClassMobile)}>
                     <div className="relative h-full w-full">
@@ -235,7 +238,8 @@ export const Offer: React.FC<OfferProps> = ({
                 <div className={contentOuterClass}>
                     <div
                         className={clsx(
-                            "w-full max-w-[420px]",
+                            "w-full",
+                            page === "residential" ? "md:max-w-[90%]" : "max-w-[420px]",
                             contentWidthClass,
                             "px-4 sm:px-6 lg:px-8 py-20 sm:py-10 lg:py-12",
                             // badgeOverlapPadding
@@ -248,13 +252,14 @@ export const Offer: React.FC<OfferProps> = ({
                         <h3
                             className={clsx(
                                 "mt-3 text-white font-bold leading-tight capitalize",
-                                isLg ? "text-3xl sm:text-4xl" : "text-2xl sm:text-3xl"
+                                page === "residential" ? "text-3xl sm:text-4xl lg:text-5xl"
+                                    : size === "lg" ? "text-3xl sm:text-4xl" : "text-2xl sm:text-3xl"
                             )}
                         >
                             {offer.title}
                         </h3>
 
-                        <div className="mt-6 grid grid-cols-2 items-stretch gap-2">
+                        <div className="mt-6 grid md:grid-cols-2 items-stretch gap-2">
                             {(offer.features ?? []).slice(0, 4).map((f, i) => (
                                 <div
                                     key={`${offer.id}-${i}`}
@@ -265,9 +270,12 @@ export const Offer: React.FC<OfferProps> = ({
                                     )}
                                 >
                                     <span className="inline-flex items-center justify-center rounded-full bg-white/10 border border-white/10">
-                                        <Check className="h-2.5 w-2.5 m-[2px] text-white" />
+                                        <Check className={clsx("text-white",
+                                            page === "residential" ? "h-3 w-3 m-[4px]" : "h-2.5 w-2.5 m-[2px]")} />
                                     </span>
-                                    <span className="text-white/90 text-[9px] font-medium leading-snug capitalize truncate">
+                                    <span className={clsx("text-white/90 font-medium leading-snug capitalize ",
+                                        page === "residential" ? "text-sm sm:text-base lg:text-lg" : "text-[9px]")}
+                                    >
                                         {f.title}
                                     </span>
                                 </div>
@@ -281,7 +289,7 @@ export const Offer: React.FC<OfferProps> = ({
                                 className={clsx(
                                     "inline-flex items-center gap-2",
                                     "rounded-xl px-5 py-3",
-                                    "text-white text-sm font-light",
+                                    page === "residential" ? "text-white text-sm font-light" : "text-white text-sm font-light",
                                     "border border-white/25 bg-white/0",
                                     "transition-all duration-300",
                                     "hover:bg-white/10 hover:border-white/35"
