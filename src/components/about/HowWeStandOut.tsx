@@ -17,20 +17,22 @@ export const HowWeStandOut = () => {
 
   return (
 
-    <section className="bg-gradient-to-b from-white via-gray-100 to-white py-16 sm:py-20 lg:py-24">
+    <section className="bg-gradient-to-b from-white via-gray-100 to-white section-py">
       <div className="container">
         {/* Header */}
-        <div className="mx-auto mb-12 max-w-3xl text-center sm:mb-16 lg:mb-20">
-          <h2 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
-            {text.howWeStandOut.title}
-          </h2>
-          <p className="mt-4 text-base text-gray-600 sm:mt-5 sm:text-lg md:text-xl">
-            {text.howWeStandOut.subtitle}
-          </p>
+        <div className="mx-auto mb-stack-lg max-w-3xl text-center">
+          <div className="stack-sm">
+            <h2 className="text-section-heading">
+              {text.howWeStandOut.title}
+            </h2>
+            <p className="text-body text-gray-600">
+              {text.howWeStandOut.subtitle}
+            </p>
+          </div>
         </div>
 
         {/* Cards */}
-        <div className="grid grid-cols-1 gap-6 md:grid-cols-3 md:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 fluid-gap">
           {text.howWeStandOut.features.map((feature: any, idx: number) => {
             const title =
               `${feature.titleSection1 ?? ""} ${feature.titleSection2 ?? ""} ${feature.titleSection3 ?? ""}`.trim();
@@ -48,7 +50,7 @@ export const HowWeStandOut = () => {
 
                 <div className="relative flex h-full flex-col">
                   {/* Title */}
-                  <p className="pt-6 sm:pt-8 px-4 text-md text-center font-normal leading-snug text-gray-900 sm:text-lg capitalize">
+                  <p className="text-card-title pt-6 sm:pt-8 px-4 text-center font-bold text-gray-900 capitalize">
                     {feature.titleSection1}{" "}
                     <span className="text-primary">{feature.titleSection2}</span>{" "}
                     {feature.titleSection3}

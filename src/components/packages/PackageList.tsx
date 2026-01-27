@@ -56,7 +56,7 @@ export const PackageList: React.FC<PackageListProps> = ({
     };
 
     return (
-        <section id={id} className={clsx("w-full py-20", className)}>
+        <section id={id} className={clsx("w-full section-py", className)}>
             <div className="container p-0">
                 {/* Title */}
                 <motion.h2
@@ -64,7 +64,7 @@ export const PackageList: React.FC<PackageListProps> = ({
                     whileInView={{ opacity: 1, scale: 1 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.6 }}
-                    className="text-center text-3xl sm:text-4xl font-bold text-gray-900 capitalize"
+                    className="text-center text-section-heading capitalize"
                 >
                     {packageSection.title}
                 </motion.h2>
@@ -75,13 +75,13 @@ export const PackageList: React.FC<PackageListProps> = ({
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.6, delay: 0.2 }}
-                    className="mt-7 flex justify-center"
+                    className="mt-stack-md flex justify-center"
                 >
                     <div className="inline-flex rounded-full bg-gray-100 p-1">
                         <button
                             onClick={() => setBilling("monthly")}
                             className={clsx(
-                                "rounded-full px-6 py-3 text-sm font-medium transition",
+                                "rounded-full px-6 py-3 text-button transition",
                                 billing === "monthly" ? "bg-white shadow text-gray-900" : "text-gray-600"
                             )}
                         >
@@ -90,7 +90,7 @@ export const PackageList: React.FC<PackageListProps> = ({
                         <button
                             onClick={() => setBilling("yearly")}
                             className={clsx(
-                                "rounded-full px-6 py-3 text-sm font-medium transition",
+                                "rounded-full px-6 py-3 text-button transition",
                                 billing === "yearly" ? "bg-white shadow text-gray-900" : "text-gray-600"
                             )}
                         >
@@ -105,7 +105,7 @@ export const PackageList: React.FC<PackageListProps> = ({
                     initial="hidden"
                     whileInView="visible"
                     viewport={{ once: true, margin: "-100px" }}
-                    className="mt-12 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 lg:items-stretch"
+                    className="mt-stack-lg grid grid-cols-1 fluid-gap md:grid-cols-2 lg:grid-cols-3 lg:items-stretch"
                 >
                     {packages.map((pkg) => (
                         <motion.div

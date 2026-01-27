@@ -45,7 +45,7 @@ export const HeroMain = () => {
             </div>
 
             <div className="container h-full min-h-screen flex flex-col justify-between items-center">
-                <div className="w-full relative z-10 items-center mt-[200px]">
+                <div className="w-full relative z-10 items-center mt-[140px] md:mt-[200px]">
                     <HeroCarousel
                         ref={carouselRef}
                         autoPlay
@@ -75,19 +75,19 @@ export const HeroMain = () => {
                                     {pkg.bandwidth} mbps{" "}
                                     <span className="text-white/80 font-light">{pkg.for}</span>
                                 </h2> */}
-                                    <div className="w-full md:w-[80%] lg:w-[80%] text-white space-y-8 animate-in fade-in slide-in-from-left duration-1000">
-                                        <h1 className="text-5xl md:text-xl font-bold leading-tight drop-shadow-md">
+                                    <div className="w-full text-white stack-lg animate-in fade-in slide-in-from-left duration-1000">
+                                        <h1 className="text-h6  !text-white !mb-0">
                                             {text.hero.title}
                                         </h1>
-                                        <h1 className="text-4xl lg:text-4xl capitalize xl:text-6xl text-white/90 drop-shadow-sm">
+                                        <h2 className="text-h2 md:text-h1 text-extrabold capitalize drop-shadow-sm">
                                             {text.hero.subtitle}
-                                        </h1>
-                                        <h2 className="text-xl lg:text-2xl xl:text-3xl font-extralight capitalize text-white/90 drop-shadow-sm">
-                                            {pkg.bandwidth} mbps{" "}
-                                            <span className="text-white/80 font-light">{pkg.for}</span>
                                         </h2>
                                     </div>
 
+                                    <h3 className="text-hero-subtitle font-black capitalize drop-shadow-sm">
+                                        {pkg.bandwidth} mbps{" "}
+                                        <span className="text-white font-extralight">{pkg.for}</span>
+                                    </h3>
                                     <div className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-4">
                                         {(pkg.tags ?? []).slice(0, 4).map((tag, i) => (
                                             <div
@@ -101,17 +101,17 @@ export const HeroMain = () => {
                                                 <span className="inline-flex items-center justify-center rounded-full bg-white/10 border border-white/10">
                                                     <Check className="h-3.5 lg:h-6.5 w-3.5 lg:w-6.5 m-[2px] lg:m-[6px] text-white" />
                                                 </span>
-                                                <span className="text-white/90 text-sm lg:text-lg font-medium leading-snug capitalize">
+                                                <span className="text-white/90 text-sm lg:text-lg font-light leading-snug capitalize">
                                                     {tag}
                                                 </span>
                                             </div>
                                         ))}
                                     </div>
 
-                                    <h3 className="font-light text-4xl">
-                                        <span className="font-bold text-6xl">{monthly}</span>{" "}
-                                        <span className="font-normal text-5xl">/ month</span>
-                                    </h3>
+                                    <div className="flex items-baseline gap-2">
+                                        <span className="text-h2 font-extrabold">{monthly}</span>
+                                        <span className="text-h5 font-light opacity-80">/ month</span>
+                                    </div>
                                 </div>
                             );
                         })}
@@ -119,8 +119,8 @@ export const HeroMain = () => {
                 </div>
 
                 {/* Bottom bar */}
-                <div className="w-full my-20 z-10 animate-in fade-in zoom-in duration-1000 delay-200">
-                    <div className="relative w-full flex flex-row justify-between items-center px-10 sm:px-20 py-4 bg-white/20 backdrop-blur-xs rounded-3xl">
+                <div className="w-full my-10 md:my-20 z-10 animate-in fade-in zoom-in duration-1000 delay-200">
+                    <div className="relative w-full flex flex-row justify-between items-center px-6 sm:px-10 md:px-20 py-4 bg-white/20 backdrop-blur-xs rounded-3xl">
                         {/* Custom Indicators */}
                         <div className="flex flex-row justify-center items-center gap-2.5">
                             {packageList.map((_, i) => {
@@ -132,7 +132,7 @@ export const HeroMain = () => {
                                         onClick={() => carouselRef.current?.goTo(i)}
                                         className={clsx(
                                             "rounded-full transition-all duration-300",
-                                            active ? "w-7 h-7 bg-dark" : "w-5 h-5 bg-black/20 hover:bg-black/30"
+                                            active ? "md:w-7 md:h-7 w-3 h-3 bg-dark" : "md:w-5 md:h-5 w-2 h-2 bg-black/20 hover:bg-black/30"
                                         )}
                                         aria-label={`Go to package ${i + 1}`}
                                         aria-current={active ? "true" : "false"}
@@ -141,7 +141,7 @@ export const HeroMain = () => {
                             })}
                         </div>
 
-                        <button className="bg-transparent border px-10 py-4 rounded-full uppercase text-white font-normal text-md transition-all hover:scale-105 shadow-xl">
+                        <button className="bg-transparent border px-6 sm:px-10 py-2 md:py-4 rounded-full uppercase text-white transition-all hover:scale-105 shadow-xl text-[12px] md:text-button truncate">
                             {text.hero.ctaPrimary}
                         </button>
                     </div>

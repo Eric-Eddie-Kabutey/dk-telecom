@@ -89,13 +89,13 @@ export const FlashCard: React.FC<FlashCardProps> = ({
                         <div className="py-5">
                             <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-white/10 via-transparent to-black/10" />
 
-                            <div className="relative z-10 flex flex-col items-center justify-center text-center px-6 sm:px-10 lg:px-16 py-16 sm:py-20 capitalize">
+                            <div className="relative z-10 flex flex-col items-center justify-center text-center px-6 sm:px-10 lg:px-16 py-16 sm:py-20 capitalize stack-md">
                                 <motion.h2
                                     initial={{ opacity: 0, y: 15 }}
                                     whileInView={{ opacity: 1, y: 0 }}
                                     viewport={{ once: true }}
                                     transition={{ duration: 0.6, delay: 0.2 }}
-                                    className="text-white font-bold leading-tight text-3xl sm:text-4xl lg:text-5xl max-w-3xl"
+                                    className="text-section-heading !text-white max-w-3xl"
                                 >
                                     {title}
                                 </motion.h2>
@@ -106,7 +106,7 @@ export const FlashCard: React.FC<FlashCardProps> = ({
                                         whileInView={{ opacity: 1, y: 0 }}
                                         viewport={{ once: true }}
                                         transition={{ duration: 0.6, delay: 0.3 }}
-                                        className="mt-4 text-white/80 text-sm sm:text-base lg:text-lg max-w-xl leading-relaxed capitalize"
+                                        className="mt-stack-sm text-white/80 text-body max-w-xl leading-relaxed capitalize"
                                     >
                                         {subtitle}
                                     </motion.p>
@@ -117,7 +117,7 @@ export const FlashCard: React.FC<FlashCardProps> = ({
                                     whileInView={{ opacity: 1, y: 0 }}
                                     viewport={{ once: true }}
                                     transition={{ duration: 0.6, delay: 0.4 }}
-                                    className="mt-8 sm:mt-10 capitalize"
+                                    className="mt-stack-md capitalize"
                                 >
                                     {Button}
                                 </motion.div>
@@ -144,28 +144,26 @@ export const FlashCard: React.FC<FlashCardProps> = ({
                             </div>
                             {/* Content */}
                             <div className="relative z-10 pt-20 md:pt-10 pb-10 h-full flex items-center ">
-                                <div className="w-full lg:w-[70%] px-6 sm:px-10 lg:px-14 py-10 sm:py-14 lg:py-20 space-y-5">
+                                <div className="w-full lg:w-[70%] px-6 sm:px-10 lg:px-14 py-10 sm:py-14 lg:py-20 stack-md">
                                     <motion.h2
                                         initial={{ opacity: 0, x: -20 }}
                                         whileInView={{ opacity: 1, x: 0 }}
                                         viewport={{ once: true }}
                                         transition={{ duration: 0.6, delay: 0.2 }}
-                                        className="text-white text-xl sm:text-2xl lg:text-3xl font-bold leading-tight max-w-xl capitalize"
+                                        className="text-white text-h3 font-bold leading-tight max-w-xl capitalize"
                                     >
                                         {title}
                                     </motion.h2>
 
-                                    {subtitle ? (
-                                        <motion.p
-                                            initial={{ opacity: 0, x: -20 }}
-                                            whileInView={{ opacity: 1, x: 0 }}
-                                            viewport={{ once: true }}
-                                            transition={{ duration: 0.6, delay: 0.3 }}
-                                            className="text-white/70 text-sm sm:text-base lg:text-lg leading-relaxed max-w-md capitalize"
-                                        >
-                                            {subtitle}
-                                        </motion.p>
-                                    ) : null}
+                                    <motion.p
+                                        initial={{ opacity: 0, x: -20 }}
+                                        whileInView={{ opacity: 1, x: 0 }}
+                                        viewport={{ once: true }}
+                                        transition={{ duration: 0.6, delay: 0.3 }}
+                                        className="text-white/70 text-body leading-relaxed max-w-md capitalize"
+                                    >
+                                        {subtitle}
+                                    </motion.p>
 
                                     <motion.div
                                         initial={{ opacity: 0, x: -20 }}

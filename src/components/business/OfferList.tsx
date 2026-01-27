@@ -54,7 +54,7 @@ export const OfferList: React.FC<OfferListProps> = ({
     const [left, topRight, bottomRight] = offers.offerslist ?? [];
 
     return (
-        <section id={id} className={clsx("w-full py-10", className)}>
+        <section id={id} className={clsx("w-full section-py", className)}>
             <div className="container mx-auto px-4 sm:px-6 lg:px-8">
                 {/* Header */}
                 <motion.div
@@ -62,9 +62,9 @@ export const OfferList: React.FC<OfferListProps> = ({
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.5 }}
-                    className="flex items-center justify-between gap-4"
+                    className="flex items-end md:items-center justify-between gap-4"
                 >
-                    <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 capitalize">
+                    <h2 className="text-section-heading capitalize">
                         {offers.title}
                     </h2>
 
@@ -74,7 +74,7 @@ export const OfferList: React.FC<OfferListProps> = ({
                             "inline-flex items-center gap-2",
                             "rounded-xl border border-gray-300 bg-white",
                             "px-4 sm:px-5 py-2.5",
-                            "text-sm font-medium text-gray-800",
+                            "text-button text-gray-800",
                             "hover:bg-gray-50 transition"
                         )}
                     >
@@ -88,7 +88,7 @@ export const OfferList: React.FC<OfferListProps> = ({
                     initial="hidden"
                     whileInView="visible"
                     viewport={{ once: true, margin: "-100px" }}
-                    className="mt-10 grid grid-cols-1 gap-6 md:gap-4 md:grid-cols-12 md:grid-rows-2"
+                    className="mt-stack-lg grid grid-cols-1 fluid-gap md:grid-cols-12 md:grid-rows-2"
                 >
                     {/* Left big card spans both rows */}
                     {left ? (

@@ -138,7 +138,7 @@ export default function ComponentCarousel({
 
     return (
         <div
-            className={clsx("w-full mb-10", className)}
+            className={clsx("w-full", className)}
             onMouseEnter={() => setIsHovering(true)}
             onMouseLeave={() => setIsHovering(false)}
         >
@@ -156,7 +156,7 @@ export default function ComponentCarousel({
                 {/* Track */}
                 <div
                     className={clsx(
-                        "flex w-full will-change-transform pb-20",
+                        "flex w-full will-change-transform pb-14",
                         "transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)]"
                     )}
                     style={{ transform: `translateX(-${index * 100}%)` }}

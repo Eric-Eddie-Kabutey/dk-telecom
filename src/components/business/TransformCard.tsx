@@ -3,6 +3,7 @@
 import React from "react";
 import clsx from "clsx";
 import { Gauge, Cloud, Headset } from "lucide-react";
+import { splitTextInTwoLines } from "@/utils/utils";
 
 type TransformIdea = {
     id: number;
@@ -24,6 +25,8 @@ const pickIcon = (title: string) => {
 
 export const TransformCard: React.FC<TransformCardProps> = ({ idea, className }) => {
     const Icon = pickIcon(idea.title);
+    const [t1, t2] = splitTextInTwoLines(idea.title);
+    const [s1, s2] = splitTextInTwoLines(idea.subtitle);
 
     return (
         <article
@@ -39,12 +42,12 @@ export const TransformCard: React.FC<TransformCardProps> = ({ idea, className })
                 <Icon className="text-white" size={26} />
             </div>
 
-            <h3 className="mt-4 text-base sm:text-lg font-semibold text-white leading-snug">
-                {idea.title}
+            <h3 className="mt-4 text-h4 font-bold text-white leading-snug">
+                {t1} <br /> {t2}
             </h3>
 
-            <p className="mt-3 text-xs sm:text-sm text-white/75 leading-relaxed">
-                {idea.subtitle}
+            <p className="mt-3 text-body text-white/75 leading-relaxed line-clamp-2">
+                {s1} <br /> {s2}
             </p>
         </article>
     );

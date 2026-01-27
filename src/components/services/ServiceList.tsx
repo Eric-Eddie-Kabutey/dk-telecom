@@ -49,16 +49,16 @@ export const ServiceList: React.FC<ServiceListProps> = ({
     if (!serviceList) return null;
 
     return (
-        <section id={id} className={clsx("w-full py-20", className)}>
+        <section id={id} className={clsx("w-full section-py", className)}>
             <div className="container">
 
                 {/* Title */}
-                <p className="text-md text-dark/60 max-w-2xl">
+                <p className="text-body text-dark/60 max-w-2xl">
                     {serviceList.title}
                 </p>
 
                 {/* Pills (using the titles in serviceList) */}
-                <div className="mt-8 flex flex-wrap gap-4">
+                <div className="mt-stack-md flex flex-wrap gap-4">
                     {items.map((s) => {
                         const isActive = activeId === s.id;
 
@@ -67,7 +67,7 @@ export const ServiceList: React.FC<ServiceListProps> = ({
                                 key={s.id}
                                 onClick={() => setActiveId(isActive ? null : s.id)}
                                 className={clsx(
-                                    "rounded-full border px-4 py-2 text-sm sm:text-lg transition",
+                                    "rounded-full border px-4 py-2 text-button transition",
                                     isActive
                                         ? "bg-primary text-white border-primary"
                                         : "bg-white text-gray-700 border-gray-300 hover:bg-gray-50"
@@ -82,7 +82,7 @@ export const ServiceList: React.FC<ServiceListProps> = ({
                 {/* mosaic grid */}
                 <div
                     className={clsx(
-                        "mt-20 grid grid-cols-1 gap-6",
+                        "mt-stack-lg grid grid-cols-1 fluid-gap",
                         // ✅ mosaic only from sm+
                         "sm:grid-cols-2 sm:grid-flow-dense sm:auto-rows-[58px]"
                     )}

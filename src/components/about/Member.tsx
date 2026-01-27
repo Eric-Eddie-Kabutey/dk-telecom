@@ -29,8 +29,8 @@ export const Member: React.FC<TeamMemberCardProps> = ({
                 />
             </div>
 
-            <h3 className="mt-6 text-base font-semibold text-gray-900">{name}</h3>
-            <p className="mt-1 text-[10px] uppercase tracking-wide text-gray-500">
+            <h3 className="mt-6 text-h4 font-bold text-gray-900">{name}</h3>
+            <p className="mt-1 text-overline text-gray-500">
                 {position}
             </p>
         </div>

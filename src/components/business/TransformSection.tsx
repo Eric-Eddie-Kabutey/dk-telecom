@@ -57,7 +57,7 @@ export const TransformSection: React.FC<TransformSectionProps> = ({
     if (!transform) return null;
 
     return (
-        <section id={id} className={clsx("w-full pb-20", className)}>
+        <section id={id} className={clsx("w-full ", className)}>
             <div className="">
                 <div className="relative">
                     {/* background image */}
@@ -83,7 +83,7 @@ export const TransformSection: React.FC<TransformSectionProps> = ({
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.8 }}
-                            className="text-white text-3xl sm:text-4xl lg:text-5xl font-bold text-center capitalize pt-48"
+                            className="text-white text-center capitalize pt-48"
                         >
                             {transform.title}
                         </motion.h2>
@@ -93,7 +93,7 @@ export const TransformSection: React.FC<TransformSectionProps> = ({
                             initial="hidden"
                             whileInView="visible"
                             viewport={{ once: true, margin: "-100px" }}
-                            className="mt-7 sm:mt-9 pb-28 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3"
+                            className="mt-stack-md pb-28 grid grid-cols-1 fluid-gap sm:grid-cols-2 lg:grid-cols-3"
                         >
                             {(transform.ideas ?? []).map((idea) => (
                                 <motion.div key={idea.id} variants={itemVariants}>

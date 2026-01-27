@@ -78,18 +78,19 @@ export const OpenRoles: React.FC<OpenRolesProps> = ({
     if (!openRoles) return null;
 
     return (
-        <section id={id} className={clsx("w-full py-20", className)}>
+        <section id={id} className={clsx("w-full section-py", className)}>
             <div className="container">
-                {/* Title */}
-                <h2 className="text-center text-3xl sm:text-4xl font-bold text-gray-900 capitalize">
-                    {openRoles.title}
-                </h2>
-                <p className="mx-auto mt-3 max-w-3xl text-center text-sm sm:text-base text-gray-600">
-                    {openRoles.subtitle}
-                </p>
+                <div className="stack-sm">
+                    <h2 className="text-center text-section-heading capitalize">
+                        {openRoles.title}
+                    </h2>
+                    <p className="mx-auto text-center text-body text-gray-600">
+                        {openRoles.subtitle}
+                    </p>
+                </div>
 
                 {/* Tags */}
-                <div className="mt-10 flex flex-wrap justify-center gap-3">
+                <div className="mt-stack-md flex flex-wrap justify-center gap-3">
                     {TAGS.map((t) => {
                         const isActive = activeTag === t.id;
 
@@ -98,7 +99,7 @@ export const OpenRoles: React.FC<OpenRolesProps> = ({
                                 key={t.id}
                                 onClick={() => setActiveTag(t.id)}
                                 className={clsx(
-                                    "rounded-full border px-5 py-2 text-sm font-medium transition",
+                                    "rounded-full border px-5 py-2 text-button transition",
                                     isActive
                                         ? "bg-primary text-white border-primary shadow-sm"
                                         : "bg-white text-gray-700 border-gray-300 hover:bg-gray-50"
@@ -111,7 +112,7 @@ export const OpenRoles: React.FC<OpenRolesProps> = ({
                 </div>
 
                 {/* Search */}
-                <div className="mt-6 flex justify-center">
+                <div className="mt-stack-md flex justify-center">
                     <div className="relative w-full max-w-3xl">
                         <Search
                             size={18}
@@ -123,7 +124,7 @@ export const OpenRoles: React.FC<OpenRolesProps> = ({
                             placeholder="Search Roles"
                             className={clsx(
                                 "w-full rounded-full bg-gray-100 border border-gray-200",
-                                "py-4 pl-12 pr-5 text-sm text-gray-900 outline-none",
+                                "py-4 pl-12 pr-5 text-body text-gray-900 outline-none",
                                 "focus:bg-white focus:border-gray-300"
                             )}
                         />
@@ -131,7 +132,7 @@ export const OpenRoles: React.FC<OpenRolesProps> = ({
                 </div>
 
                 {/* Grid */}
-                <div className="mt-12 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+                <div className="mt-stack-lg grid grid-cols-1 fluid-gap md:grid-cols-2 lg:grid-cols-3">
                     {filtered.map((role) => (
                         <RoleCard key={role.id} role={role} />
                     ))}

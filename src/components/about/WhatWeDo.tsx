@@ -17,12 +17,12 @@ export const WhatWeDo = () => {
                 className="container mx-auto max-w-4xl px-6"
             >
                 {/* Title */}
-                <h2 className="text-left text-3xl sm:text-4xl lg:text-5xl font-extrabold text-dark">
+                <h2 className="text-left text-section-heading">
                     {text.AboutUs.whatWeDo.title}
                 </h2>
 
                 {/* Subtitle */}
-                <p className="mt-4 text-left text-lg sm:text-xl font-light text-dark">
+                <p className="mt-4 text-left text-h3 font-light text-dark/90">
                     {text.AboutUs.whatWeDo.subtitle}
                 </p>
 
@@ -30,7 +30,7 @@ export const WhatWeDo = () => {
                 <div className="mx-auto mt-8 h-1 w-20 rounded-full bg-primary" />
 
                 {/* Body */}
-                <p className="mt-10 text-base sm:text-lg leading-relaxed text-dark/70 text-left">
+                <p className="mt-10 text-body text-dark/70 text-left">
                     {text.AboutUs.whatWeDo.body}
                 </p>
             </motion.div>

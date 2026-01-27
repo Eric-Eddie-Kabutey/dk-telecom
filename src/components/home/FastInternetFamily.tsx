@@ -43,19 +43,19 @@ export const FastInternetFamily = ({ content, imagePath }: Props) => {
 
                     {/* Content */}
                     <div className="relative z-10 h-full flex items-center">
-                        <div className="w-full lg:w-[70%] px-6 sm:px-10 lg:px-14 pt-32 sm:pt-10 lg:pt-20 pb-10 sm:pb-14 lg:pb-20 space-y-5">    
-                            <h2 className="text-white text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight max-w-xl">
+                        <div className="w-full lg:w-[70%] px-6 sm:px-10 lg:px-14 pt-32 sm:pt-10 lg:pt-20 pb-10 sm:pb-14 lg:pb-20 stack-md">
+                            <h2 className="text-section-heading !text-white max-w-xl">
                                 {content.title}
                             </h2>
 
-                            <p className="text-white/60 text-sm sm:text-base lg:text-lg leading-relaxed max-w-md">
+                            <p className="text-white/60 text-body leading-relaxed max-w-md">
                                 {content.desc}
                             </p>
 
                             <button
                                 className={clsx(
                                     "inline-flex items-center justify-center",
-                                    "uppercase tracking-widest text-xs",
+                                    "text-button uppercase",
                                     "text-white border border-white/60",
                                     "rounded-full px-7 md:px-9 py-3 md:py-3.5",
                                     "transition-all duration-300",

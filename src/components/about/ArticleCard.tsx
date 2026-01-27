@@ -45,18 +45,18 @@ export const ArticleCard: React.FC<ArticleCardProps> = ({
             </div>
 
             <div className="py-5 sm:py-6">
-                <h3 className="text-base sm:text-lg font-semibold text-gray-900 leading-snug">
+                <h3 className="text-h4 font-bold text-gray-900 leading-snug">
                     {title}
                 </h3>
 
-                <p className="mt-2 text-sm text-gray-600 leading-relaxed line-clamp-3">
+                <p className="mt-2 text-body text-gray-600 leading-relaxed line-clamp-3">
                     {body}
                 </p>
 
                 <div className="mt-4">
                     <Link
                         href={href}
-                        className="inline-flex items-center gap-2 rounded-lg border border-gray-300 px-3 py-2 text-xs font-medium text-gray-800 hover:bg-gray-50 transition"
+                        className="inline-flex items-center gap-2 rounded-lg border border-gray-300 px-3 py-2 text-button text-gray-800 hover:bg-gray-50 transition"
                     >
                         {buttonLabel}
                         <ArrowRight size={16} />

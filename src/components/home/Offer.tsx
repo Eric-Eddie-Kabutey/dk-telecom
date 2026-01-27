@@ -176,7 +176,7 @@ export const Offer: React.FC<OfferProps> = ({
     const contentWidthClass =
         contentSide === "top" || contentSide === "bottom"
             ? "md:w-full md:max-w-4xl"
-            : "md:w-[90%] lg:w-[70%]";
+            : "md:w-[90%] lg:w-[90%]";
 
     const badgeOverlapPadding = clsx(
         badgePosition.includes("left") ? "md:pl-24" : "",
@@ -239,27 +239,27 @@ export const Offer: React.FC<OfferProps> = ({
                     <div
                         className={clsx(
                             "w-full",
-                            page === "residential" ? "md:max-w-[90%]" : "max-w-[420px]",
+                            page === "residential" ? "md:max-w-[90%]" : "max-w-[80%]",
                             contentWidthClass,
                             "px-4 sm:px-6 lg:px-8 py-20 sm:py-10 lg:py-12",
                             // badgeOverlapPadding
                         )}
                     >
-                        <p className="text-white/75 text-[9px] font-semibold tracking-[0.22em] uppercase">
+                        <p className="text-section-subheading !text-white/75 !mb-0">
                             {offer.tagline}
                         </p>
 
                         <h3
                             className={clsx(
                                 "mt-3 text-white font-bold leading-tight capitalize",
-                                page === "residential" ? "text-3xl sm:text-4xl lg:text-5xl"
-                                    : size === "lg" ? "text-3xl sm:text-4xl" : "text-2xl sm:text-3xl"
+                                page === "residential" ? "text-h2"
+                                    : size === "lg" ? "text-h3" : "text-h4"
                             )}
                         >
                             {offer.title}
                         </h3>
 
-                        <div className="mt-6 grid md:grid-cols-2 items-stretch gap-2">
+                        <div className="mt-2 grid md:grid-cols-2 items-stretch gap-2">
                             {(offer.features ?? []).slice(0, 4).map((f, i) => (
                                 <div
                                     key={`${offer.id}-${i}`}
@@ -274,7 +274,7 @@ export const Offer: React.FC<OfferProps> = ({
                                             page === "residential" ? "h-3 w-3 m-[4px]" : "h-2.5 w-2.5 m-[2px]")} />
                                     </span>
                                     <span className={clsx("text-white/90 font-medium leading-snug capitalize ",
-                                        page === "residential" ? "text-sm sm:text-base lg:text-lg" : "text-[9px]")}
+                                        page === "residential" ? "text-body" : "text-caption")}
                                     >
                                         {f.title}
                                     </span>
@@ -282,14 +282,14 @@ export const Offer: React.FC<OfferProps> = ({
                             ))}
                         </div>
 
-                        <div className="mt-6">
+                        <div className="mt-stack-md">
                             <button
                                 type="button"
                                 onClick={onCtaClick}
                                 className={clsx(
                                     "inline-flex items-center gap-2",
                                     "rounded-xl px-5 py-3",
-                                    page === "residential" ? "text-white text-sm font-light" : "text-white text-sm font-light",
+                                    "text-white text-button",
                                     "border border-white/25 bg-white/0",
                                     "transition-all duration-300",
                                     "hover:bg-white/10 hover:border-white/35"
@@ -302,7 +302,7 @@ export const Offer: React.FC<OfferProps> = ({
                     </div>
                 </div>
 
-                {/* ✅ Badge */}
+                {/* Badge */}
                 <div
                     className={clsx(
                         "absolute z-20",
@@ -315,10 +315,10 @@ export const Offer: React.FC<OfferProps> = ({
                     <div className="relative h-full w-full rounded-full bg-white/0 backdrop-blur-xl">
                         <div className="absolute inset-0 flex items-center justify-center">
                             <div className="flex items-end gap-1">
-                                <span className="text-white text-xl sm:text-2xl font-extrabold leading-none">
+                                <span className="text-white text-h3 font-extrabold leading-none">
                                     {offer.bandwidth}
                                 </span>
-                                <span className="text-white/90 text-[10px] sm:text-xs font-light tracking-widest pb-1.5">
+                                <span className="text-white/90 text-overline pb-1.5">
                                     MBPS
                                 </span>
                             </div>

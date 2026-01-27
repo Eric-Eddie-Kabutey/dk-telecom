@@ -19,7 +19,7 @@ export const OurMission = () => {
                 {/* Grid */}
                 <div
                     className="
-                        grid gap-12
+                        grid fluid-gap
                         grid-cols-[repeat(auto-fit,minmax(260px,1fr))]
                     "
                 >
@@ -38,8 +38,7 @@ export const OurMission = () => {
                                 {/* Icon */}
                                 <div
                                     className="
-                                        mb-8 flex h-40 w-40 rounded-3xl bg-gray-900/5 items-center justify-center
-                                        
+                                        mb-stack-md flex h-40 w-40 rounded-3xl bg-gray-900/5 items-center justify-center
                                     "
                                 >
                                     <Icon
@@ -53,7 +52,7 @@ export const OurMission = () => {
                                 {/* Title*/}
                                 <h3
                                     className="
-                                        text-lg sm:text-xl font-semibold text-dark
+                                        text-h4 font-bold text-dark
                                         line-clamp-2 min-h-[3rem]
                                     "
                                 >
@@ -63,7 +62,7 @@ export const OurMission = () => {
                                 {/* Body */}
                                 <p
                                     className="
-                                        mt-4 px-10 text-sm sm:text-base text-dark/70
+                                        mt-stack-sm px-10 text-body text-dark/70
                                         leading-relaxed
                                         line-clamp-4
                                     "

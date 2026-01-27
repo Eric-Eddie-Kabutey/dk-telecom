@@ -37,24 +37,24 @@ export const Footer = () => {
         <footer className="bg-dark py-20">
             <div className="container flex flex-col md:flex-row-reverse md:items-start items-center justify-between">
                 {/* Logo */}
-                <div className="shrink-0 my-10">
+                <div className="w-full md:w-[50%] flex flex-row items-end justify-start md:justify-end shrink-0 mb-10">
                     <Image
                         src="/assets/resources/logo.svg"
                         alt="DK Telecom"
-                        width={240}
+                        width={110}
                         height={45}
-                        className="h-auto w-[220px] sm:w-[240px]"
+                        className="h-[45px]"
                     />
                 </div>
-                <div>
+                <div className="w-full md:w-[50%]">
                     {/* links1 */}
-                    <div className="my-10 grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-6 md:flex md:gap-10">
+                    <div className="mb-10 flex flex-row flex-wrap gap-4 justify-start md:justify-start sm:items-center sm:gap-x-8 sm:gap-y-3">
                         {links1.map((item) => {
                             const Icon = ICONS[item.icon] ?? MessageSquare;
                             const content = (
                                 <div className="flex items-center gap-3">
                                     <Icon className="text-primary-dark" size={22} />
-                                    <span className="text-base font-normal capitalize text-white sm:text-lg">
+                                    <span className="text-body font-normal capitalize text-white">
                                         {item.label}
                                     </span>
                                 </div>
@@ -80,13 +80,13 @@ export const Footer = () => {
                     </div>
 
                     {/* links2 */}
-                    <div className="mb-10 flex flex-col gap-4 sm:flex-row sm:flex-wrap sm:items-center sm:gap-x-8 sm:gap-y-3">
+                    <div className="mb-10 flex flex-row flex-wrap gap-4 justify-start md:justify-start sm:items-center sm:gap-x-8 sm:gap-y-3">
                         {links2.map((link) =>
                             link.href ? (
                                 <Link
                                     key={link.label}
                                     href={link.href}
-                                    className="text-sm font-light text-white/80 transition hover:text-white"
+                                    className="text-small font-light text-white/80 transition hover:text-white"
                                 >
                                     {link.label}
                                 </Link>
@@ -102,7 +102,7 @@ export const Footer = () => {
                     </div>
 
                     {/* copy */}
-                    <p className="mb-6 text-sm font-light text-white/70">
+                    <p className="text-caption text-left font-light text-white/70">
                         {text.footer.copy}
                     </p>
                 </div>

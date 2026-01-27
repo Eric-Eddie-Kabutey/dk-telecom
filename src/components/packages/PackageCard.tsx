@@ -58,8 +58,8 @@ export const PackageCard: React.FC<PackageCardProps> = ({
                             {pkg.type}
                         </p>
 
-                        <h3 className={clsx("mt-2 font-medium leading-none", "text-xl sm:text-2xl")}>
-                            {pkg.bandwidth.toUpperCase()}<span className="text-md sm:text-lg uppercase">mbps</span>
+                        <h3 className={clsx("mt-2 text-h3 font-bold leading-none")}>
+                            {pkg.bandwidth.toUpperCase()}<span className="text-body uppercase ml-1">mbps</span>
                         </h3>
 
                         <p className={clsx("mt-2 text-[10px] uppercase tracking-wide", isPopular ? "text-white/70" : "text-gray-600")}>
@@ -89,7 +89,7 @@ export const PackageCard: React.FC<PackageCardProps> = ({
                                 <Check size={14} className="text-white" />
                             </span>
 
-                            <span className={clsx("text-[13px] capitalize", isPopular ? "text-white/90" : "text-gray-700")}>
+                            <span className={clsx("text-small capitalize", isPopular ? "text-white/90" : "text-gray-700")}>
                                 {t}
                             </span>
                         </li>
@@ -107,7 +107,7 @@ export const PackageCard: React.FC<PackageCardProps> = ({
                                     {p.title}
                                 </span>
 
-                                <span className={clsx("font-bold", isPopular ? "text-2xl sm:text-3xl" : "text-xl sm:text-2xl")}>
+                                <span className={clsx("font-bold", isPopular ? "text-h2" : "text-h3")}>
                                     {p.price}
                                 </span>
                             </div>
@@ -117,7 +117,7 @@ export const PackageCard: React.FC<PackageCardProps> = ({
                     <button
                         onClick={() => onSelect?.(pkg)}
                         className={clsx(
-                            "mt-6 w-full rounded-xl px-5 py-4 text-sm font-semibold transition inline-flex items-center justify-center gap-2",
+                            "mt-6 w-full rounded-xl px-5 py-4 text-button transition inline-flex items-center justify-center gap-2",
                             "bg-primary text-white hover:opacity-95"
                         )}
                     >

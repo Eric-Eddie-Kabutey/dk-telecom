@@ -21,7 +21,7 @@ type ThingCardProps = {
 export const ThingCard: React.FC<ThingCardProps> = ({ thing, className }) => {
     if (thing.type === "simple") {
         return (
-            <article className={clsx("w-full rounded-2xl bg-white p-4 sm:p-5", className)}>
+            <article className={clsx("w-full rounded-2xl bg-white p-4 sm:p-5 stack-sm", className)}>
                 <div className="relative w-full overflow-hidden rounded-2xl bg-gray-100 aspect-[16/9]">
                     <Image
                         src={thing.img ?? "/assets/resources/placeholder.png"}
@@ -32,11 +32,11 @@ export const ThingCard: React.FC<ThingCardProps> = ({ thing, className }) => {
                     />
                 </div>
 
-                <h3 className="mt-6 capitalize text-base font-semibold text-gray-900">
+                <h3 className="capitalize text-h4 font-bold text-gray-900">
                     {thing.title}
                 </h3>
 
-                <p className=" capitalize text-sm text-gray-600 leading-relaxed">
+                <p className=" capitalize text-body text-gray-600 leading-relaxed">
                     {thing.body}
                 </p>
             </article>
@@ -51,9 +51,9 @@ export const ThingCard: React.FC<ThingCardProps> = ({ thing, className }) => {
                 className
             )}
         >
-            <div className="p-6 sm:p-7">
-                <h3 className="text-lg capitalize font-semibold">{thing.title}</h3>
-                <p className=" capitalize text-sm text-white/85 leading-relaxed max-w-sm">
+            <div className="p-6 sm:p-7 stack-sm">
+                <h3 className="text-h4 capitalize font-bold">{thing.title}</h3>
+                <p className=" capitalize text-body text-white/85 leading-relaxed max-w-sm">
                     {thing.body}
                 </p>
             </div>

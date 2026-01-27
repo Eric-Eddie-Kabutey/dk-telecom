@@ -95,14 +95,14 @@ export const HelpCenter = () => {
     return (
         <div className="bg-white">
             {/* HERO */}
-            <section className="bg-primary text-white pt-40">
-                <div className="container px-4 py-12 sm:py-16 lg:py-20">
-                    <div className="justify-start w-full mb-10 sm:mb-20">
-                        <p className="text-sm font-semibold tracking-widest text-white mb-6">
+            <section className="bg-primary text-white section-py !pb-0">
+                <div className="container px-4">
+                    <div className="pt-32 justify-start w-full mb-stack-lg stack-sm">
+                        <p className="text-section-subheading !text-white !mb-4">
                             {help?.hero?.kicker ?? "HELP"}
                         </p>
 
-                        <h1 className="mt-3 max-w-sm sm:max-w-md md:max-w-lg text-3xl font-bold leading-tight sm:text-4xl md:text-5xl">
+                        <h1 className="mt-3 max-w-sm sm:max-w-md md:max-w-lg text-section-heading !text-white">
                             {help?.hero?.title ?? "Welcome To Our Help Center"}
                         </h1>
                     </div>
@@ -110,15 +110,15 @@ export const HelpCenter = () => {
                     {/* Search */}
                     <form
                         onSubmit={onSearchSubmit}
-                        className="w-full pb-20 sm:pb-0"
+                        className="w-full pb-stack-md sm:pb-0"
                     >
-                        <div className="flex items-center gap-3 rounded-full bg-white p-4 shadow-sm">
+                        <div className="flex items-center gap-3 rounded-full bg-white p-4 shadow-sm mb-4">
                             <Search className="text-dark" size={20} strokeWidth={2.5} />
                             <input
                                 value={query}
                                 onChange={(e) => setQuery(e.target.value)}
                                 placeholder={help?.hero?.searchPlaceholder ?? "Search through our help center"}
-                                className="w-full bg-transparent text-sm text-gray-900 outline-none placeholder:text-gray-500"
+                                className="w-full bg-transparent text-body text-gray-900 outline-none placeholder:text-gray-500"
                                 aria-label="Search help center"
                             />
                         </div>
@@ -127,20 +127,20 @@ export const HelpCenter = () => {
             </section>
 
             {/* CONTENT */}
-            <section className="py-12 sm:py-16">
+            <section className="section-py">
                 <div className="container-inner">
-                    <div className="mx-auto max-w-md text-center">
-                        <h2 className="text-2xl font-bold text-gray-900 sm:text-3xl">
+                    <div className="mx-auto max-w-md text-center stack-sm">
+                        <h2 className="text-h1 font-bold text-gray-900">
                             {help?.section?.title ?? "Help & Support"}
                         </h2>
-                        <p className="mt-3 text-sm text-gray-600 text-center leading-relaxed line-clamp-2 min-h-[3rem]">
+                        <p className="text-body text-gray-600 text-center leading-relaxed line-clamp-2 min-h-[3rem]">
                             {help?.section?.subtitle ??
                                 "Welcome to dk telecom Media's help and support page. Pick a category to get started."}
                         </p>
                     </div>
 
                     {/* Results anchor */}
-                    <div ref={resultsRef} className="mt-10" />
+                    <div ref={resultsRef} className="mt-stack-lg" />
 
                     {/* If searching : show results count + breadcrumbs & clear search button */}
                     {q && (
@@ -167,7 +167,7 @@ export const HelpCenter = () => {
                     )}
 
                     {/* Categories grid */}
-                    <div className="grid gap-5 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
+                    <div className="grid fluid-gap grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
                         {filteredCategories.map((cat) => {
                             const Icon = ICONS[cat.icon] ?? Wifi;
 
@@ -182,7 +182,7 @@ export const HelpCenter = () => {
                                             <Icon className="text-primary text-bold m-6" size={28} strokeWidth={2.3} />
                                         </div>
 
-                                        <p className="mt-4 text-sm font-medium text-gray-800">
+                                        <p className="mt-4 text-body font-bold text-gray-800">
                                             {cat.title}
                                         </p>
                                     </div>

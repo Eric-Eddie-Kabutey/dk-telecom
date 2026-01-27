@@ -39,15 +39,15 @@ export const HeroSimple = ({
             {/* Content */}
             <div className="container relative z-10">
                 <div className="my-[200px] max-w-2xl space-y-8 animate-in fade-in slide-in-from-left duration-1000">
-                    <h1 className="text-xl uppercase text-white/90 font-medium leading-tight drop-shadow-md">
+                    <h1 className="text-h6 uppercase !text-white !mb-4">
                         {tag}
                     </h1>
 
-                    <h2 className="font-bold text-6xl capitalize text-white drop-shadow-sm leading-tight">
+                    <h2 className="text-h1 md:text-h1 text-extrabold text-white capitalize">
                         {title}
                     </h2>
 
-                    <p className="font-extralight text-xl capitalize text-white drop-shadow-sm">
+                    <p className="text-h4 text-white capitalize font-extralight">
                         {subtitle}
                     </p>
                 </div>

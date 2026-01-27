@@ -43,7 +43,7 @@ export const ServiceCard: React.FC<ServiceCardProps> = ({
 
             {/* title */}
             <div className="absolute bottom-14 left-4 right-4">
-                <p className="text-white text-2xl font-semibold leading-tight drop-shadow-sm">
+                <p className="text-white text-h4 font-bold leading-tight drop-shadow-sm">
                     {title}
                 </p>
             </div>

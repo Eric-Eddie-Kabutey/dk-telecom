@@ -9,7 +9,7 @@ export const PaymentHub = () => {
     const { text } = useSiteMode();
 
     return (
-        <section className="relative overflow-hidden text-white py-12 sm:py-16 lg:py-20">
+        <section className="relative overflow-hidden text-white section-py">
             <div className="container mx-auto px-4 sm:px-6 lg:px-8">
                 <div
                     className={clsx(
@@ -20,16 +20,16 @@ export const PaymentHub = () => {
 
                     <div className="flex flex-col lg:grid lg:grid-cols-12 lg:items-center lg:gap-12 min-h-[640px] sm:min-h-[720px] lg:min-h-[420px]">
                         {/* Text */}
-                        <div className="lg:col-span-6 px-7 sm:px-10 lg:px-14 pt-10 sm:pt-14 lg:py-16 space-y-5 sm:space-y-7 text-left">
-                            <p className="uppercase text-[11px] sm:text-xs tracking-[0.22em] text-white/70 font-semibold">
+                        <div className="lg:col-span-6 px-7 sm:px-10 lg:px-14 pt-10 sm:pt-14 lg:py-16 stack-md text-left">
+                            <p className="text-section-subheading !text-white/70 !mb-0">
                                 {text.paymentHub.tagline}
                             </p>
 
-                            <h2 className="text-white text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight max-w-xl">
+                            <h2 className="text-section-heading !text-white max-w-xl">
                                 {text.paymentHub.title}
                             </h2>
 
-                            <p className="text-white/70 text-sm sm:text-base lg:text-lg leading-relaxed max-w-md">
+                            <p className="text-white/70 text-body leading-relaxed max-w-md">
                                 {text.paymentHub.desc}
                             </p>
 
@@ -37,7 +37,7 @@ export const PaymentHub = () => {
                                 <button
                                     className={clsx(
                                         "inline-flex items-center justify-center",
-                                        "uppercase tracking-widest text-xs",
+                                        "text-button uppercase",
                                         "text-white border border-white/60",
                                         "rounded-full px-7 md:px-9 py-3 md:py-3.5",
                                         "transition-all duration-300",

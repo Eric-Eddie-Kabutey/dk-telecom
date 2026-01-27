@@ -46,17 +46,17 @@ export const FamilyPlus = () => {
                     <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12">
                         <div className="hidden lg:block lg:col-span-5" />
 
-                        <div className="lg:col-span-7 px-6 sm:px-10 lg:px-14 py-10 sm:py-12 lg:py-14">
-                            <p className="text-white/75 text-[11px] sm:text-xs font-semibold tracking-[0.22em] uppercase">
+                        <div className="lg:col-span-7 px-6 sm:px-10 lg:px-14 py-10 sm:py-12 lg:py-14 stack-md">
+                            <p className="text-section-subheading !text-white/75 !mb-0">
                                 {familyPlus.tagline}
                             </p>
 
-                            <h2 className="mt-3 text-white text-2xl sm:text-3xl lg:text-4xl font-bold leading-tight max-w-2xl">
+                            <h2 className="mt-3 text-white text-h2 font-bold leading-tight max-w-2xl">
                                 {familyPlus.title}
                             </h2>
 
                             {/* features */}
-                            <div className="mt-6 sm:mt-8 grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
+                            <div className="mt-stack-md grid grid-cols-1 sm:grid-cols-2 fluid-gap">
                                 {(familyPlus.features ?? []).map((f: { title: string }, i: number) => (
                                     <div
                                         key={`${f.title}-${i}`}
@@ -70,7 +70,7 @@ export const FamilyPlus = () => {
                                         <span className="inline-flex h-7 w-7 items-center justify-center rounded-full bg-primary border border-white/10">
                                             <Check className="h-4 w-4 text-white" />
                                         </span>
-                                        <span className="text-white/90 text-sm sm:text-[15px] font-medium capitalize">
+                                        <span className="text-white/90 text-small font-medium capitalize">
                                             {f.title}
                                         </span>
                                     </div>
@@ -78,13 +78,13 @@ export const FamilyPlus = () => {
                             </div>
 
                             {/* CTA */}
-                            <div className="mt-7 sm:mt-9">
+                            <div className="mt-stack-md">
                                 <button
                                     type="button"
                                     className={clsx(
                                         "inline-flex items-center gap-2",
                                         "rounded-xl px-5 py-3",
-                                        "text-white text-sm font-medium",
+                                        "text-white text-button",
                                         "border border-white/25 bg-white/0",
                                         "transition-all duration-300",
                                         "hover:bg-white/10 hover:border-white/35",
@@ -107,7 +107,7 @@ export const FamilyPlus = () => {
                             "h-[110px] w-[110px] sm:h-[132px] sm:w-[132px]",
                             "rounded-full border-[5px] border-white",
                             "shadow-[0_18px_40px_rgba(0,0,0,0.35)]",
-                            
+
                         )}
                     >
                         {/* Gradient fill + glassy look */}
@@ -127,11 +127,11 @@ export const FamilyPlus = () => {
                             {/* content */}
                             <div className="absolute inset-0 flex items-center justify-center">
                                 <div className="flex items-end gap-1 rotate-[8deg]">
-                                    
-                                    <span className="text-white text-4xl sm:text-5xl font-extrabold leading-none">
+
+                                    <span className="text-white text-display font-extrabold leading-none">
                                         10
                                     </span>
-                                    <span className="text-white/90 text-[11px] sm:text-sm font-semibold tracking-widest pb-2">
+                                    <span className="text-white/90 text-overline pb-2">
                                         MBPS
                                     </span>
                                 </div>

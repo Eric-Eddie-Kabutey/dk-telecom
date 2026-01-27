@@ -77,26 +77,28 @@ export const BuildSomethingMeaningful: React.FC<Props> = ({
   if (!data) return null;
 
   return (
-    <section id={id} className={clsx("w-full bg-white py-20", className)}>
+    <section id={id} className={clsx("w-full bg-white section-py", className)}>
       <div className="container ">
-        <motion.h2
-          initial={{ opacity: 0, scale: 0.95 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-          className="max-w-lg mx-auto pt-20 text-center text-2xl sm:text-4xl font-bold text-gray-900 leading-tight capitalize"
-        >
-          {data.title}
-        </motion.h2>
-        <motion.p
-          initial={{ opacity: 0, y: 10 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          className="max-w-2xl mx-auto mt-3 text-center text-sm sm:text-base text-gray-600 capitalize"
-        >
-          {data.subtitle}
-        </motion.p>
+        <div className="stack-sm">
+          <motion.h2
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="max-w-lg mx-auto text-center text-section-heading !mb-0 capitalize"
+          >
+            {data.title}
+          </motion.h2>
+          <motion.p
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="max-w-2xl mx-auto text-center text-body text-gray-600 capitalize"
+          >
+            {data.subtitle}
+          </motion.p>
+        </div>
 
         {/* ✅ 1 col mobile/tablet, 4 cols on desktop */}
         <motion.div
@@ -104,7 +106,7 @@ export const BuildSomethingMeaningful: React.FC<Props> = ({
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
-          className="mt-12 grid grid-cols-1 gap-6 lg:grid-cols-6"
+          className="mt-stack-lg grid grid-cols-1 fluid-gap lg:grid-cols-6"
         >
           {/* ROW 1 (50/50) */}
           {row1[0] && (

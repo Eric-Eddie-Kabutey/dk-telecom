@@ -63,26 +63,26 @@ export const ContactUsForm = ({
     };
 
     return (
-        <section className="bg-gray-50 py-60">
+        <section className="bg-gray-50 section-py">
             <div className="container px-4">
                 {/* Header */}
-                <div className="max-w-2xl">
-                    <h1 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+                <div className="max-w-2xl stack-sm">
+                    <h1 className="text-section-heading !mb-0">
                         {title}
                     </h1>
-                    <p className="mt-2 text-sm text-gray-600 sm:text-base">{subtitle}</p>
-                    <p className="text-sm text-gray-600 sm:text-base">{note}</p>
+                    <p className="text-body text-gray-600">{subtitle}</p>
+                    <p className="text-body text-gray-600">{note}</p>
                 </div>
 
                 {/* Form */}
                 <form
                     onSubmit={handleSubmit}
-                    className="mt-8 sm:mt-10"
+                    className="mt-stack-md"
                 >
-                    <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+                    <div className="grid grid-cols-1 fluid-gap md:grid-cols-2">
                         {/* Full Name */}
-                        <div className="space-y-2">
-                            <label className="text-xs font-medium text-gray-600">
+                        <div className="stack-sm">
+                            <label className="text-small font-bold text-gray-600 uppercase tracking-wider">
                                 Full Name
                             </label>
                             <input
@@ -95,8 +95,8 @@ export const ContactUsForm = ({
                         </div>
 
                         {/* Email */}
-                        <div className="space-y-2">
-                            <label className="text-xs font-medium text-gray-600">Email</label>
+                        <div className="stack-sm">
+                            <label className="text-small font-bold text-gray-600 uppercase tracking-wider">Email</label>
                             <input
                                 value={values.email}
                                 onChange={update("email")}
@@ -108,8 +108,8 @@ export const ContactUsForm = ({
                         </div>
 
                         {/* Message */}
-                        <div className="space-y-2 md:col-span-2">
-                            <label className="text-xs font-medium text-gray-600">
+                        <div className="stack-sm md:col-span-2">
+                            <label className="text-small font-bold text-gray-600 uppercase tracking-wider">
                                 How can we assist you?
                             </label>
                             <textarea
@@ -123,11 +123,11 @@ export const ContactUsForm = ({
                     </div>
 
                     {/* Footer row */}
-                    <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+                    <div className="mt-stack-md flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
                         <button
                             type="submit"
                             disabled={isSubmitting}
-                            className="inline-flex w-fit items-center gap-2 rounded-md border border-dark px-4 py-2 text-sm font-semibold text-gray-700 transition disabled:cursor-not-allowed disabled:opacity-60"
+                            className="inline-flex w-fit items-center gap-2 rounded-md border border-dark px-4 py-2 text-button text-gray-700 transition disabled:cursor-not-allowed disabled:opacity-60"
                         >
                             {isSubmitting ? "Submitting..." : "Submit"} <ArrowRight size={18} />
                         </button>

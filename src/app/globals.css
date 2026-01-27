@@ -3,12 +3,117 @@
 @tailwind utilities;
 
 
+@layer base {
+    h1 {
+        @apply text-h1;
+    }
+
+    h2 {
+        @apply text-h2;
+    }
+
+    h3 {
+        @apply text-h3;
+    }
+
+    h4 {
+        @apply text-h4;
+    }
+
+    h5 {
+        @apply text-h5;
+    }
+
+    h6 {
+        @apply text-h6;
+    }
+
+    body {
+        @apply text-body;
+    }
+}
+
+@layer utilities {
+
+    /* Hero Patterns */
+    .text-hero-title {
+        @apply text-display font-extrabold tracking-tight text-white;
+    }
+
+    .text-hero-subtitle {
+        @apply text-h4 font-medium text-white;
+    }
+
+    /* Section Headings */
+    .text-section-heading {
+        @apply text-h1 font-bold tracking-tight text-dark;
+    }
+
+    .text-section-subheading {
+        @apply text-h5 font-semibold uppercase tracking-widest text-primary mb-2;
+    }
+
+    /* Card Patterns */
+    .text-card-title {
+        @apply text-h4 font-bold text-dark;
+    }
+
+    .text-card-body {
+        @apply text-body text-gray-600;
+    }
+
+    .text-card-meta {
+        @apply text-caption font-medium text-gray-400;
+    }
+
+    /* Form Patterns */
+    .text-form-label {
+        @apply text-small font-semibold text-dark mb-1 block;
+    }
+
+    .text-form-input {
+        @apply text-body text-dark placeholder:text-gray-400;
+    }
+
+    .text-form-helper {
+        @apply text-caption text-gray-500 mt-1;
+    }
+
+    .text-form-error {
+        @apply text-caption font-medium text-red-500 mt-1;
+    }
+
+    /* Spacing Utilities */
+    .section-py {
+        @apply py-section;
+    }
+
+    .section-mt {
+        @apply mt-section;
+    }
+
+    .stack-lg {
+        @apply space-y-stack-lg;
+    }
+
+    .stack-md {
+        @apply space-y-stack-md;
+    }
+
+    .stack-sm {
+        @apply space-y-stack-sm;
+    }
+
+    .fluid-gap {
+        @apply gap-fluid-gap;
+    }
+}
+
 :root {
     --background: #ffffff;
     --foreground: #111827;
     --primary: #4A3FF7;
     --primary-dark: #1D1962;
-
     --dark: #101828;
 }
 
@@ -60,8 +165,3 @@ body {
     background-size: cover;
     background-position: center;
 }
-
-.bg-hero {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url('/assets/resources/hero-bg.png');
-}
-

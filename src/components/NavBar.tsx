@@ -134,7 +134,7 @@ export const NavBar = () => {
                                 <div key={item.href} className="relative flex flex-col justify-between">
                                     <Link
                                         href={item.href}
-                                        className={clsx("py-6 text-xs md:text-sm text-white hover:text-white/60 font-light transition-all duration-200 relative")}
+                                        className={clsx("py-6 text-small text-white hover:text-white/60 font-medium transition-all duration-200 relative")}
                                     >
                                         {item.label}
                                     </Link>
@@ -149,7 +149,7 @@ export const NavBar = () => {
                     <div className="flex items-center space-x-4">
                         <Link
                             href={`/${mode}/branches`}
-                            className="hidden md:flex items-center space-x-2 text-xs md:text-sm font-bold text-white transition-colors"
+                            className="hidden md:flex items-center space-x-2 text-small font-bold text-white transition-colors"
                         >
                             <span>Branch Locator</span>
                         </Link>
@@ -225,7 +225,7 @@ export const NavBar = () => {
                                                 href={item.href}
                                                 onClick={closeMenu}
                                                 className={clsx(
-                                                    "block w-full text-center py-3 text-md font-light rounded-md transition-all",
+                                                    "block w-full text-center py-3 text-body font-medium rounded-md transition-all",
                                                     active ? "bg-dark/10 text-black" : "text-black hover:bg-black/5"
                                                 )}
                                             >

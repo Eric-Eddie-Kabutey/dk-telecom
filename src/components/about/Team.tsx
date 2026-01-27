@@ -32,17 +32,17 @@ export const Team: React.FC<TeamSectionProps> = ({
     if (!team) return null;
 
     return (
-        <section id={id} className={clsx("w-full py-14 sm:py-16", className)}>
+        <section id={id} className={clsx("w-full section-py", className)}>
             <div className="container-inner">
-                <h2 className="mx-auto mt-3 max-w-md text-center text-2xl sm:text-3xl font-bold text-gray-900">
+                <h2 className="mx-auto mt-3 max-w-md text-center text-section-heading !mb-0">
                     {team.title}
                 </h2>
 
-                <p className="mx-auto mt-3 max-w-sm text-center text-sm text-gray-600">
+                <p className="mx-auto mt-3 max-w-sm text-center text-body text-gray-600">
                     {team.subtitle}
                 </p>
 
-                <div className="mt-12 grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-3">
+                <div className="mt-stack-lg grid grid-cols-1 fluid-gap md:grid-cols-2 lg:grid-cols-3">
                     {(team.members ?? []).map((m) => (
                         <Member
                             key={m.id}
