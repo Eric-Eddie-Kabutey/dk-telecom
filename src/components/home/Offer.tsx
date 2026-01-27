@@ -176,7 +176,7 @@ export const Offer: React.FC<OfferProps> = ({
     const contentWidthClass =
         contentSide === "top" || contentSide === "bottom"
             ? "md:w-full md:max-w-4xl"
-            : "md:w-[90%] lg:w-[90%]";
+            : "md:w-[90%] lg:w-[70%]";
 
     const badgeOverlapPadding = clsx(
         badgePosition.includes("left") ? "md:pl-24" : "",
@@ -239,7 +239,7 @@ export const Offer: React.FC<OfferProps> = ({
                     <div
                         className={clsx(
                             "w-full",
-                            page === "residential" ? "md:max-w-[90%]" : "max-w-[80%]",
+                            // page === "residential" ? "md:max-w-[90%]" : "max-w-[60%]",
                             contentWidthClass,
                             "px-4 sm:px-6 lg:px-8 py-20 sm:py-10 lg:py-12",
                             // badgeOverlapPadding
