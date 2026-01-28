@@ -19,7 +19,7 @@
         "ctaPrimary": "Explore Now",
         "features": [
             {
-                "title": "20 mbps download apeed"
+                "title": "20 mbps download speed"
             },
             {
                 "title": "20 mbps upload speed"
@@ -59,7 +59,7 @@
     "fastInternet": {
         "family": {
             "title": "Fast Internet for the Whole Family",
-            "desc": "Stream, studt, game, and browse all th the same time with stable, high speed internet that keeps every family member connected without interruptions."
+            "desc": "Stream, study, game, and browse all at the same time with stable, high speed internet that keeps every family member connected without interruptions."
         },
         "streaming": {
             "title": "Fast Internet Built for Everyday Smooth Streaming",
@@ -69,18 +69,18 @@
     "paymentHub": {
         "tagline": "business solutions",
         "title": "Get your All-in-One Wallet & Payment Hub",
-        "desc": "Pay bills, top uo airtime, link bank accounts, create virtual cards, and manage payments - all from one secure app"
+        "desc": "Pay bills, top up airtime, link bank accounts, create virtual cards, and manage payments - all from one secure app"
     },
     "familyPlus": {
         "tagline": "Family Plus",
-        "title": "Build for Familt Life, Streaming, Learning, and Fun",
+        "title": "Build for Family Life, Streaming, Learning, and Fun",
         "img": "/assets/resources/fast-internet-for-the-whole-family-img.png",
         "features": [
             {
                 "title": "ideal for multiple devices"
             },
             {
-                "title": "HD streaming & gamind"
+                "title": "HD streaming & gaming"
             },
             {
                 "title": "30 days unlimited browsing"
@@ -163,7 +163,7 @@
     },
     "howWeStandOut": {
         "title": "How We Stand Out",
-        "subtitle": "Because you need more than just internet speedyou need reliability, coverage, and a provider that shows up when it matters.",
+        "subtitle": "Because you need more than just internet speed you need reliability, coverage, and a provider that shows up when it matters.",
         "features": [
             {
                 "id": "1",
@@ -455,7 +455,7 @@
         },
         "team": {
             "title": "A Team that understands your everyday internet needs",
-            "subtitle": "meet our team focuses on practical solutions that actually help.",
+            "subtitle": "Meet our team that focuses on practical solutions that actually help.",
             "members": [
                 {
                     "id": 1,
@@ -495,7 +495,7 @@
             "img": "/assets/resources/insights/1.png",
             "tag": "insights",
             "title": "explore our insights and updates",
-            "subtitle": "find the right solution, tailored for your every needs"
+            "subtitle": "find the right solution, tailored for your every need"
         }
     },
     "services": {
@@ -503,7 +503,7 @@
             "img": "/assets/resources/services/hero.png",
             "tag": "services",
             "title": "explore our digital solutions",
-            "subtitle": "find the right solution, tailored for your every needs"
+            "subtitle": "find the right solution, tailored for your every need"
         },
         "serviceList": {
             "title": "At DK Telecom, we deliver practical and reliable digital solutions that help you work smarter, stay secure, and grow with confidence.",
@@ -546,14 +546,14 @@
             "img": "/assets/resources/career/hero.png",
             "tag": "career",
             "title": "build the future of connectivity with us",
-            "subtitle": "vJoin a team that’s passionate about connecting people and communities. At DK, you’ll work on meaningful projects, grow your skills, and help shape reliable internet experiences for homes and businesses.",
+            "subtitle": "Join a team that’s passionate about connecting people and communities. At DK, you’ll work on meaningful projects, grow your skills, and help shape reliable internet experiences for homes and businesses.",
             "button": {
                 "text": "view open roles",
                 "href": "/"
             }
         },
         "buildingSomethingMeaningful": {
-            "title": "biuld something meaningful with a driven team",
+            "title": "build something meaningful with a driven team",
             "subtitle": "We’re bringing together committed young professionals who want to learn, grow, and contribute to projects that go beyond today and leave a lasting mark.",
             "things": [
                 {
@@ -657,7 +657,7 @@
             ]
         },
         "callToAction": {
-            "title": "work with people who respect your ideas, and value collaboravtion",
+            "title": "work with people who respect your ideas, and value collaboration",
             "subtitle": "Haven't found what you're looking for? Save time experts for exclusive deals - we answer calls",
             "button": {
                 "text": "view open roles",
@@ -685,7 +685,7 @@
                         "perfect for families",
                         "stable for school and streaming",
                         "30 days unlimited browsing",
-                        "excellect 24/7 customer care",
+                        "excellent 24/7 customer care",
                         "free support and installation"
                     ],
                     "prices": [
@@ -717,7 +717,7 @@
                         "perfect for power users",
                         "stable for school and streaming",
                         "30 days unlimited browsing",
-                        "excellect 24/7 customer care",
+                        "excellent 24/7 customer care",
                         "free support and installation"
                     ],
                     "prices": [
@@ -792,7 +792,7 @@
             },
             {
                 "id": 5,
-                "title": "garaunteed speeds",
+                "title": "guaranteed speeds",
                 "icon": "Meter"
             }
         ]

@@ -19,7 +19,7 @@
         "ctaPrimary": "Explore Now",
         "features": [
             {
-                "title": "20 mbps download apeed"
+                "title": "20 mbps download speed"
             },
             {
                 "title": "20 mbps upload speed"
@@ -69,18 +69,18 @@
     "paymentHub": {
         "tagline": "business solutions",
         "title": "Get your All-in-One Wallet & Payment Hub",
-        "desc": "Pay bills, top uo airtime, link bank accounts, create virtual cards, and manage payments - all from one secure app"
+        "desc": "Pay bills, top up airtime, link bank accounts, create virtual cards, and manage payments - all from one secure app"
     },
     "familyPlus": {
         "tagline": "Family Plus",
-        "title": "Build for Familt Life, Streaming, Learning, and Fun",
+        "title": "Build for Family Life, Streaming, Learning, and Fun",
         "img": "/assets/resources/fast-internet-for-the-whole-family-img.png",
         "features": [
             {
                 "title": "ideal for multiple devices"
             },
             {
-                "title": "HD streaming & gamind"
+                "title": "HD streaming & gaming"
             },
             {
                 "title": "30 days unlimited browsing"
@@ -483,7 +483,7 @@
             "img": "/assets/resources/insights/1.png",
             "tag": "insights",
             "title": "explore our insights and updates",
-            "subtitle": "find the right solution, tailored for your every needs"
+            "subtitle": "find the right solution, tailored for your every need"
         }
     },
     "services": {
@@ -534,7 +534,7 @@
             "img": "/assets/resources/career/hero.png",
             "tag": "career",
             "title": "build the future of connectivity with us",
-            "subtitle": "vJoin a team that’s passionate about connecting people and communities. At DK, you’ll work on meaningful projects, grow your skills, and help shape reliable internet experiences for homes and businesses.",
+            "subtitle": "Join a team that’s passionate about connecting people and communities. At DK, you’ll work on meaningful projects, grow your skills, and help shape reliable internet experiences for homes and businesses.",
             "button": {
                 "text": "view open roles",
                 "href": "/"
@@ -645,7 +645,7 @@
             ]
         },
         "callToAction": {
-            "title": "work with people who respect your ideas, and value collaboravtion",
+            "title": "work with people who respect your ideas, and value collaboration",
             "subtitle": "Haven't found what you're looking for? Save time experts for exclusive deals - we answer calls",
             "button": {
                 "text": "view open roles",
@@ -656,7 +656,7 @@
     },
     "packages": {
         "hero": {
-            "tag": "residental packages",
+            "tag": "residential packages",
             "title": "the perfect package for every need",
             "subtitle": "Choose a plan that fits your needs and budget",
             "img": "/assets/resources/packages/1.png"
@@ -673,7 +673,7 @@
                         "perfect for families",
                         "stable for school and streaming",
                         "30 days unlimited browsing",
-                        "excellect 24/7 customer care",
+                        "excellent 24/7 customer care",
                         "free support and installation"
                     ],
                     "prices": [
@@ -705,7 +705,7 @@
                         "perfect for power users",
                         "stable for school and streaming",
                         "30 days unlimited browsing",
-                        "excellect 24/7 customer care",
+                        "excellent 24/7 customer care",
                         "free support and installation"
                     ],
                     "prices": [
@@ -780,7 +780,7 @@
             },
             {
                 "id": 5,
-                "title": "garaunteed speeds",
+                "title": "guaranteed speeds",
                 "icon": "Meter"
             }
         ]
