@@ -32,7 +32,7 @@ export const ThingCard: React.FC<ThingCardProps> = ({ thing, className }) => {
                     />
                 </div>
 
-                <h3 className="capitalize text-h4 font-bold text-gray-900">
+                <h3 className="capitalize text-h5 font-bold text-gray-900">
                     {thing.title}
                 </h3>
 
@@ -43,11 +43,11 @@ export const ThingCard: React.FC<ThingCardProps> = ({ thing, className }) => {
         );
     }
 
-    // ✅ Detailed (blue) — title + body + 2 layered images
+    // Detailed (blue) — title + body + 2 layered images
     return (
         <article
             className={clsx(
-                "relative w-full overflow-hidden rounded-2xl bg-primary text-white",
+                "relative w-full overflow-hidden pb-6 rounded-2xl bg-primary text-white",
                 className
             )}
         >

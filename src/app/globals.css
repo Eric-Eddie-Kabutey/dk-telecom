@@ -41,12 +41,12 @@
     }
 
     .text-hero-subtitle {
-        @apply text-h4 font-medium text-white;
+        @apply text-h5 font-medium text-white;
     }
 
     /* Section Headings */
     .text-section-heading {
-        @apply text-h1 font-bold tracking-tight text-dark;
+        @apply text-h3 font-bold tracking-tight text-dark;
     }
 
     .text-section-subheading {
@@ -55,7 +55,7 @@
 
     /* Card Patterns */
     .text-card-title {
-        @apply text-h4 font-bold text-dark;
+        @apply text-h5 font-bold text-dark;
     }
 
     .text-card-body {

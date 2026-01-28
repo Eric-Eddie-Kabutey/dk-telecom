@@ -38,18 +38,18 @@ export const HeroSimple = ({
 
             {/* Content */}
             <div className="container relative z-10">
-                <div className="my-[200px] max-w-2xl space-y-8 animate-in fade-in slide-in-from-left duration-1000">
+                <div className="my-[200px] max-w-3xl space-y-8 animate-in fade-in slide-in-from-left duration-1000">
                     <h1 className="text-h6 uppercase !text-white !mb-4">
                         {tag}
                     </h1>
 
-                    <h2 className="text-h1 md:text-h1 text-extrabold text-white capitalize">
+                    <h2 className="text-h2 md:text-h2 text-extrabold text-white capitalize">
                         {title}
                     </h2>
 
-                    <p className="text-h4 text-white capitalize font-extralight">
+                    <p className="text-h5 text-white capitalize font-extralight">
                         {subtitle}
-                    </p>
+                    </p>3
                 </div>
             </div>
         </section>

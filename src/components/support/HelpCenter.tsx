@@ -110,7 +110,7 @@ export const HelpCenter = () => {
                     {/* Search */}
                     <form
                         onSubmit={onSearchSubmit}
-                        className="w-full pb-stack-md sm:pb-0"
+                        className="w-full pb-stack-md"
                     >
                         <div className="flex items-center gap-3 rounded-full bg-white p-4 shadow-sm mb-4">
                             <Search className="text-dark" size={20} strokeWidth={2.5} />
@@ -129,7 +129,7 @@ export const HelpCenter = () => {
             {/* CONTENT */}
             <section className="section-py">
                 <div className="container-inner">
-                    <div className="mx-auto max-w-md text-center stack-sm">
+                    <div className="mx-auto max-w-4xl text-center stack-sm">
                         <h2 className="text-h1 font-bold text-gray-900">
                             {help?.section?.title ?? "Help & Support"}
                         </h2>

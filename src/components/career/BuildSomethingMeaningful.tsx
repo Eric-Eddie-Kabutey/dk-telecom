@@ -85,7 +85,7 @@ export const BuildSomethingMeaningful: React.FC<Props> = ({
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="max-w-lg mx-auto text-center text-section-heading !mb-0 capitalize"
+            className="mx-auto text-center text-section-heading !mb-0 capitalize"
           >
             {data.title}
           </motion.h2>
@@ -106,7 +106,7 @@ export const BuildSomethingMeaningful: React.FC<Props> = ({
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
-          className="mt-stack-lg grid grid-cols-1 fluid-gap lg:grid-cols-6"
+          className="mt-stack-lg grid grid-cols-1 gap-4 lg:grid-cols-6"
         >
           {/* ROW 1 (50/50) */}
           {row1[0] && (

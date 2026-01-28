@@ -34,7 +34,7 @@ export const Team: React.FC<TeamSectionProps> = ({
     return (
         <section id={id} className={clsx("w-full section-py", className)}>
             <div className="container-inner">
-                <h2 className="mx-auto mt-3 max-w-md text-center text-section-heading !mb-0">
+                <h2 className="mx-auto mt-3 max-w-4xl text-center text-section-heading !mb-0">
                     {team.title}
                 </h2>
 

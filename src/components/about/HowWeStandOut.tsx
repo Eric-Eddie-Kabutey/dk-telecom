@@ -50,7 +50,7 @@ export const HowWeStandOut = () => {
 
                 <div className="relative flex h-full flex-col">
                   {/* Title */}
-                  <p className="text-card-title pt-6 sm:pt-8 px-4 text-center font-bold text-gray-900 capitalize">
+                  <p className="text-h6 pt-6 sm:pt-8 px-4 text-center font-bold text-gray-900 capitalize">
                     {feature.titleSection1}{" "}
                     <span className="text-primary">{feature.titleSection2}</span>{" "}
                     {feature.titleSection3}
