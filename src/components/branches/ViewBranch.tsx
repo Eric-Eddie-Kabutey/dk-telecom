@@ -21,9 +21,31 @@ type ViewBranchProps = {
 };
 
 const ViewBranch = ({ lat, lng, name, address }: ViewBranchProps) => {
+    // Create a temporary branch object to satisfy the LeafletMap interface
+    // which expects an array of full Branch objects
+    const branchData = {
+        id: 99999, // Temporary ID for view-only map
+        name: name,
+        address: address,
+        description: "",
+        phone: "",
+        openingHours: "",
+        services: [],
+        region: "",
+        town: "",
+        location: {
+            lat: lat,
+            lng: lng
+        }
+    };
+
     return (
         <div className="w-full h-[300px] md:h-full min-h-[300px] border border-gray-200 rounded-2xl overflow-hidden shadow-sm">
-            <LeafletMap lat={lat} lng={lng} name={name} address={address} />
+            <LeafletMap
+                branches={[branchData]}
+                selectedBranchId={99999}
+                onMarkerClick={() => { }}
+            />
         </div>
     );
 };
