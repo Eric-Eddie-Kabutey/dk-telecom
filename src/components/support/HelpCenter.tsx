@@ -2,6 +2,7 @@
 
 import React, { useMemo, useRef, useState } from "react";
 import Link from "next/link";
+import { useSearchParams } from "next/navigation";
 import { useSiteMode } from "@/context/SiteModeProvider";
 import {
     Search,
@@ -48,7 +49,9 @@ export const HelpCenter = () => {
     const help = text.help;
     const categories = (help?.categories ?? []) as HelpCategory[];
 
-    const [query, setQuery] = useState("");
+    const searchParams = useSearchParams();
+    const initialQuery = searchParams.get("q") ?? "";
+    const [query, setQuery] = useState(initialQuery);
     const resultsRef = useRef<HTMLDivElement | null>(null);
 
     const q = norm(query);

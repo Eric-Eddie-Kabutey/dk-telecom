@@ -49,7 +49,7 @@ export const HeroSimple = ({
 
                     <p className="text-h5 text-white capitalize font-extralight">
                         {subtitle}
-                    </p>3
+                    </p>
                 </div>
             </div>
         </section>

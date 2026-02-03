@@ -232,7 +232,7 @@
                 "id": "broadband",
                 "title": "BroadBand",
                 "icon": "Wifi",
-                "href": "/help/broadband",
+                "href": "/residential/support?q=broadband",
                 "keywords": [
                     "internet",
                     "wifi",
@@ -242,7 +242,7 @@
                 "articles": [
                     {
                         "title": "Slow internet troubleshooting",
-                        "href": "/help/broadband/slow",
+                        "href": "/residential/support?q=slow",
                         "keywords": [
                             "slow",
                             "speed"
@@ -250,7 +250,7 @@
                     },
                     {
                         "title": "How to reset your router",
-                        "href": "/help/broadband/reset-router",
+                        "href": "/residential/support?q=reset router",
                         "keywords": [
                             "reset",
                             "router"
@@ -262,7 +262,7 @@
                 "id": "billing",
                 "title": "Billing",
                 "icon": "CreditCard",
-                "href": "/help/billing",
+                "href": "/residential/support?q=billing",
                 "keywords": [
                     "payment",
                     "invoice",
@@ -273,7 +273,7 @@
                 "id": "account",
                 "title": "My Account",
                 "icon": "User",
-                "href": "/help/account",
+                "href": "/residential/support?q=account",
                 "keywords": [
                     "profile",
                     "login",
@@ -284,7 +284,7 @@
                 "id": "support",
                 "title": "Support",
                 "icon": "Headset",
-                "href": "/help/support",
+                "href": "/residential/support?q=support",
                 "keywords": [
                     "help",
                     "ticket",
@@ -295,7 +295,7 @@
                 "id": "billing2",
                 "title": "Billing",
                 "icon": "CreditCard",
-                "href": "/help/billing",
+                "href": "/residential/support?q=billing",
                 "keywords": [
                     "payment",
                     "invoice",
@@ -306,7 +306,7 @@
                 "id": "broadband2",
                 "title": "BroadBand",
                 "icon": "Wifi",
-                "href": "/help/broadband",
+                "href": "/residential/support?q=broadband",
                 "keywords": [
                     "internet",
                     "wifi",
@@ -316,7 +316,7 @@
                 "articles": [
                     {
                         "title": "Slow internet troubleshooting 2",
-                        "href": "/help/broadband/slow",
+                        "href": "/residential/support?q=slow",
                         "keywords": [
                             "slow",
                             "speed"
@@ -324,7 +324,7 @@
                     },
                     {
                         "title": "How to reset your router 2",
-                        "href": "/help/broadband/reset-router",
+                        "href": "/residential/support?q=reset router",
                         "keywords": [
                             "reset",
                             "router"
@@ -336,7 +336,7 @@
                 "id": "support2",
                 "title": "Support",
                 "icon": "Headset",
-                "href": "/help/support",
+                "href": "/residential/support?q=support",
                 "keywords": [
                     "help",
                     "ticket",
@@ -347,7 +347,7 @@
                 "id": "account2",
                 "title": "My Account",
                 "icon": "User",
-                "href": "/help/account",
+                "href": "/residential/support?q=account",
                 "keywords": [
                     "profile",
                     "login",
