@@ -20,7 +20,6 @@ export const NavBar = () => {
         { label: text.nav.contact, href: `/${mode}/contact` },
         { label: text.nav.support, href: `/${mode}/support` },
         { label: text.nav.career, href: `/${mode}/career` },
-        { label: text.nav.packages, href: `/${mode}/packages` },
     ];
 
     const isActive = (href: string) => {

@@ -58,6 +58,7 @@ export default function UnifiedHome() {
                                 badgeRotation="8deg"
                                 className="h-full"
                                 page="residential"
+                                ctaHref={`/${currentMode}/packages`}
                             />
                         </div>
                         <div className="container">
@@ -70,6 +71,7 @@ export default function UnifiedHome() {
                                 badgeRotation="8deg"
                                 className="h-full"
                                 page="residential"
+                                ctaHref={`/${currentMode}/packages`}
                             />
                         </div>
                         <div className="container">
@@ -82,6 +84,7 @@ export default function UnifiedHome() {
                                 badgeRotation="8deg"
                                 className="h-full"
                                 page="residential"
+                                ctaHref={`/${currentMode}/packages`}
                             />
                         </div>
                     </ComponentCarousel>

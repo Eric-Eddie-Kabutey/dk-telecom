@@ -2,6 +2,7 @@
 
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 import clsx from "clsx";
 import { Check } from "lucide-react";
 import { useSiteMode } from "@/context/SiteModeProvider";
@@ -18,7 +19,7 @@ type PackageItem = {
 };
 
 export const HeroMain = () => {
-    const { text } = useSiteMode();
+    const { text, mode } = useSiteMode();
 
     const packageList: PackageItem[] =
         text?.packages?.packageSection?.packageList ?? [];
@@ -142,7 +143,9 @@ export const HeroMain = () => {
                         </div>
 
                         <button className="bg-transparent border px-6 sm:px-10 py-2 md:py-4 rounded-full uppercase text-white transition-all hover:scale-105 shadow-xl text-[12px] md:text-button truncate">
-                            {text.hero.ctaPrimary}
+                            <Link href={`/${mode}/packages`}>
+                                {text.hero.ctaPrimary}
+                            </Link>
                         </button>
                     </div>
                 </div>

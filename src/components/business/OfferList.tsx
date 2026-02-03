@@ -46,7 +46,7 @@ export const OfferList: React.FC<OfferListProps> = ({
     id = "offers",
     requestHref = "/",
 }) => {
-    const { text } = useSiteMode();
+    const { text, mode } = useSiteMode();
     const offers = text?.offers as OffersData;
 
     if (!offers) return null;
@@ -102,6 +102,7 @@ export const OfferList: React.FC<OfferListProps> = ({
                                 badgeRotation="-8deg"
                                 className="h-full"
                                 page="business"
+                                ctaHref={`/${mode}/packages`}
                             />
                         </motion.div>
                     ) : null}
@@ -117,6 +118,7 @@ export const OfferList: React.FC<OfferListProps> = ({
                                 badgePosition="top-right"
                                 badgeRotation="8deg"
                                 className="h-full"
+                                ctaHref={`/${mode}/packages`}
                             />
                         </motion.div>
                     ) : null}
@@ -132,6 +134,7 @@ export const OfferList: React.FC<OfferListProps> = ({
                                 badgePosition="top-left"
                                 badgeRotation="-8deg"
                                 className="h-full"
+                                ctaHref={`/${mode}/packages`}
                             />
                         </motion.div>
                     ) : null}

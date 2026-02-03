@@ -1,8 +1,11 @@
 "use client";
 
 import React from "react";
+import Link from "next/link";
 import clsx from "clsx";
 import { DollarSign, Code2, Briefcase, CalendarDays } from "lucide-react";
+import { useSiteMode } from "@/context/SiteModeProvider";
+import { slugify } from "@/utils/slugify";
 
 type Role = {
     id: number;
@@ -29,11 +32,14 @@ function getUnitIcon(unit: string) {
 
 export const RoleCard: React.FC<RoleCardProps> = ({ role, className }) => {
     const Icon = getUnitIcon(role.unit);
+    const { mode } = useSiteMode();
+    const slug = slugify(role.title);
 
     return (
-        <article
+        <Link
+            href={`/${mode}/career/${slug}`}
             className={clsx(
-                "flex flex-col justify-between w-full rounded-2xl border border-gray-200 bg-white p-6 shadow-sm transition hover:shadow-md stack-sm",
+                "flex flex-col justify-between w-full rounded-2xl border border-gray-200 bg-white p-6 shadow-sm transition hover:shadow-md hover:border-primary/30 stack-sm",
                 className
             )}
         >
@@ -69,6 +75,6 @@ export const RoleCard: React.FC<RoleCardProps> = ({ role, className }) => {
                 <CalendarDays size={16} />
                 <span className="capitalize">{role.date}</span>
             </div>
-        </article>
+        </Link>
     );
 };

@@ -43,7 +43,7 @@ export const Footer = () => {
                         alt="DK Telecom"
                         width={110}
                         height={45}
-                        className="h-[45px]"
+                        className="w-[195px]"
                     />
                 </div>
                 <div className="w-full md:w-[50%]">

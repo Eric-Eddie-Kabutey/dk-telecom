@@ -1,9 +1,8 @@
-"use client";
-
-import React, { useEffect } from "react";
-import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
+import React, { useEffect, useRef } from "react";
+import { MapContainer, TileLayer, Marker, Popup, useMap } from "react-leaflet";
 import L from "leaflet";
 import "leaflet/dist/leaflet.css";
+import { Branch } from "../types";
 
 // Fix for default marker icon issues in Next.js
 const icon = L.icon({
@@ -15,33 +14,70 @@ const icon = L.icon({
     shadowSize: [41, 41]
 });
 
-type LeafletMapProps = {
-    lat: number;
-    lng: number;
-    name: string;
-    address: string;
+// Component to handle fitting bounds
+const MapBounds = ({ branches, selectedBranchId }: { branches: Branch[], selectedBranchId: number | null }) => {
+    const map = useMap();
+
+    useEffect(() => {
+        if (branches.length === 0) return;
+
+        if (selectedBranchId) {
+            const selected = branches.find(b => b.id === selectedBranchId);
+            if (selected) {
+                map.flyTo([selected.location.lat, selected.location.lng], 16, {
+                    duration: 1.5
+                });
+            }
+        } else {
+            const bounds = L.latLngBounds(branches.map(b => [b.location.lat, b.location.lng]));
+            map.fitBounds(bounds, { padding: [50, 50] });
+        }
+    }, [branches, selectedBranchId, map]);
+
+    return null;
 };
 
-const LeafletMap = ({ lat, lng, name, address }: LeafletMapProps) => {
+type LeafletMapProps = {
+    branches: Branch[];
+    selectedBranchId: number | null;
+    onMarkerClick?: (branchId: number) => void;
+};
+
+const LeafletMap = ({ branches, selectedBranchId, onMarkerClick }: LeafletMapProps) => {
     return (
         <MapContainer
-            center={[lat, lng]}
-            zoom={15}
-            scrollWheelZoom={false}
-            className="h-full w-full"
+            center={[13.4432, -16.7085]} // Default center (approx Gambia area)
+            zoom={11}
+            scrollWheelZoom={true}
+            className="h-full w-full z-0"
+            style={{ minHeight: "400px" }}
         >
             <TileLayer
                 attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+                // Using a cleaner, light map style if available, or standard OSM
                 url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
             />
-            <Marker position={[lat, lng]} icon={icon}>
-                <Popup>
-                    <div className="text-sm">
-                        <strong className="block">{name}</strong>
-                        <span className="text-gray-600 font-light">{address}</span>
-                    </div>
-                </Popup>
-            </Marker>
+
+            <MapBounds branches={branches} selectedBranchId={selectedBranchId} />
+
+            {branches.map((branch) => (
+                <Marker
+                    key={branch.id}
+                    position={[branch.location.lat, branch.location.lng]}
+                    icon={icon}
+                    eventHandlers={{
+                        click: () => onMarkerClick && onMarkerClick(branch.id)
+                    }}
+                >
+                    <Popup>
+                        <div className="text-sm p-1">
+                            <h3 className="font-bold text-gray-900 text-base mb-1">{branch.name}</h3>
+                            <p className="text-gray-600 text-xs mb-2">{branch.address}</p>
+                            <p className="text-primary font-semibold text-xs">{branch.phone}</p>
+                        </div>
+                    </Popup>
+                </Marker>
+            ))}
         </MapContainer>
     );
 };

@@ -2,7 +2,9 @@
 
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { clsx } from "clsx";
+import { useSiteMode } from "@/context/SiteModeProvider";
 
 type Content = {
     title: string;
@@ -15,6 +17,7 @@ type Props = {
 };
 
 export const FastInternetFamily = ({ content, imagePath }: Props) => {
+    const { mode } = useSiteMode();
     return (
         <div className="container">
             <div className="relative overflow-hidden rounded-[28px] md:rounded-[36px] shadow-2xl bg-black">
@@ -52,7 +55,8 @@ export const FastInternetFamily = ({ content, imagePath }: Props) => {
                                 {content.desc}
                             </p>
 
-                            <button
+                            <Link
+                                href={`/${mode}/packages`}
                                 className={clsx(
                                     "inline-flex items-center justify-center",
                                     "text-button uppercase",
@@ -65,7 +69,7 @@ export const FastInternetFamily = ({ content, imagePath }: Props) => {
                                 )}
                             >
                                 Explore now
-                            </button>
+                            </Link>
                         </div>
                     </div>
                 </div>

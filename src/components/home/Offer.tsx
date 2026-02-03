@@ -3,6 +3,7 @@
 import React from "react";
 import Image from "next/image";
 import clsx from "clsx";
+import Link from "next/link";
 import { Check, ArrowRight } from "lucide-react";
 
 type OfferFeature = { title: string };
@@ -37,6 +38,7 @@ type OfferProps = {
 
     ctaText?: string;
     onCtaClick?: () => void;
+    ctaHref?: string;
 
     size?: "lg" | "sm";
     imageObjectPosition?: "left" | "right" | "center";
@@ -131,6 +133,7 @@ export const Offer: React.FC<OfferProps> = ({
     badgePosition,
     ctaText = "Get Started",
     onCtaClick,
+    ctaHref,
     size = "sm",
     imageObjectPosition = "right",
     badgeRotation = "",
@@ -283,21 +286,38 @@ export const Offer: React.FC<OfferProps> = ({
                         </div>
 
                         <div className="mt-stack-md">
-                            <button
-                                type="button"
-                                onClick={onCtaClick}
-                                className={clsx(
-                                    "inline-flex items-center gap-2",
-                                    "rounded-xl px-5 py-3",
-                                    "text-white text-button",
-                                    "border border-white/25 bg-white/0",
-                                    "transition-all duration-300",
-                                    "hover:bg-white/10 hover:border-white/35"
-                                )}
-                            >
-                                {ctaText}
-                                <ArrowRight className="h-4 w-4" />
-                            </button>
+                            {ctaHref ? (
+                                <Link
+                                    href={ctaHref}
+                                    className={clsx(
+                                        "inline-flex items-center gap-2",
+                                        "rounded-xl px-5 py-3",
+                                        "text-white text-button",
+                                        "border border-white/25 bg-white/0",
+                                        "transition-all duration-300",
+                                        "hover:bg-white/10 hover:border-white/35"
+                                    )}
+                                >
+                                    {ctaText}
+                                    <ArrowRight className="h-4 w-4" />
+                                </Link>
+                            ) : (
+                                <button
+                                    type="button"
+                                    onClick={onCtaClick}
+                                    className={clsx(
+                                        "inline-flex items-center gap-2",
+                                        "rounded-xl px-5 py-3",
+                                        "text-white text-button",
+                                        "border border-white/25 bg-white/0",
+                                        "transition-all duration-300",
+                                        "hover:bg-white/10 hover:border-white/35"
+                                    )}
+                                >
+                                    {ctaText}
+                                    <ArrowRight className="h-4 w-4" />
+                                </button>
+                            )}
                         </div>
                     </div>
                 </div>

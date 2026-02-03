@@ -23,6 +23,7 @@ type LatestNewsArticle = {
   // 🔥 Add this in your JSON if you want proper filtering:
   // categoryId: "news" | "events" | "case studies"
   categoryId?: string;
+  content?: string[];
 };
 
 type LatestNewsSectionProps = {

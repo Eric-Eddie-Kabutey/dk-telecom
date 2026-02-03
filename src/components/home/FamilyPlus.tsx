@@ -4,6 +4,7 @@ import React from "react";
 import Image from "next/image";
 import clsx from "clsx";
 import { Check, ArrowRight } from "lucide-react";
+import Link from "next/link";
 import { useSiteMode } from "@/context/SiteModeProvider";
 
 export const FamilyPlus = () => {
@@ -91,8 +92,10 @@ export const FamilyPlus = () => {
                                         "focus:outline-none focus-visible:ring-2 focus-visible:ring-white/30 focus-visible:ring-offset-2 focus-visible:ring-offset-[#14146A]"
                                     )}
                                 >
-                                    Get Started
-                                    <ArrowRight className="h-4 w-4" />
+                                    <Link href="/residential/packages" className="flex items-center gap-2">
+                                        Get Started
+                                        <ArrowRight className="h-4 w-4" />
+                                    </Link>
                                 </button>
                             </div>
                         </div>

@@ -3,7 +3,9 @@
 import React from "react";
 import Image from "next/image";
 import { clsx } from "clsx";
+import Link from "next/link";
 import { ArrowRight } from "lucide-react";
+import { useSiteMode } from "@/context/SiteModeProvider";
 
 type Content = {
     title: string;
@@ -16,6 +18,7 @@ type Props = {
 };
 
 export const FastInternetStreaming = ({ content, imagePath }: Props) => {
+    const { mode } = useSiteMode();
     return (
         <div className="container">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center">
@@ -30,7 +33,8 @@ export const FastInternetStreaming = ({ content, imagePath }: Props) => {
                         {content.desc}
                     </p>
 
-                    <button
+                    <Link
+                        href={`/${mode}/packages`}
                         className={clsx(
                             "inline-flex items-center justify-center gap-3",
                             "uppercase tracking-widest text-xs",
@@ -44,7 +48,7 @@ export const FastInternetStreaming = ({ content, imagePath }: Props) => {
                     >
                         Get Started
                         <ArrowRight className="h-4 w-4" />
-                    </button>
+                    </Link>
                 </div>
 
                 {/* Visual */}
