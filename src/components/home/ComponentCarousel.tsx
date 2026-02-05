@@ -28,7 +28,7 @@ export default function ComponentCarousel({
     showIndicators = true,
     indicatorsClassName = "",
 
-    showArrows = false, // (kept in props for later if you add arrows)
+    showArrows = false,
     className = "",
     slideClassName = "",
 }: CarouselProps) {
@@ -64,7 +64,6 @@ export default function ComponentCarousel({
         return () => window.clearInterval(t);
     }, [autoPlay, intervalMs, count, pauseOnHover, isHovering]);
 
-    // keyboard navigation
     React.useEffect(() => {
         const onKeyDown = (e: KeyboardEvent) => {
             if (e.key === "ArrowLeft") prev();
@@ -74,7 +73,6 @@ export default function ComponentCarousel({
         return () => window.removeEventListener("keydown", onKeyDown);
     }, [next, prev]);
 
-    // swipe handling (pointer + touch)
     const startXRef = React.useRef<number | null>(null);
     const startYRef = React.useRef<number | null>(null);
     const deltaXRef = React.useRef<number>(0);
@@ -91,7 +89,6 @@ export default function ComponentCarousel({
         const dx = x - startXRef.current;
         const dy = y - startYRef.current;
 
-        // Only consider it a swipe if it's more horizontal than vertical
         if (Math.abs(dx) > Math.abs(dy)) {
             deltaXRef.current = dx;
         }
@@ -106,13 +103,15 @@ export default function ComponentCarousel({
 
         if (Math.abs(dx) < threshold) return;
 
-        // swipe left -> next, swipe right -> prev
         if (dx < 0) next();
         else prev();
     };
 
-    // Pointer events (covers mouse/pen/touch in most browsers)
     const onPointerDown = (e: React.PointerEvent<HTMLDivElement>) => {
+        const target = e.target as HTMLElement;
+        if (target.closest('a') || target.closest('button')) {
+            return;
+        }
         beginSwipe(e.clientX, e.clientY);
         e.currentTarget.setPointerCapture(e.pointerId);
     };
@@ -123,8 +122,11 @@ export default function ComponentCarousel({
 
     const onPointerUp = () => endSwipe();
 
-    // Touch fallback (helps on some mobile Safari edge cases)
     const onTouchStart = (e: React.TouchEvent<HTMLDivElement>) => {
+        const target = e.target as HTMLElement;
+        if (target.closest('a') || target.closest('button')) {
+            return;
+        }
         const t = e.touches[0];
         beginSwipe(t.clientX, t.clientY);
     };

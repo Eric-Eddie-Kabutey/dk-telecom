@@ -2,6 +2,8 @@
 
 import React, { useState } from "react";
 import { ArrowRight } from "lucide-react";
+import { useSiteMode } from "@/context/SiteModeProvider";
+import { WHATSAPP_PHONE_NUMBER } from "@/constants/contact";
 
 type ContactFormValues = {
     fullName: string;
@@ -22,6 +24,7 @@ export const ContactUsForm = ({
     note = "we can’t wait to hear from you",
     onSubmit,
 }: ContactUsProps) => {
+    const { mode } = useSiteMode();
     const [values, setValues] = useState<ContactFormValues>({
         fullName: "",
         email: "",
@@ -45,12 +48,13 @@ export const ContactUsForm = ({
             setIsSubmitting(true);
             setStatus("idle");
 
-            // If you pass onSubmit, you can call your API here
-            await onSubmit?.(values);
-
-            // If no onSubmit, just simulate success
-            if (!onSubmit) {
-                await new Promise((r) => setTimeout(r, 600));
+            if (onSubmit) {
+                await onSubmit(values);
+            } else {
+                // Redirect to WhatsApp with form data
+                const message = `Hello DK Telecom ${mode === "business" ? "Business" : "Residential"},\n\nName: ${values.fullName}\nEmail: ${values.email}\n\nMessage:\n${values.message}`;
+                const whatsappUrl = `https://wa.me/${WHATSAPP_PHONE_NUMBER.replace(/\D/g, "")}?text=${encodeURIComponent(message)}`;
+                window.open(whatsappUrl, "_blank", "noopener,noreferrer");
             }
 
             setStatus("success");
@@ -131,16 +135,6 @@ export const ContactUsForm = ({
                         >
                             {isSubmitting ? "Submitting..." : "Submit"} <ArrowRight size={18} />
                         </button>
-
-                        {/* Tiny status text (optional) */}
-                        {status === "success" && (
-                            <p className="text-sm text-gray-600">✅ Sent. We got you.</p>
-                        )}
-                        {status === "error" && (
-                            <p className="text-sm text-gray-600">
-                                😵‍💫 Something went wrong. Try again.
-                            </p>
-                        )}
                     </div>
                 </form>
             </div>
