@@ -290,69 +290,6 @@
                     "ticket",
                     "contact"
                 ]
-            },
-            {
-                "id": "billing2",
-                "title": "Billing",
-                "icon": "CreditCard",
-                "href": "/business/support?q=billing",
-                "keywords": [
-                    "payment",
-                    "invoice",
-                    "charges"
-                ]
-            },
-            {
-                "id": "broadband2",
-                "title": "BroadBand",
-                "icon": "Wifi",
-                "href": "/business/support?q=broadband",
-                "keywords": [
-                    "internet",
-                    "wifi",
-                    "router",
-                    "speed"
-                ],
-                "articles": [
-                    {
-                        "title": "Slow internet troubleshooting 2",
-                        "href": "/business/support?q=slow",
-                        "keywords": [
-                            "slow",
-                            "speed"
-                        ]
-                    },
-                    {
-                        "title": "How to reset your router 2",
-                        "href": "/business/support?q=reset router",
-                        "keywords": [
-                            "reset",
-                            "router"
-                        ]
-                    }
-                ]
-            },
-            {
-                "id": "support2",
-                "title": "Support",
-                "icon": "Headset",
-                "href": "/business/support?q=support",
-                "keywords": [
-                    "help",
-                    "ticket",
-                    "contact"
-                ]
-            },
-            {
-                "id": "account2",
-                "title": "My Account",
-                "icon": "User",
-                "href": "/business/support?q=account",
-                "keywords": [
-                    "profile",
-                    "login",
-                    "password"
-                ]
             }
         ]
     },
@@ -400,14 +337,6 @@
                 {
                     "id": "all",
                     "title": "All"
-                },
-                {
-                    "id": "news",
-                    "title": "News"
-                },
-                {
-                    "id": "events",
-                    "title": "Events"
                 },
                 {
                     "id": "case studies",
@@ -706,33 +635,27 @@
             "members": [
                 {
                     "id": 1,
-                    "img": "/assets/resources/aboutUs/team/member-default.png",
-                    "name": "Zayn Malik",
-                    "position": "ceo"
+                    "img": "/assets/resources/team/lamin.png",
+                    "name": "Lamin Drammeh",
+                    "position": "Founder & CEO"
                 },
                 {
                     "id": 2,
-                    "img": "/assets/resources/aboutUs/team/member-default.png",
-                    "name": "Zayn Malik",
-                    "position": "ceo"
+                    "img": "/assets/resources/team/lamin1.png",
+                    "name": "Lamin AK Jammeh",
+                    "position": "Commercial Director"
                 },
                 {
                     "id": 3,
-                    "img": "/assets/resources/aboutUs/team/member-default.png",
-                    "name": "Zayn Malik",
-                    "position": "ceo"
+                    "img": "/assets/resources/team/ya.png",
+                    "name": "Ya Ida Drammeh",
+                    "position": "HR & Legal Manager"
                 },
                 {
                     "id": 4,
-                    "img": "/assets/resources/aboutUs/team/member-default.png",
-                    "name": "Zayn Malik",
-                    "position": "ceo"
-                },
-                {
-                    "id": 5,
-                    "img": "/assets/resources/aboutUs/team/member-default.png",
-                    "name": "Zayn Malik",
-                    "position": "ceo"
+                    "img": "/assets/resources/team/alagie.png",
+                    "name": "Alagie Mboob",
+                    "position": ""
                 }
             ]
         }

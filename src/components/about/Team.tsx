@@ -42,7 +42,7 @@ export const Team: React.FC<TeamSectionProps> = ({
                     {team.subtitle}
                 </p>
 
-                <div className="mt-stack-lg grid grid-cols-1 fluid-gap md:grid-cols-2 lg:grid-cols-3">
+                <div className="mt-stack-lg grid grid-cols-1 fluid-gap md:grid-cols-2 lg:grid-cols-3 auto-rows-fr">
                     {(team.members ?? []).map((m) => (
                         <Member
                             key={m.id}
@@ -50,7 +50,7 @@ export const Team: React.FC<TeamSectionProps> = ({
                             name={m.name}
                             position={`CEO DK TELECOM`.toLowerCase() === m.position.toLowerCase()
                                 ? m.position
-                                : `${m.position} dk telecom`}
+                                : `${m.position}`}
                         />
                     ))}
                 </div>

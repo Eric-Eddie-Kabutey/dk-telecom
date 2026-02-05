@@ -31,7 +31,7 @@ export const BlogCard: React.FC<BlogCardProps> = ({ article, className }) => {
         <Link
             href={`/${mode}/blog/${slug}`}
             className={clsx(
-                "group flex flex-col overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-sm transition hover:shadow-md hover:border-primary/30",
+                "group flex flex-col overflow-hidden mb-4 transitio",
                 className
             )}
         >
@@ -46,7 +46,7 @@ export const BlogCard: React.FC<BlogCardProps> = ({ article, className }) => {
             </div>
 
             {/* Content */}
-            <div className="flex flex-col flex-1 p-6 stack-sm">
+            <div className="flex flex-col flex-1 stack-sm">
                 {/* Category badge */}
                 {/* {article.categoryId && (
                     <span className="inline-flex self-start rounded-full bg-primary/10 px-3 py-1 text-caption font-medium text-primary capitalize">
@@ -65,8 +65,8 @@ export const BlogCard: React.FC<BlogCardProps> = ({ article, className }) => {
                 </p>
 
                 {/* Read more link */}
-                <div className="flex items-center gap-2 text-button text-primary font-medium mt-4">
-                    {article.button || "Read more"}
+                <div className="flex items-center gap-2 text-button group-hover:text-primary font-medium mt-4">
+                    {article.button || "READ MORE"}
                     <ArrowRight size={16} className="transition-transform group-hover:translate-x-1" />
                 </div>
             </div>

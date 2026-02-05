@@ -18,7 +18,7 @@ type Article = {
     content?: string[];
 };
 
-type FilterId = "all" | "news" | "events" | "case studies";
+type FilterId = "all" | "case studies";
 
 export default function BlogPage() {
     const { text } = useSiteMode();
@@ -109,7 +109,7 @@ export default function BlogPage() {
                     </div>
 
                     {/* Articles Grid */}
-                    <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-2">
+                    <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
                         {filteredArticles.map((article) => (
                             <BlogCard key={article.id} article={article} />
                         ))}

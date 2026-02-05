@@ -94,13 +94,13 @@ export default function UnifiedHome() {
                         title={"Get Connected Instantly"}
                         subtitle={"Experience fiber-speed internet with zero lag, enterprise-grade reliability, and concierge onboarding for your entire household."}
                         buttonText="Request a Sales Call"
-                        buttonRoute="/contact"
+                        buttonRoute={`/${currentMode}/contact`}
                         gradientColors={["#4B46E5", "#2E2A8F"]}
                     />
                 </>
             ) : (
                 <>
-                    <OfferList requestHref="/contact" />
+                    <OfferList requestHref={`/${currentMode}/contact`} />
                     <Benefits />
                     <TransformSection />
                 </>

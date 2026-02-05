@@ -15,6 +15,7 @@ import {
     Smartphone,
     type LucideIcon,
 } from "lucide-react";
+import { WHATSAPP_PHONE_NUMBER } from "@/constants/contact";
 
 type HelpArticle = {
     title: string;
@@ -44,7 +45,7 @@ const ICONS = {
 const norm = (s: string) => (s ?? "").toLowerCase().trim();
 
 export const HelpCenter = () => {
-    const { text } = useSiteMode();
+    const { text, mode } = useSiteMode();
 
     const help = text.help;
     const categories = (help?.categories ?? []) as HelpCategory[];
@@ -173,11 +174,16 @@ export const HelpCenter = () => {
                     <div className="grid fluid-gap grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
                         {filteredCategories.map((cat) => {
                             const Icon = ICONS[cat.icon] ?? Wifi;
+                            const whatsappUrl = `https://wa.me/${WHATSAPP_PHONE_NUMBER.replace(/\D/g, "")}?text=${encodeURIComponent(
+                                `Hello DK Telecom ${mode === "business" ? "Business" : "Residential"}, I need help with ${cat.title}`
+                            )}`;
 
                             return (
                                 <Link
                                     key={cat.id}
-                                    href={cat.href}
+                                    href={whatsappUrl}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
                                     className="group aspect-square rounded-3xl border border-gray-100 bg-white p-6 shadow-[0_10px_30px_rgba(0,0,0,0.05)] transition hover:-translate-y-1 hover:shadow-[0_18px_45px_rgba(0,0,0,0.08)]"
                                 >
                                     <div className="h-full flex flex-col justify-center items-center text-center gap-4">

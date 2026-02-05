@@ -7,6 +7,7 @@ import clsx from "clsx";
 import { Check } from "lucide-react";
 import { useSiteMode } from "@/context/SiteModeProvider";
 import HeroCarousel, { CarouselHandle } from "@/components/home/HeroCarousel";
+import { WHATSAPP_PHONE_NUMBER } from "@/constants/contact";
 
 type PackageItem = {
     id: number;
@@ -158,7 +159,7 @@ export const HeroMain = () => {
 
 {/* <div className="absolute -top-10 -right-10">
                         <Link
-                            href="https://wa.me/1234567890"
+                            href={`https://wa.me/${WHATSAPP_PHONE_NUMBER.replace(/\D/g, "")}`}
                             target="_blank"
                             className="flex items-center space-x-2 bg-[#00D539] text-white px-6 py-6 rounded-full hover:bg-green-600 transition-colors"
                         >

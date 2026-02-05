@@ -81,8 +81,6 @@ export const OfferList: React.FC<OfferListProps> = ({
                         Request Installation <ArrowRight size={18} />
                     </Link>
                 </motion.div>
-
-                {/* ✅ Layout starts at md (tablet) */}
                 <motion.div
                     variants={containerVariants}
                     initial="hidden"
@@ -90,7 +88,6 @@ export const OfferList: React.FC<OfferListProps> = ({
                     viewport={{ once: true, margin: "-100px" }}
                     className="mt-stack-lg grid grid-cols-1 fluid-gap md:grid-cols-12 md:grid-rows-2"
                 >
-                    {/* Left big card spans both rows */}
                     {left ? (
                         <motion.div variants={itemVariants} className="md:col-span-5 md:row-span-2">
                             <Offer

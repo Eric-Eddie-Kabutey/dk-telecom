@@ -1,0 +1,1 @@
+export const WHATSAPP_PHONE_NUMBER = "+233200000000"; 

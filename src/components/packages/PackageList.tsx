@@ -4,6 +4,7 @@ import React, { useMemo, useState } from "react";
 import clsx from "clsx";
 import { useSiteMode } from "@/context/SiteModeProvider";
 import { PackageCard, PackageItem } from "@/components/packages/PackageCard";
+import { WHATSAPP_PHONE_NUMBER } from "@/constants/contact";
 
 type PackageListProps = {
     className?: string;
@@ -38,7 +39,7 @@ export const PackageList: React.FC<PackageListProps> = ({
     className,
     id = "packages",
 }) => {
-    const { text } = useSiteMode();
+    const { text, mode } = useSiteMode();
 
     const packageSection = text?.packages?.packageSection as {
         title: string;
@@ -52,7 +53,10 @@ export const PackageList: React.FC<PackageListProps> = ({
     if (!packageSection) return null;
 
     const handleSelect = (pkg: PackageItem) => {
-        console.log("Selected package:", pkg);
+        const whatsappUrl = `https://wa.me/${WHATSAPP_PHONE_NUMBER.replace(/\D/g, "")}?text=${encodeURIComponent(
+            `Hello DK Telecom ${mode === "business" ? "Business" : "Residential"}, I am interested in the ${pkg.bandwidth} Mbps (${pkg.type}) package.`
+        )}`;
+        window.open(whatsappUrl, "_blank", "noopener,noreferrer");
     };
 
     return (

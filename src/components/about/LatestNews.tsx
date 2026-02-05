@@ -6,6 +6,7 @@ import clsx from "clsx";
 import { ArrowRight } from "lucide-react";
 import { useSiteMode } from "@/context/SiteModeProvider";
 import { ArticleCard } from "@/components/about/ArticleCard";
+import { BlogCard } from "../blog/BlogCard";
 
 type LatestNewsFilter = {
   id: string; // "all" | "news" | "events" | "case studies"
@@ -111,16 +112,8 @@ export const LatestNews: React.FC<LatestNewsSectionProps> = ({
 
         {/* Cards */}
         <div className="mt-10 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {visibleArticles.map((a) => (
-            <ArticleCard
-              key={a.id}
-              title={a.title}
-              body={a.body}
-              img={a.img}
-              href={a.href}
-              buttonLabel={a.button ?? "Read more"}
-              imageAlt={a.title}
-            />
+          {visibleArticles.map((article) => (
+            <BlogCard key={article.id} article={article} />
           ))}
         </div>
 
